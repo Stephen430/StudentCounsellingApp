@@ -1,0 +1,76 @@
+@model StudentCounsellingApp.Models.Counsellor
+
+@{
+    ViewData["Title"] = $"Counsellor - {Model.FirstName} {Model.LastName}";
+}
+
+<div class="container">
+    <div class="row justify-content-center my-5">
+        <div class="col-md-8">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center">
+                            @if (!string.IsNullOrEmpty(Model.ProfileImageUrl))
+                            {
+                                <img src="@Model.ProfileImageUrl" class="rounded-circle img-fluid mb-3" alt="@Model.FirstName @Model.LastName">
+                            }
+                            else
+                            {
+                                <div class="counsellor-detail-img mb-3">
+                                    <i class="bi bi-person-fill"></i>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-md-8">
+                            <h2 class="mb-1">@Model.FirstName @Model.LastName</h2>
+                            <p class="text-primary mb-3">@Model.Specialization</p>
+                            
+                            <div class="mb-4">
+                                <div class="mb-2"><i class="bi bi-stars me-2"></i><span>@Model.YearsOfExperience years of experience</span></div>
+                                @if (!string.IsNullOrEmpty(Model.PhoneNumber))
+                                {
+                                    <div class="mb-2"><i class="bi bi-telephone me-2"></i><span>@Model.PhoneNumber</span></div>
+                                }
+                            </div>
+                            
+                            <a asp-controller="Appointment" asp-action="Create" asp-route-counsellorId="@Model.Id" class="btn btn-primary">
+                                <i class="bi bi-calendar-plus me-2"></i>Book a Session
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <h4>Biography</h4>
+                        <hr />
+                        <p>@(string.IsNullOrEmpty(Model.Biography) ? "No biography available" : Model.Biography)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-3 text-center">
+                <a asp-action="Index" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>Back to Counsellors
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .counsellor-detail-img {
+        width: 180px;
+        height: 180px;
+        background-color: #f8f9fa;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .counsellor-detail-img i {
+        font-size: 6rem;
+        color: #dee2e6;
+    }
+</style>

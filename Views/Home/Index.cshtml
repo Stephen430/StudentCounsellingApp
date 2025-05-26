@@ -1,0 +1,535 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/landing-page.css" />
+    <link rel="stylesheet" href="~/css/timeline.css" />
+    <link rel="stylesheet" href="~/css/testimonials.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+}
+
+<!-- Hero Section with Background Image - Full Viewport Height -->
+<div class="hero-section text-center text-white">
+    <div class="hero-overlay">
+        <h1 class="animate__animated animate__fadeInDown">Empowering <span class="txt-type" data-wait="3000"
+                data-words='["Academic Success", "Mental Wellbeing", "Student Potential", "Personal Growth"]'> </span>
+        </h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Your journey at university should be
+            transformative and fulfilling. We're here to support you every step of the way.</p>
+
+        <div class="mt-4 animate__animated animate__fadeIn animate__delay-2s">
+            <a asp-controller="Account" asp-action="Register" class="btn btn-lg btn-primary me-3">Get Started</a>
+            <a asp-controller="Appointment" asp-action="Create" class="btn btn-lg btn-outline-light">Book
+                Appointment</a>
+        </div>
+    </div>
+    <div class="hero-scroll-down animate__animated animate__fadeIn animate__delay-3s">
+        <i class="bi bi-chevron-down"></i>
+    </div>
+</div>
+
+<!-- Services Section -->
+<div class="services-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-heading">How We Can Help</h2>
+                <p class="text-muted">Comprehensive support tailored to your university journey</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <h4>Personal Counselling</h4>
+                        <p>Book confidential one-on-one sessions with our experienced counsellors to discuss any
+                            concerns affecting your academic performance or wellbeing.</p>
+                        <a asp-controller="Appointment" asp-action="Create" class="btn btn-primary mt-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <div class="card-body text-center">
+
+                        <div class="service-icon">
+
+                            <i class="bi bi-journal-text"></i>
+                        </div>
+                        <h4>Resources Library</h4>
+                        <p>Access our extensive collection of self-help materials, articles, videos and tools designed
+                            to support your mental wellbeing and academic success.</p>
+                        <a asp-controller="Resource" asp-action="Index" class="btn btn-primary mt-3">Explore
+                            Resources</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="service-card">
+                    <div class="card-body text-center">
+                        <div class="service-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h4>Specialist Team</h4>
+                        <p>Our diverse team of professional counsellors specialize in various areas including stress
+                            management, anxiety, depression, and academic performance.</p>
+                        <a asp-controller="Counsellor" asp-action="Index" class="btn btn-primary mt-3">Meet Our Team</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How It Works Section -->
+<div class="how-it-works-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-heading">How It Works</h2>
+                <p class="text-muted">Get the support you need in four simple steps</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-12">
+                <div class="timeline">
+                    <div class="timeline-container left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="bi bi-person-plus"></i>
+                                <span class="timeline-number">1</span>
+                            </div>
+                            <h3>Create Your Account</h3>
+                            <p>Sign up for a secure and confidential account that gives you access to all our service
+                                s and resources.</p>
+                            <a asp-controller="Account" asp-action="Register" class="timeline-link">Get Started <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-container right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="bi bi-card-checklist"></i>
+                                <span class="timeline-number">2</span>
+                            </div>
+                            <h3>Complete Brief Assessment</h3>
+
+                            <p>Take a quick assessment to help us understand your needs and match you with the right
+                                counsellor.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-container left" data-aos="fade-right">
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="bi bi-calendar2-plus"></i>
+                                <span class="timeline-number">3</span>
+                            </div>
+                            <h3>Book Your Session</h3>
+                            <p>Choose a convenient time from available slots and select in-person or virtual meeting.
+                            </p>
+                            <a asp-controller="Appointment" asp-action="Create" class="timeline-link">Schedule Now <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-container right" data-aos="fade-left">
+                        <div class="timeline-content">
+                            <div class="timeline-icon">
+                                <i class="bi bi-chat-square-text"></i>
+                                <span class="timeline-number">4</span>
+                            </div>
+                            <h3>Start Your Journey</h3>
+                            <p>Meet with your counsellor and begin working together on strategies tailored to your
+                                needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial Section -->
+<div class="testimonial-section">
+    <div class="testimonial-overlay"></div>
+    <div class="container position-relative">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-heading text-white animate__animated animate__fadeInDown">Student Success Stories
+                </h2>
+                <p class="text-white animate__animated animate__fadeIn animate__delay-1s">Hear from students who've
+                    transformed their university experience</p>
+            </div>
+        </div>
+
+        <!-- Desktop View (3 columns) -->
+        <div class="testimonial-desktop d-none d-lg-block">
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80"
+                                alt="Student portrait" class="img-fluid rounded-circle">
+                        </div>
+                        <blockquote>
+                            <p>"The counselling sessions helped me manage my exam anxiety and improve my academic
+                                performance significantly."</p>
+                            <footer class="text-white-50 mt-3">— Computer Science Student, <cite>Class of 2025</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card testimonial-card-featured">
+                        <div class="testimonial-icon">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80"
+                                alt="Student portrait" class="img-fluid rounded-circle">
+                        </div>
+                        <blockquote>
+                            <p>"I was struggling with balancing my coursework and mental health. The strategies I
+                                learned here made all the difference in my academic journey."</p>
+                            <footer class="text-white-50 mt-3">— Engineering Student, <cite>Class of 2024</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="bi bi-quote"></i>
+                        </div>
+                        <div class="testimonial-image">
+                            <img src="https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80"
+                                alt="Student portrait" class="img-fluid rounded-circle">
+                        </div>
+                        <blockquote>
+                            <p>"The counsellors here truly care. They provided me with tools to overcome my social
+                                anxiety and thrive in my university life."</p>
+                            <footer class="text-white-50 mt-3">— Psychology Student, <cite>Class of 2023</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile & Tablet View (Carousel) -->
+        <div class="testimonial-carousel d-block d-lg-none">
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <div class="testimonial-icon">
+                                <i class="bi bi-quote"></i>
+                            </div>
+                            <div class="testimonial-image">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80"
+                                    alt="Student portrait" class="img-fluid rounded-circle">
+                            </div>
+                            <blockquote>
+                                <p>"The counselling sessions helped me manage my exam anxiety and improve my academic
+                                    performance significantly."</p>
+                                <footer class="text-white-50 mt-3">— Computer Science Student, <cite>Class of
+                                        2025</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card testimonial-card-featured">
+                            <div class="testimonial-icon">
+                                <i class="bi bi-quote"></i>
+                            </div>
+                            <div class="testimonial-image">
+                                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80"
+                                    alt="Student portrait" class="img-fluid rounded-circle">
+                            </div>
+                            <blockquote>
+                                <p>"I was struggling with balancing my coursework and mental health. The strategies I
+                                    learned here made all the difference in my academic journey."</p>
+                                <footer class="text-white-50 mt-3">— Engineering Student, <cite>Class of 2024</cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="testimonial-icon">
+                                <i class="bi bi-quote"></i>
+                            </div>
+                            <div class="testimonial-image">
+                                <img src="https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&h=300&q=80"
+                                    alt="Student portrait" class="img-fluid rounded-circle">
+                            </div>
+                            <blockquote>
+                                <p>"The counsellors here truly care. They provided me with tools to overcome my social
+                                    anxiety and thrive in my university life."</p>
+                                <footer class="text-white-50 mt-3">— Psychology Student, <cite>Class of 2023</cite>
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-indicators testimonial-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <i class="bi bi-chevron-left testimonial-control-icon" aria-hidden="true"></i>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <i class="bi bi-chevron-right testimonial-control-icon" aria-hidden="true"></i>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="testimonial-shape shape-left d-none d-xl-block"></div>
+        <div class="testimonial-shape shape-right d-none d-xl-block"></div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="stats-section">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="stat-item">
+                    <h3 class="stat-number"><span class="counter">500</span>+</h3>
+                    <p class="stat-text">Students Supported Annually</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-item">
+                    <h3 class="stat-number"><span class="counter">15</span>+</h3>
+                    <p class="stat-text">Expert Counsellors</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                    <h3 class="stat-number"><span class="counter">95</span>%</h3>
+                    <p class="stat-text">Student Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Why Choose Us Section -->
+<div class="why-choose-us-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-heading">Why Choose Us</h2>
+                <p class="text-muted">We're committed to your well-being and academic success</p>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                    alt="University counsellor with student" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Complete Confidentiality</h4>
+                            <p>Your privacy is our priority. All sessions and information shared remain strictly
+                                confidential.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Qualified Professionals</h4>
+                            <p>Our team consists of licensed counsellors with specialized training in student mental
+                                health.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Flexible Scheduling</h4>
+                            <p>Book appointments that fit around your classes and study schedule.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h4>Virtual & In-Person Options</h4>
+                            <p>Choose between face-to-face sessions or convenient online consultations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Student Resources Section -->
+<div class="resources-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-heading">Resources & Tools</h2>
+                <p class="text-muted">Access valuable materials to support your mental wellbeing</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <h4>Self-Help Guides</h4>
+                    <p>Comprehensive guides on managing stress, anxiety, and improving wellbeing.</p>
+                    <a asp-controller="Resource" asp-action="Index" asp-route-category="guides"
+                        class="resource-link">Browse Guides <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-journal-check"></i>
+                    </div>
+                    <h4>Wellbeing Journals</h4>
+                    <p>Interactive journals to track your mood, progress and daily reflections.</p>
+                    <a asp-controller="Resource" asp-action="Index" asp-route-category="journals"
+                        class="resource-link">View Journals <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-play-circle"></i>
+                    </div>
+                    <h4>Video Resources</h4>
+                    <p>Expert-led tutorials and talks on mental health topics for students.</p>
+                    <a asp-controller="Resource" asp-action="Index" asp-route-category="videos"
+                        class="resource-link">Watch Videos <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="bi bi-calendar2-week"></i>
+                    </div>
+                    <h4>Workshop Calendar</h4>
+                    <p>Register for upcoming workshops and group sessions on campus.</p>
+                    <a asp-controller="Resource" asp-action="Workshops" class="resource-link">See Schedule <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+            <a asp-controller="Resource" asp-action="Index" class="btn btn-primary">Explore All Resources</a>
+        </div>
+    </div>
+</div>
+
+<!-- Contact CTA Section -->
+<div class="contact-cta-section">
+    <div class="container">
+        <div class="cta-card" data-aos="zoom-in">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2>Ready to take the first step?</h2>
+                    <p class="mb-0">Schedule your first counselling session today and start your journey to better
+                        well-being.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a asp-controller="Appointment" asp-action="Create" class="btn btn-lg btn-white">Book Your
+                        Session</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-waypoints@2.0.5/lib/jquery.waypoints.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="~/js/landing-page.js" asp-append-version="true"></script>
+    <script src="~/js/testimonials.js" asp-append-version="true"></script>
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Initialize counter animation
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+
+        // Smooth scroll for hero section arrow
+        $(document).ready(function () {
+            $('.hero-scroll-down').click(function () {
+                $('html, body').animate({
+                    scrollTop: $('.services-section').offset().top
+                }, 800);
+            });
+        });
+    </script>
+}
+
+
+
+
+
+
+                       
+                       
+                       
+                           
+                       
+                       

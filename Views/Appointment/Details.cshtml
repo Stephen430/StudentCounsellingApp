@@ -1,0 +1,79 @@
+@model StudentCounsellingApp.Models.Appointment
+
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card dashboard-card mb-4">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="bi bi-calendar-event me-2"></i>Appointment Details</h5>
+                        <span class="badge @(Model.Status == "Scheduled" ? "bg-success" : 
+                                          Model.Status == "Completed" ? "bg-secondary" : 
+                                          Model.Status == "Cancelled" ? "bg-danger" : 
+                                          "bg-warning")">
+                            @Model.Status
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="fw-bold">Date:</label>
+                                <p>@Model.AppointmentDate.ToLongDateString()</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="fw-bold">Time:</label>
+                                <p>@Model.StartTime.ToString(@"hh\:mm tt") - @Model.EndTime.ToString(@"hh\:mm tt")</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="fw-bold">Counsellor:</label>
+                                <p>@(Model.Counsellor != null ? $"{Model.Counsellor.FirstName} {Model.Counsellor.LastName}" : "Not assigned")</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="fw-bold">Created:</label>
+                                <p>@Model.CreatedAt.ToString("g")</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Subject:</label>
+                        <p>@Model.Subject</p>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="fw-bold">Description:</label>
+                        <p>@(string.IsNullOrEmpty(Model.Description) ? "No description provided" : Model.Description)</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mt-4">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left me-2"></i>Back to Appointments
+                        </a>
+                        
+                        @if (Model.AppointmentDate > DateTime.Today && Model.Status == "Scheduled")
+                        {
+                            <div>
+                                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary me-2">
+                                    <i class="bi bi-pencil me-2"></i>Edit
+                                </a>
+                                <a asp-action="Cancel" asp-route-id="@Model.Id" 
+                                   class="btn btn-danger"
+                                   onclick="return confirm('Are you sure you want to cancel this appointment?');">
+                                    <i class="bi bi-x-circle me-2"></i>Cancel
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

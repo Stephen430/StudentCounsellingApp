@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Resources";
+}
+
+<div class="container">
+    <h1 class="my-4">Counselling Resources</h1>
+    <p class="lead mb-5">Access our collection of resources to support your mental health and academic success.</p>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card service-card h-100">
+                <div class="card-body text-center">
+                    <div class="service-icon mb-3">
+                        <i class="bi bi-heart-pulse"></i>
+                    </div>
+                    <h4 class="card-title">Mental Health</h4>
+                    <p class="card-text">Resources focused on supporting your emotional well-being, stress management, and mental health.</p>
+                    <a asp-action="MentalHealth" class="btn btn-primary mt-3">Explore Resources</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card service-card h-100">
+                <div class="card-body text-center">
+                    <div class="service-icon mb-3">
+                        <i class="bi bi-book"></i>
+                    </div>
+                    <h4 class="card-title">Academic Support</h4>
+                    <p class="card-text">Materials to help you succeed academically, including study strategies, time management, and exam preparation.</p>
+                    <a asp-action="AcademicSupport" class="btn btn-primary mt-3">Explore Resources</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card service-card h-100">
+                <div class="card-body text-center">
+                    <div class="service-icon mb-3">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+                    <h4 class="card-title">Career Guidance</h4>
+                    <p class="card-text">Information about career planning, job searching, resume building, and interview preparation.</p>
+                    <a asp-action="CareerGuidance" class="btn btn-primary mt-3">Explore Resources</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

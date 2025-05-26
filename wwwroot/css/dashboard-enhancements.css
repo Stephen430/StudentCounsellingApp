@@ -1,0 +1,162 @@
+/**
+ * Custom CSS for the Student Counselling App Dashboard
+ * Enhanced visual styles for the modern dashboard UI
+ */
+
+/* Additional hover effects for stat cards */
+.stat-card {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, filter 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    filter: brightness(1.05);
+}
+
+.stat-card-animated {
+    animation: stat-appear 0.6s ease-out forwards;
+}
+
+@keyframes stat-appear {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Appointment item enhanced styles */
+.appointment-item {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.appointment-item-hover {
+    background-color: #f8f9fa !important;
+    transform: translateX(5px);
+}
+
+.appointment-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(to right, #4158d0, #c850c0);
+    transition: width 0.3s ease;
+}
+
+.appointment-item:hover::after {
+    width: 100%;
+}
+
+/* Quick link items enhancements */
+.quick-link-item {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.quick-link-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(65, 88, 208, 0.15) 0%, rgba(200, 80, 192, 0.15) 100%);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.5s ease-out;
+    border-radius: 0.75rem;
+}
+
+.quick-link-item:hover::before {
+    transform: scaleX(1);
+}
+
+.quick-link-touch {
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* Dashboard hero section enhancements */
+.dashboard-hero {
+    position: relative;
+}
+
+.dashboard-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
+    pointer-events: none;
+}
+
+/* Animation for welcome message */
+.welcome-animation {
+    animation: fadeInScale 1s ease-out;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Empty state enhancements */
+.empty-state {
+    position: relative;
+}
+
+.empty-state i {
+    transition: transform 0.3s ease;
+}
+
+.empty-state:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+    
+    .dashboard-hero {
+        padding: 2rem 0;
+    }
+    
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .quick-link-item {
+        background-color: rgba(255,255,255,0.05);
+    }
+    
+    .quick-link-item:hover {
+        background-color: rgba(255,255,255,0.1);
+    }
+    
+    .appointment-item-hover {
+        background-color: rgba(255,255,255,0.05) !important;
+    }
+}

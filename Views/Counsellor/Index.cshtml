@@ -1,0 +1,64 @@
+@model IEnumerable<StudentCounsellingApp.Models.Counsellor>
+
+@{
+    ViewData["Title"] = "Our Counsellors";
+}
+
+<div class="container">
+    <h1 class="my-4">Our Counselling Team</h1>
+    <p class="lead mb-5">Meet our professional counsellors dedicated to supporting your mental health and academic well-being.</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var counsellor in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="text-center pt-4">
+                        @if (!string.IsNullOrEmpty(counsellor.ProfileImageUrl))
+                        {
+                            <img src="@counsellor.ProfileImageUrl" class="rounded-circle mb-3" width="140" height="140" alt="@counsellor.FirstName @counsellor.LastName">
+                        }
+                        else
+                        {
+                            <div class="counsellor-placeholder-img mb-3">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                        }
+                        <h5 class="card-title">@counsellor.FirstName @counsellor.LastName</h5>
+                        <p class="card-text text-primary">@counsellor.Specialization</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text text-muted">
+                            <i class="bi bi-stars me-1"></i>
+                            <span>@counsellor.YearsOfExperience years of experience</span>
+                        </p>
+                        <p class="card-text">@(counsellor.Biography?.Length > 150 ? counsellor.Biography.Substring(0, 150) + "..." : counsellor.Biography)</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pb-4">
+                        <a asp-controller="Appointment" asp-action="Create" asp-route-counsellorId="@counsellor.Id" class="btn btn-primary w-100">
+                            <i class="bi bi-calendar-plus me-2"></i>Book Session
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .counsellor-placeholder-img {
+        width: 140px;
+        height: 140px;
+        background-color: #f8f9fa;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .counsellor-placeholder-img i {
+        font-size: 4rem;
+        color: #dee2e6;
+    }
+</style>

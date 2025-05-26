@@ -1,0 +1,118 @@
+@model StudentCounsellingApp.ViewModels.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard Debug View";
+}
+
+<div class="container py-4">
+    <h1>Dashboard Debug View</h1>
+
+    <div class="alert alert-info">
+        <strong>Request ID:</strong> @Context.TraceIdentifier
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5>Basic Information</h5>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <th>Authentication Status</th>
+                    <td>@User.Identity?.IsAuthenticated</td>
+                </tr>
+                <tr>
+                    <th>User Name</th>
+                    <td>@User.Identity?.Name</td>
+                </tr>
+                <tr>
+                    <th>Student Name from Model</th>
+                    <td>@Model?.StudentName</td>
+                </tr>
+                <tr>
+                    <th>Model Loaded Successfully</th>
+                    <td>@(Model?.IsLoaded == true ? "Yes" : "No")</td>
+                </tr>
+                <tr>
+                    <th>Last Updated</th>
+                    <td>@Model?.LastUpdated.ToString("f")</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5>Data Status</h5>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <th>Upcoming Appointments</th>
+                    <td>@(Model?.UpcomingAppointments?.Count() ?? 0) items</td>
+                </tr>
+                <tr>
+                    <th>Past Appointments</th>
+                    <td>@(Model?.PastAppointments?.Count() ?? 0) items</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5>User Claims</h5>
+        </div>
+        <div class="card-body">
+            @if (User.Claims.Any())
+            {
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var claim in User.Claims)
+                        {
+                            <tr>
+                                <td>@claim.Type</td>
+                                <td>@claim.Value</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-warning">No claims found</div>
+            }
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a href="/Dashboard" class="btn btn-primary">Try Main Dashboard</a>
+        <a href="/Dashboard/simple" class="btn btn-secondary">Try Simple Dashboard</a>
+        <a href="/Dashboard/tech-report" class="btn btn-info">View Technical Report</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        console.log('Debug view loaded successfully at: ' + new Date().toISOString());
+
+        // Check if page content loaded correctly
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOM Content loaded');
+            if (document.body.innerText.length < 100) {
+                console.warn('Page content appears to be minimal');
+            }
+        });
+
+        // Log any errors
+        window.onerror = function (msg, url, line) {
+            console.error('Error:', msg, 'at', url, ':', line);
+        };
+    </script>
+}

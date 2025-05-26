@@ -1,0 +1,35 @@
+@model StudentCounsellingApp.Models.ErrorViewModel
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+<div class="container text-center py-5">
+    <div class="mb-4">
+        <i class="bi bi-shield-lock-fill text-danger" style="font-size: 4rem;"></i>
+    </div>
+    <h1 class="text-danger mb-3">Access Denied</h1>
+    <h2 class="text-muted mb-4">You do not have permission to access the requested resource.</h2>
+
+    @if (Model.ShowRequestId)
+    {
+        <p class="mb-4">
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+    
+    @if (!string.IsNullOrEmpty(Model.RequestPath))
+    {
+        <div class="mt-2 small text-muted">
+            <strong>Path:</strong> @Model.RequestPath
+        </div>
+    }
+
+    <div class="mt-5">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary me-2">
+            <i class="bi bi-house-door me-2"></i>Return Home
+        </a>
+        <a asp-controller="Account" asp-action="Login" class="btn btn-outline-secondary">
+            <i class="bi bi-box-arrow-in-right me-2"></i>Login Again
+        </a>
+    </div>
+</div>

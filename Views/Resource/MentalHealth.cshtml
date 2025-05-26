@@ -1,0 +1,102 @@
+@{
+    ViewData["Title"] = "Mental Health Resources";
+}
+
+<div class="container">
+    <h1 class="my-4">Mental Health Resources</h1>
+    <p class="lead mb-5">Supporting your emotional well-being through information and strategies for managing stress, anxiety, and depression.</p>
+
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <h3>Articles & Reading Materials</h3>
+            <div class="list-group shadow-sm">
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Understanding Stress and Anxiety in College</h5>
+                        <small>15 min read</small>
+                    </div>
+                    <p class="mb-1">Learn about the common causes of stress and anxiety in academic settings and effective coping mechanisms.</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Building Resilience: A Guide for Students</h5>
+                        <small>10 min read</small>
+                    </div>
+                    <p class="mb-1">Practical strategies to develop emotional resilience and bounce back from challenges and setbacks.</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Mindfulness Techniques for Daily Life</h5>
+                        <small>12 min read</small>
+                    </div>
+                    <p class="mb-1">Simple mindfulness practices that can be integrated into your daily routine to reduce stress and improve focus.</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Emergency Resources</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>National Suicide Prevention Lifeline:</strong><br>1-800-273-8255</p>
+                    <p><strong>Crisis Text Line:</strong><br>Text HOME to 741741</p>
+                    <p><strong>Campus Counseling Center:</strong><br>555-123-4567</p>
+                    <hr>
+                    <p class="mb-0">If you're experiencing an emergency, please call 911 or visit your nearest emergency room.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <h3>Video Resources</h3>
+        </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-img-top bg-light text-center py-5">
+                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Managing Test Anxiety</h5>
+                    <p class="card-text">Techniques for handling anxiety before and during exams to improve performance.</p>
+                    <small class="text-muted">Duration: 8:45</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-img-top bg-light text-center py-5">
+                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Guided Meditation for Students</h5>
+                    <p class="card-text">A relaxing guided meditation specifically designed to help students clear their minds.</p>
+                    <small class="text-muted">Duration: 15:20</small>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-img-top bg-light text-center py-5">
+                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Dealing with Burnout</h5>
+                    <p class="card-text">Identifying signs of burnout and strategies to recover and prevent future occurrences.</p>
+                    <small class="text-muted">Duration: 12:15</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mb-5">
+        <a asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-2"></i>Back to Resources
+        </a>
+    </div>
+</div>

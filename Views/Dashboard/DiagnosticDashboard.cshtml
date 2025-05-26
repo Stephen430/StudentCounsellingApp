@@ -1,0 +1,143 @@
+@model StudentCounsellingApp.ViewModels.DashboardViewModel
+@{
+    ViewData["Title"] = "Diagnostic Dashboard";
+}
+
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4>Welcome, @(string.IsNullOrEmpty(Model.StudentName) ? "Student" : Model.StudentName)</h4>
+                </div>
+                <div class="card-body">
+                    <p>This is a diagnostic dashboard view created to troubleshoot rendering issues.</p>
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-warning">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-exclamation-triangle me-2"></i>
+                                <strong>Dashboard Issue Detected: </strong>
+                            </div>
+                            <p class="mb-2">@TempData["ErrorMessage"]</p>
+                            <div class="d-flex gap-2">
+                                <a href="@Url.Action("DiagnosticView", "Dashboard")" class="btn btn-info btn-sm">Run Diagnostics</a>
+                                <a href="@Url.Action("EmergencyView", "Dashboard")" class="btn btn-warning btn-sm">Emergency View</a>
+                                <a href="@Url.Action("TechnicalReport", "Dashboard")" class="btn btn-outline-dark btn-sm">Technical Report</a>
+                            </div>
+                        </div>
+                    }
+                    
+                    <div class="alert alert-info">
+                        <strong>Diagnostic Information</strong><br/>
+                        Session ID: @Context.TraceIdentifier<br/>
+                        Last Updated: @Model.LastUpdated.ToString("f")<br/>
+                        Data Loaded Successfully: @(Model.IsLoaded ? "Yes" : "No")<br/>
+                        Upcoming Appointments: @(Model.UpcomingAppointments?.Count() ?? 0)<br/>
+                        Past Appointments: @(Model.PastAppointments?.Count() ?? 0)<br/>
+                        Authentication Status: @User.Identity?.IsAuthenticated<br/>
+                        User Name: @User.Identity?.Name
+                    </div>
+                    
+                    <div class="mt-3">
+                        <a href="@Url.Action("Index", "Dashboard")" class="btn btn-primary">Return to Dashboard</a>
+                        <a href="@Url.Action("DiagnosticView", "Dashboard")" class="btn btn-secondary ms-2">View System Diagnostics</a>
+                        <a href="@Url.Action("EmergencyView", "Dashboard")" class="btn btn-warning ms-2">Emergency View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Appointment Data Display -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Upcoming Appointments (@(Model.UpcomingAppointments?.Count() ?? 0))</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.UpcomingAppointments != null && Model.UpcomingAppointments.Any())
+                    {
+                        <ul class="list-group">
+                            @foreach (var appointment in Model.UpcomingAppointments)
+                            {
+                                <li class="list-group-item">
+                                    <div>
+                                        <strong>@(appointment?.Subject ?? "Appointment")</strong>
+                                        <span class="badge bg-primary float-end">@(appointment?.Status ?? "Unknown")</span>
+                                    </div>
+                                    <div class="text-muted small">
+                                        <div>Date: @(appointment?.AppointmentDate.ToString("D") ?? "N/A")</div>
+                                        <div>Time: @(appointment?.StartTime != null ? appointment.StartTime.ToString("%h\\:mm") + (appointment.StartTime.Hours < 12 ? " AM" : " PM") : "N/A") - 
+                                                  @(appointment?.EndTime != null ? appointment.EndTime.ToString("%h\\:mm") + (appointment.EndTime.Hours < 12 ? " AM" : " PM") : "N/A")</div>
+                                        <div>Counsellor: @(appointment?.Counsellor != null ? $"{appointment.Counsellor.FirstName} {appointment.Counsellor.LastName}" : "N/A")</div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="text-center py-3">
+                            <i class="bi bi-calendar-x text-muted"></i>
+                            <p class="text-muted mb-0">No upcoming appointments.</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Past Appointments (@(Model.PastAppointments?.Count() ?? 0))</h5>
+                </div>
+                <div class="card-body">
+                    @if (Model.PastAppointments != null && Model.PastAppointments.Any())
+                    {
+                        <ul class="list-group">
+                            @foreach (var appointment in Model.PastAppointments)
+                            {
+                                <li class="list-group-item">
+                                    <div>
+                                        <strong>@(appointment?.Subject ?? "Past Appointment")</strong>
+                                        <span class="badge bg-secondary float-end">@(appointment?.Status ?? "Unknown")</span>
+                                    </div>
+                                    <div class="text-muted small">
+                                        <div>Date: @(appointment?.AppointmentDate.ToString("D") ?? "N/A")</div>
+                                        <div>Time: @(appointment?.StartTime != null ? appointment.StartTime.ToString("%h\\:mm") + (appointment.StartTime.Hours < 12 ? " AM" : " PM") : "N/A") - 
+                                                  @(appointment?.EndTime != null ? appointment.EndTime.ToString("%h\\:mm") + (appointment.EndTime.Hours < 12 ? " AM" : " PM") : "N/A")</div>
+                                        <div>Counsellor: @(appointment?.Counsellor != null ? $"{appointment.Counsellor.FirstName} {appointment.Counsellor.LastName}" : "N/A")</div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="text-center py-3">
+                            <i class="bi bi-calendar-x text-muted"></i>
+                            <p class="text-muted mb-0">No past appointments.</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        console.log("Diagnostic dashboard loaded successfully");
+        console.log("Model data:", {
+            studentName: "@Model.StudentName",
+            upcomingAppointments: @(Model.UpcomingAppointments?.Count() ?? 0),
+            pastAppointments: @(Model.PastAppointments?.Count() ?? 0),
+            lastUpdated: "@Model.LastUpdated.ToString("o")",
+            isLoaded: @(Model.IsLoaded ? "true" : "false"),
+            sessionId: "@Context.TraceIdentifier",
+            isAuthenticated: @(User.Identity?.IsAuthenticated.ToString().ToLower() ?? "false")
+        });
+    </script>
+}

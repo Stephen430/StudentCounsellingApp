@@ -1,0 +1,83 @@
+@model StudentCounsellingApp.Models.Student
+
+@{
+    ViewData["Title"] = "Student Profile";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-md-8">
+            <h1 class="display-4">My Profile</h1>
+            <p class="lead">View and manage your personal information</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+            <a asp-action="Edit" class="btn btn-primary">
+                <i class="bi bi-pencil-square me-2"></i>Edit Profile
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center py-5">
+                    <div class="avatar-placeholder mb-3">
+                        <i class="bi bi-person-circle" style="font-size: 5rem;"></i>
+                    </div>
+                    <h3 class="card-title mb-0">@Model.FirstName @Model.LastName</h3>
+                    <p class="text-muted">Student</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-info-circle me-2"></i>Personal Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Student ID</div>
+                        <div class="col-md-8">@(Model.StudentId ?? "Not provided")</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Department</div>
+                        <div class="col-md-8">@(Model.Department ?? "Not provided")</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Year of Study</div>
+                        <div class="col-md-8">@(Model.YearOfStudy > 0 ? Model.YearOfStudy.ToString() : "Not provided")</div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Date of Birth</div>
+                        <div class="col-md-8">
+                            @(Model.DateOfBirth.Year > 1 ? Model.DateOfBirth.ToString("MMM dd, yyyy") : "Not provided")
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-telephone me-2"></i>Contact Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-4 fw-bold">Email</div>
+                        <div class="col-md-8">@Model.User.Email</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 fw-bold">Phone Number</div>
+                        <div class="col-md-8">@(String.IsNullOrEmpty(Model.PhoneNumber) ? "Not provided" : Model.PhoneNumber)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4 text-center">
+        <a asp-controller="Dashboard" asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-2"></i>Back to Dashboard
+        </a>
+    </div>
+</div>

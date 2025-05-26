@@ -1,0 +1,498 @@
+@model StudentCounsellingApp.ViewModels.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/dashboard-enhancements.css" />
+}
+
+<!-- CSS for the advanced dashboard -->
+<style>
+    /* Hero Section Styles */
+    .dashboard-hero {
+        background: linear-gradient(135deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+        border-radius: 0.75rem;
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .dashboard-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMCkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+        opacity: 0.3;
+    }
+
+    .welcome-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        animation: fadeIn 0.8s ease-out;
+    }
+
+    .welcome-subtitle {
+        opacity: 0.9;
+        animation: slideUp 0.8s ease-out 0.2s both;
+    }
+
+    /* Stat Card Styles */
+    .stat-card {
+        border-radius: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .stat-card.upcoming {
+        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+    }
+
+    .stat-card.past {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    }
+
+    .stat-card.resources {
+        background: linear-gradient(135deg, #fad961 0%, #f76b1c 100%);
+    }
+
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,0.2);
+        margin-bottom: 1rem;
+    }
+
+    .stat-icon i {
+        font-size: 1.75rem;
+        color: #fff;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-text {
+        font-size: 1rem;
+        opacity: 0.85;
+    }
+    
+    /* Appointment Card Styles */
+    .appointment-container {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+
+    .appointment-header {
+        padding: 1.25rem;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        background: linear-gradient(to right, #f8f9fa, #f1f3f5);
+    }
+
+    .appointment-list {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .appointment-item {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        transition: background-color 0.2s;
+    }
+
+    .appointment-item:last-child {
+        border-bottom: none;
+    }
+
+    .appointment-item:hover {
+        background-color: rgba(0,0,0,0.01);
+    }
+
+    .appointment-date {
+        min-width: 70px;
+        height: 70px;
+        border-radius: 10px;
+        background: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+    }
+
+    .date-day {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    .date-month {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: #777;
+    }
+
+    .appointment-details {
+        flex: 1;
+    }
+
+    .appointment-details h6 {
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+
+    .appointment-status .badge {
+        padding: 0.5rem 0.75rem;
+        font-weight: 500;
+    }
+
+    /* Quick Links Styles */
+    .quick-links-container {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+
+    .quick-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .quick-link-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1.25rem;
+        border-radius: 0.75rem;
+        background-color: #f8f9fa;
+        color: #495057;
+        transition: all 0.3s;
+        text-decoration: none;
+        height: 100%;
+    }
+
+    .quick-link-item:hover {
+        background-color: #e9ecef;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        color: #212529;
+    }
+
+    .quick-link-icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .quick-link-icon i {
+        color: #6c757d;
+    }
+
+    .quick-link-item:hover .quick-link-icon i {
+        color: #495057;
+    }
+
+    /* Empty State Styles */
+    .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 1.5rem;
+        color: #6c757d;
+    }
+
+    .empty-state i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        opacity: 0.7;
+    }
+
+    .empty-state.smaller {
+        padding: 2rem 1.5rem;
+    }
+
+    .empty-state.smaller i {
+        font-size: 2rem;
+    }
+
+    /* Animations */
+    @@keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @@keyframes slideUp {
+        from { 
+            opacity: 0; 
+            transform: translateY(20px);
+        }
+        to { 
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .welcome-title {
+            font-size: 2rem;
+        }
+        .stat-card {
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+        <strong>Notice:</strong> @TempData["ErrorMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<!-- Dashboard Hero Section -->
+<div class="container-fluid px-4 py-4">
+    <div class="dashboard-hero mb-5">
+        <div class="container-fluid px-4">
+            @if (!string.IsNullOrEmpty(Context.TraceIdentifier))
+            {
+                <div class="position-absolute top-0 end-0 m-3">
+                    <span class="badge bg-white text-primary small">Session ID: @Context.TraceIdentifier</span>
+                </div>
+            }
+            
+            <div class="row align-items-center">
+                <div class="col-12 col-md-8">
+                    <h1 class="welcome-title text-white">Welcome, @(string.IsNullOrEmpty(Model.StudentName) ? "Student" : Model.StudentName)!</h1>
+                    <p class="welcome-subtitle text-white-50 mb-1">Your wellness journey at a glance</p>
+                    <p class="text-white-50 small mb-4">Last updated: @(Model.LastUpdated.ToString("f"))</p>
+                    
+                    <div class="d-flex gap-2">
+                        <a asp-controller="Appointment" asp-action="Create" class="btn btn-light btn-lg">
+                            <i class="bi bi-calendar-plus me-2"></i>Schedule Session
+                        </a>
+                        <a asp-controller="Resource" asp-action="Index" class="btn btn-outline-light">
+                            <i class="bi bi-journal-bookmark me-2"></i>View Resources
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 d-none d-md-block">
+                    <!-- Could add an SVG illustration here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Stats Section -->
+    <div class="row g-4 mb-5">
+        <div class="col-12 col-md-4">
+            <div class="stat-card upcoming text-white">
+                <div class="card-body p-4">
+                    <div class="stat-icon">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+                    <h3 class="stat-number">@(Model.UpcomingAppointments?.Count() ?? 0)</h3>
+                    <p class="stat-text">Upcoming Sessions</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="stat-card past text-white">
+                <div class="card-body p-4">
+                    <div class="stat-icon">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <h3 class="stat-number">@(Model.PastAppointments?.Count() ?? 0)</h3>
+                    <p class="stat-text">Past Sessions</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="stat-card resources text-white">
+                <div class="card-body p-4">
+                    <div class="stat-icon">
+                        <i class="bi bi-journal-richtext"></i>
+                    </div>
+                    <h3 class="stat-number">3</h3>
+                    <p class="stat-text">Resources Available</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="row g-4">
+        <!-- Upcoming Appointments -->
+        <div class="col-12 col-lg-7">
+            <div class="appointment-container mb-4">
+                <div class="appointment-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0"><i class="bi bi-calendar2-week me-2"></i>Upcoming Appointments</h5>
+                        <a asp-controller="Appointment" asp-action="Index" class="btn btn-sm btn-primary rounded-pill">
+                            View all
+                        </a>
+                    </div>
+                </div>
+                
+                @if (Model.UpcomingAppointments != null && Model.UpcomingAppointments.Any())
+                {
+                    <ul class="appointment-list">
+                        @foreach (var appointment in Model.UpcomingAppointments)
+                        {
+                            <li class="appointment-item">
+                                <div class="appointment-date">
+                                    <span class="date-day">@(appointment?.AppointmentDate.ToString("dd") ?? "--")</span>
+                                    <span class="date-month">@(appointment?.AppointmentDate.ToString("MMM") ?? "--")</span>
+                                </div>
+                                <div class="appointment-details">
+                                    <h6>@(appointment?.Subject ?? "Appointment")</h6>
+                                    <p class="text-muted mb-0">
+                                        <i class="bi bi-clock me-1"></i> 
+                                        @(appointment?.StartTime != null ? appointment.StartTime.ToString("%h\\:mm") + (appointment.StartTime.Hours < 12 ? " AM" : " PM") : "N/A") - 
+                                        @(appointment?.EndTime != null ? appointment.EndTime.ToString("%h\\:mm") + (appointment.EndTime.Hours < 12 ? " AM" : " PM") : "N/A")
+                                    </p>
+                                    <p class="text-muted mb-0">
+                                        <i class="bi bi-person me-1"></i>
+                                        @(appointment?.Counsellor != null ? $"{appointment.Counsellor.FirstName} {appointment.Counsellor.LastName}" : "Counsellor")
+                                    </p>
+                                </div>
+                                <div class="appointment-status ms-auto">
+                                    <span class="badge bg-primary">@(appointment?.Status ?? "Unknown")</span>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <div class="empty-state">
+                        <i class="bi bi-calendar-x"></i>
+                        <p>No upcoming appointments.</p>
+                        <a asp-controller="Appointment" asp-action="Create" class="btn btn-primary">
+                            Schedule New Appointment
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+        
+        <div class="col-12 col-lg-5">
+            <!-- Past Appointments -->
+            <div class="appointment-container mb-4">
+                <div class="appointment-header">
+                    <h5 class="mb-0"><i class="bi bi-clock-history me-2"></i>Past Appointments</h5>
+                </div>
+                
+                @if (Model.PastAppointments != null && Model.PastAppointments.Any())
+                {
+                    <ul class="appointment-list">
+                        @foreach (var appointment in Model.PastAppointments)
+                        {
+                            <li class="appointment-item">
+                                <div class="appointment-date">
+                                    <span class="date-day">@(appointment?.AppointmentDate.ToString("dd") ?? "--")</span>
+                                    <span class="date-month">@(appointment?.AppointmentDate.ToString("MMM") ?? "--")</span>
+                                </div>
+                                <div class="appointment-details">
+                                    <h6>@(appointment?.Subject ?? "Appointment")</h6>
+                                    <p class="text-muted mb-0 small">
+                                        <i class="bi bi-person me-1"></i>
+                                        @(appointment?.Counsellor != null ? $"{appointment.Counsellor.FirstName} {appointment.Counsellor.LastName}" : "Counsellor")
+                                    </p>
+                                </div>
+                                <div class="appointment-status">
+                                    <a href="@Url.Action("Details", "Appointment", new { id = appointment?.Id })" class="btn btn-sm btn-outline-secondary">
+                                        Details
+                                    </a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <div class="empty-state smaller">
+                        <i class="bi bi-calendar-x"></i>
+                        <p>No past appointments.</p>
+                    </div>
+                }
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="quick-links-container">
+                <div class="appointment-header">
+                    <h5 class="mb-0"><i class="bi bi-grid-1x2 me-2"></i>Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <div class="quick-links">
+                        <a asp-controller="Student" asp-action="Profile" class="quick-link-item">
+                            <div class="quick-link-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
+                            <span>My Profile</span>
+                        </a>
+                        <a asp-controller="Counsellor" asp-action="Index" class="quick-link-item">
+                            <div class="quick-link-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <span>Counsellors</span>
+                        </a>
+                        <a asp-controller="Resource" asp-action="Index" class="quick-link-item">
+                            <div class="quick-link-icon">
+                                <i class="bi bi-journal-bookmark"></i>
+                            </div>
+                            <span>Resources</span>
+                        </a>
+                        <a asp-controller="Appointment" asp-action="Create" class="quick-link-item">
+                            <div class="quick-link-icon">
+                                <i class="bi bi-calendar-plus"></i>
+                            </div>
+                            <span>Book Session</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/dashboard-enhancements.js"></script>
+}
