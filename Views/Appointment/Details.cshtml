@@ -25,10 +25,9 @@
                             <div class="mb-3">
                                 <label class="fw-bold">Date:</label>
                                 <p>@Model.AppointmentDate.ToLongDateString()</p>
-                            </div>
-                            <div class="mb-3">
+                            </div>                            <div class="mb-3">
                                 <label class="fw-bold">Time:</label>
-                                <p>@Model.StartTime.ToString(@"hh\:mm tt") - @Model.EndTime.ToString(@"hh\:mm tt")</p>
+                                <p>@Model.StartTime.ToString(@"hh\:mm") - @Model.EndTime.ToString(@"hh\:mm")</p>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -46,12 +45,32 @@
                     <div class="mb-3">
                         <label class="fw-bold">Subject:</label>
                         <p>@Model.Subject</p>
-                    </div>
-
-                    <div class="mb-3">
+                    </div>                    <div class="mb-3">
                         <label class="fw-bold">Description:</label>
                         <p>@(string.IsNullOrEmpty(Model.Description) ? "No description provided" : Model.Description)</p>
                     </div>
+
+                    @if (Model.SessionNotes != null && Model.SessionNotes.Any())
+                    {
+                        <div class="mb-3">
+                            <label class="fw-bold">Session Notes:</label>
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    @foreach (var note in Model.SessionNotes)
+                                    {
+                                        <div class="mb-3">
+                                            <p class="mb-1"><strong>@note.NoteDate.ToString("g")</strong></p>
+                                            <p class="mb-2">@note.Content</p>
+                                            @if (!string.IsNullOrEmpty(note.Recommendations))
+                                            {
+                                                <p class="mb-0"><strong>Recommendations:</strong> @note.Recommendations</p>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
 
                     <div class="d-flex justify-content-between mt-4">
                         <a asp-action="Index" class="btn btn-secondary">
@@ -63,10 +82,7 @@
                             <div>
                                 <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary me-2">
                                     <i class="bi bi-pencil me-2"></i>Edit
-                                </a>
-                                <a asp-action="Cancel" asp-route-id="@Model.Id" 
-                                   class="btn btn-danger"
-                                   onclick="return confirm('Are you sure you want to cancel this appointment?');">
+                                </a>                                <a asp-action="Cancel" asp-route-id="@Model.Id" class="btn btn-danger">
                                     <i class="bi bi-x-circle me-2"></i>Cancel
                                 </a>
                             </div>

@@ -1,0 +1,57 @@
+@model StudentCounsellingApp.Models.Appointment
+
+@{
+    ViewData["Title"] = "Cancel Appointment";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card dashboard-card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-x-circle me-2"></i>Cancel Appointment</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-danger">
+                        <h4>Are you sure you want to cancel this appointment?</h4>
+                        <p>This action cannot be undone.</p>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="fw-bold">Date:</label>
+                                <p>@Model.AppointmentDate.ToLongDateString()</p>
+                            </div>                            <div class="mb-3">
+                                <label class="fw-bold">Time:</label>
+                                <p>@Model.StartTime.ToString(@"hh\:mm") - @Model.EndTime.ToString(@"hh\:mm")</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="fw-bold">Counsellor:</label>
+                                <p>@(Model.Counsellor != null ? $"{Model.Counsellor.FirstName} {Model.Counsellor.LastName}" : "Not assigned")</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="fw-bold">Subject:</label>
+                                <p>@Model.Subject</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left me-2"></i>Back to Details
+                        </a>                        <form asp-action="Cancel" method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="id" value="@Model.Id" />
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-x-circle me-2"></i>Confirm Cancellation
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

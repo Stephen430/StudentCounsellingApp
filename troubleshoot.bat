@@ -4,7 +4,7 @@ echo STUDENT COUNSELLING APP TROUBLESHOOTER
 echo =======================================================
 echo.
 
-cd c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp
+cd c:\Users\USER\Desktop\StudentCounsellingApp
 
 echo STEP 1: CLEANING PREVIOUS BUILD ARTIFACTS
 echo -----------------------------------------

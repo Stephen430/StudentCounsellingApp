@@ -1,102 +1,730 @@
 @{
-    ViewData["Title"] = "Academic Support Resources";
+    ViewData["Title"] = "Academic Excellence Hub";
 }
 
+@section Styles {
+    <link rel="stylesheet" href="~/css/academic-support-advanced.css" />
+}
+
+<!-- Hero Section -->
+<section class="academic-hero">
+    <div class="academic-hero-content">
+        <div class="container text-center">
+            <h1 class="fade-in">Academic Excellence Hub</h1>
+            <p class="lead fade-in">Unlock your potential with cutting-edge study tools, personalized resources, and
+                intelligent progress tracking designed for academic success</p>
+
+            <div class="academic-stats">
+                <div class="stat-card fade-in">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Study Resources</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Learning Support</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">Smart</span>
+                    <span class="stat-label">AI Assistance</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="container">
-    <h1 class="my-4">Academic Support Resources</h1>
-    <p class="lead mb-5">Tools and strategies to help you excel in your academic journey, improve study habits, and achieve your educational goals.</p>
+    <!-- Navigation Tabs -->
+    <nav class="academic-nav">
+        <div class="nav-tabs-advanced">
+            <a href="#resources" class="nav-tab-advanced active" data-tab="resources">
+                <i class="bi bi-book me-2"></i>Study Resources
+            </a>
+            <a href="#tools" class="nav-tab-advanced" data-tab="tools">
+                <i class="bi bi-tools me-2"></i>Study Tools
+            </a>
+            <a href="#progress" class="nav-tab-advanced" data-tab="progress">
+                <i class="bi bi-graph-up me-2"></i>Progress Tracker
+            </a>
+            <a href="#calendar" class="nav-tab-advanced" data-tab="calendar">
+                <i class="bi bi-calendar me-2"></i>Study Planner
+            </a>
+            <a href="#services" class="nav-tab-advanced" data-tab="services">
+                <i class="bi bi-headset me-2"></i>Support Services
+            </a>
+        </div>
+    </nav>
 
-    <div class="row mb-5">
-        <div class="col-md-8">
-            <h3>Articles & Reading Materials</h3>
-            <div class="list-group shadow-sm">
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Effective Study Techniques for College Students</h5>
-                        <small>12 min read</small>
-                    </div>
-                    <p class="mb-1">Research-backed study methods to help you retain information better and prepare for exams more effectively.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Time Management Strategies for Busy Students</h5>
-                        <small>15 min read</small>
-                    </div>
-                    <p class="mb-1">Practical approaches to balance coursework, extracurricular activities, and personal life while maintaining productivity.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Note-Taking Methods That Actually Work</h5>
-                        <small>10 min read</small>
-                    </div>
-                    <p class="mb-1">A comparison of different note-taking systems and how to choose the right one for your learning style.</p>
-                </a>
+    <!-- Search Section -->
+    <div class="academic-search">
+        <div class="search-container">
+            <div class="search-box-advanced">
+                <i class="bi bi-search"></i>
+                <input type="text" id="academicSearch" placeholder="Search articles, videos, tools, and resources..." />
+            </div>
+            <div class="search-filters">
+                <div class="filter-tag" data-filter="study">Study Techniques</div>
+                <div class="filter-tag" data-filter="time">Time Management</div>
+                <div class="filter-tag" data-filter="note">Note Taking</div>
+                <div class="filter-tag" data-filter="exam">Exam Prep</div>
+                <div class="filter-tag" data-filter="research">Research</div>
+                <div class="filter-tag" data-filter="writing">Writing</div>
+                <div class="filter-tag" data-filter="memory">Memory</div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-success text-white">
-                    <h5 class="mb-0">Academic Support Services</h5>
+    </div>
+
+    <!-- Resources Tab -->
+    <div id="resources" class="tab-content-advanced active">
+        <div class="academic-grid">
+            <!-- Articles Section -->
+            <div class="academic-card">
+                <div class="card-header-advanced">
+                    <h3><i class="bi bi-journal-text me-2"></i>Featured Articles & Guides</h3>
+                    <p class="text-muted mb-0">Research-backed strategies for academic success</p>
                 </div>
-                <div class="card-body">
-                    <p><strong>Campus Tutoring Center:</strong><br>Mon-Fri, 9am-7pm<br>Library, Room 204</p>
-                    <p><strong>Writing Center:</strong><br>Mon-Thu, 10am-8pm<br>Academic Building, Room 156</p>
-                    <p><strong>Math Learning Center:</strong><br>Mon-Fri, 11am-5pm<br>Science Hall, Room 302</p>
-                    <hr>
-                    <p class="mb-0">Schedule an appointment through the student portal or walk in during operating hours.</p>
+                <div class="card-body-advanced">
+                    <div class="article-item" data-tags="study techniques memory">
+                        <h5 class="article-title">Advanced Study Techniques for College Students</h5>
+                        <p class="article-description">Discover evidence-based study methods including spaced
+                            repetition, active recall, and the Feynman technique to maximize your learning efficiency
+                            and retention.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Study Techniques</span>
+                                <span class="tag">Memory</span>
+                                <span class="tag">Learning Science</span>
+                            </div>
+                            <span class="read-time">15 min read</span>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-tags="time management productivity">
+                        <h5 class="article-title">Master Time Management with the Eisenhower Matrix</h5>
+                        <p class="article-description">Learn how to prioritize tasks effectively using proven frameworks
+                            that help you balance coursework, extracurricular activities, and personal commitments.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Time Management</span>
+                                <span class="tag">Productivity</span>
+                                <span class="tag">Planning</span>
+                            </div>
+                            <span class="read-time">12 min read</span>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-tags="note taking digital">
+                        <h5 class="article-title">Digital Note-Taking Systems That Actually Work</h5>
+                        <p class="article-description">Compare different note-taking methods including Cornell notes,
+                            mind mapping, and digital tools to find the perfect system for your learning style.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Note Taking</span>
+                                <span class="tag">Digital Tools</span>
+                                <span class="tag">Organization</span>
+                            </div>
+                            <span class="read-time">10 min read</span>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-tags="exam preparation stress">
+                        <h5 class="article-title">Exam Preparation Without the Stress</h5>
+                        <p class="article-description">Step-by-step guide to creating effective exam schedules, managing
+                            test anxiety, and implementing proven strategies for peak performance.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Exam Prep</span>
+                                <span class="tag">Stress Management</span>
+                                <span class="tag">Test Strategy</span>
+                            </div>
+                            <span class="read-time">18 min read</span>
+                        </div>
+                    </div>
+                    <div class="article-item" data-tags="research writing academic">
+                        <h5 class="article-title">Research Paper Writing Mastery</h5>
+                        <p class="article-description">From topic selection to final draft - comprehensive guide
+                            covering research methodology, citation styles, and academic writing best practices.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Research</span>
+                                <span class="tag">Writing</span>
+                                <span class="tag">Academic Skills</span>
+                            </div>
+                            <span class="read-time">25 min read</span>
+                        </div>
+                    </div>
+
+                    <!-- Book Recommendations Section -->
+                    <div class="books-divider">
+                        <h4 class="books-header"><i class="bi bi-book me-2"></i>Essential Books for Academic Success
+                        </h4>
+                        <p class="text-muted">Transform your learning with these research-backed books by leading
+                            experts</p>
+                    </div>
+
+                    <div class="article-item book-item" data-tags="study techniques memory learning">
+                        <div class="book-cover">
+                            <i class="bi bi-book-fill"></i>
+                        </div>
+                        <div class="book-content">
+                            <h5 class="article-title">Make It Stick: The Science of Successful Learning</h5>
+                            <p class="book-author">by Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel</p>
+                            <p class="article-description">Revolutionary insights into how we learn best. Discover why
+                                conventional study methods fail and learn evidence-based techniques that will transform
+                                your academic performance forever.</p>
+                            <div class="article-meta">
+                                <div class="article-tags">
+                                    <span class="tag">Learning Science</span>
+                                    <span class="tag">Study Techniques</span>
+                                    <span class="tag">Memory</span>
+                                </div>
+                                <div class="book-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-text">4.8/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-item book-item" data-tags="deep work focus productivity">
+                        <div class="book-cover">
+                            <i class="bi bi-book-fill"></i>
+                        </div>
+                        <div class="book-content">
+                            <h5 class="article-title">Deep Work: Rules for Focused Success in a Distracted World</h5>
+                            <p class="book-author">by Cal Newport</p>
+                            <p class="article-description">Master the art of focus in our age of distraction. Learn how
+                                to cultivate deep work habits that will skyrocket your academic productivity and quality
+                                of thinking.</p>
+                            <div class="article-meta">
+                                <div class="article-tags">
+                                    <span class="tag">Focus</span>
+                                    <span class="tag">Productivity</span>
+                                    <span class="tag">Time Management</span>
+                                </div>
+                                <div class="book-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-text">4.7/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-item book-item" data-tags="mindset psychology success">
+                        <div class="book-cover">
+                            <i class="bi bi-book-fill"></i>
+                        </div>
+                        <div class="book-content">
+                            <h5 class="article-title">Mindset: The New Psychology of Success</h5>
+                            <p class="book-author">by Carol S. Dweck</p>
+                            <p class="article-description">Discover how your beliefs about your abilities can
+                                dramatically impact your success. Learn to develop a growth mindset that turns
+                                challenges into opportunities for growth.</p>
+                            <div class="article-meta">
+                                <div class="article-tags">
+                                    <span class="tag">Psychology</span>
+                                    <span class="tag">Mindset</span>
+                                    <span class="tag">Personal Development</span>
+                                </div>
+                                <div class="book-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-text">4.6/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-item book-item" data-tags="learning strategies academic study">
+                        <div class="book-cover">
+                            <i class="bi bi-book-fill"></i>
+                        </div>
+                        <div class="book-content">
+                            <h5 class="article-title">A Mind for Numbers: How to Excel at Math and Science</h5>
+                            <p class="book-author">by Barbara Oakley</p>
+                            <p class="article-description">Unlock your potential in STEM subjects with proven learning
+                                strategies. Whether you're struggling or excelling, discover how to approach complex
+                                subjects with confidence and clarity.</p>
+                            <div class="article-meta">
+                                <div class="article-tags">
+                                    <span class="tag">STEM Learning</span>
+                                    <span class="tag">Study Strategies</span>
+                                    <span class="tag">Problem Solving</span>
+                                </div>
+                                <div class="book-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-text">4.5/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-item book-item" data-tags="habits productivity atomic">
+                        <div class="book-cover">
+                            <i class="bi bi-book-fill"></i>
+                        </div>
+                        <div class="book-content">
+                            <h5 class="article-title">Atomic Habits: An Easy & Proven Way to Build Good Habits</h5>
+                            <p class="book-author">by James Clear</p>
+                            <p class="article-description">Transform your academic life through the power of tiny
+                                changes. Learn how to build study habits that stick and break the patterns that hold you
+                                back from achieving your potential.</p>
+                            <div class="article-meta">
+                                <div class="article-tags">
+                                    <span class="tag">Habit Formation</span>
+                                    <span class="tag">Productivity</span>
+                                    <span class="tag">Behavior Change</span>
+                                </div>
+                                <div class="book-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="rating-text">4.9/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="article-item book-item" data-tags="learning techniques ultralearning">
+                        <div class="book-cover">
+                            <i class="bi bi-book-fill"></i>
+                        </div>
+                        <div class="book-content">
+                            <h5 class="article-title">Ultralearning: Master Hard Skills, Outsmart the Competition</h5>
+                            <p class="book-author">by Scott Young</p>
+                            <p class="article-description">Master any subject faster than you ever thought possible.
+                                Discover the principles and strategies used by rapid learners to acquire complex skills
+                                and knowledge in record time.</p>
+                            <div class="article-meta">
+                                <div class="article-tags">
+                                    <span class="tag">Accelerated Learning</span>
+                                    <span class="tag">Skill Development</span>
+                                    <span class="tag">Study Methods</span>
+                                </div>
+                                <div class="book-rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="rating-text">4.4/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Resources -->
+            <div class="academic-card">
+                <div class="card-header-advanced">
+                    <h3><i class="bi bi-play-circle me-2"></i>Video Learning Library</h3>
+                    <p class="text-muted mb-0">Visual guides and interactive tutorials</p>
+                </div>
+                <div class="card-body-advanced">
+                    <div class="video-grid">
+                        <div class="video-card-advanced" data-tags="memory techniques">
+                            <div class="video-thumbnail" data-video-id="memory-palace"
+                                data-title="Memory Palace Technique">
+                                <div class="play-button-advanced">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                            <div class="video-content">
+                                <h5 class="video-title">Build a Memory Palace</h5>
+                                <p class="video-description">Learn the ancient memory technique used by memory champions
+                                    to remember vast amounts of information.</p>
+                                <div class="video-meta">
+                                    <span>Duration: 12:45</span>
+                                    <span>Views: 2.1K</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-card-advanced" data-tags="study techniques focus">
+                            <div class="video-thumbnail" data-video-id="focus-techniques"
+                                data-title="Deep Focus Strategies">
+                                <div class="play-button-advanced">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                            <div class="video-content">
+                                <h5 class="video-title">Deep Focus Strategies</h5>
+                                <p class="video-description">Practical techniques to eliminate distractions and maintain
+                                    concentration for extended study sessions.</p>
+                                <div class="video-meta">
+                                    <span>Duration: 9:30</span>
+                                    <span>Views: 1.8K</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-card-advanced" data-tags="writing academic">
+                            <div class="video-thumbnail" data-video-id="academic-writing"
+                                data-title="Academic Writing Excellence">
+                                <div class="play-button-advanced">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                            <div class="video-content">
+                                <h5 class="video-title">Academic Writing Excellence</h5>
+                                <p class="video-description">Master the art of clear, compelling academic writing with
+                                    structure, style, and citation guidelines.</p>
+                                <div class="video-meta">
+                                    <span>Duration: 16:20</span>
+                                    <span>Views: 1.5K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mb-4">
-        <div class="col-12">
-            <h3>Video Resources</h3>
+    <!-- Study Tools Tab -->
+    <div id="tools" class="tab-content-advanced">
+        <div class="study-tools">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Interactive Study Tools</h2>
+                    <p class="lead">Boost your productivity with our smart study companions</p>
+                </div>
+
+                <div class="tool-grid">
+                    <!-- Pomodoro Timer -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="bi bi-stopwatch"></i>
+                        </div>
+                        <h4 class="tool-title">Pomodoro Timer</h4>
+                        <p class="tool-description">Stay focused with scientifically-proven time management technique
+                        </p>
+                        <div class="interactive-tool">
+                            <div class="timer-display" id="pomodoroTimer">25:00</div>
+                            <div class="pomodoro-controls">
+                                <button class="pomodoro-btn" id="startPomodoro">Start</button>
+                                <button class="pomodoro-btn" id="pausePomodoro" disabled>Pause</button>
+                                <button class="pomodoro-btn" id="resetPomodoro">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Notes -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="bi bi-journal"></i>
+                        </div>
+                        <h4 class="tool-title">Smart Notepad</h4>
+                        <p class="tool-description">Capture thoughts instantly with auto-save and cloud sync</p>
+                        <div class="interactive-tool">
+                            <div class="note-toolbar">
+                                <button class="note-btn" onclick="document.execCommand('bold')">B</button>
+                                <button class="note-btn" onclick="document.execCommand('italic')">I</button>
+                                <button class="note-btn" onclick="document.execCommand('underline')">U</button>
+                            </div>
+                            <textarea class="note-editor" id="noteEditor"
+                                placeholder="Start typing your notes..."></textarea>
+                            <div class="mt-2">
+                                <button class="tool-button" id="saveNote">Save Note</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Study Calculator -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="bi bi-calculator"></i>
+                        </div>
+                        <h4 class="tool-title">Study Calculator</h4>
+                        <p class="tool-description">Calculate study time needed based on your goals and complexity</p>
+                        <a href="#" class="tool-button">Open Calculator</a>
+                    </div>
+
+                    <!-- Goal Tracker -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="bi bi-target"></i>
+                        </div>
+                        <h4 class="tool-title">Goal Tracker</h4>
+                        <p class="tool-description">Set, track, and achieve your academic milestones</p>
+                        <div class="interactive-tool">
+                            <div id="goalsContainer">
+                                <!-- Goals will be dynamically loaded -->
+                            </div>
+                            <button class="tool-button" id="addGoal">Add New Goal</button>
+                        </div>
+                    </div>
+
+                    <!-- Flashcards -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="bi bi-card-text"></i>
+                        </div>
+                        <h4 class="tool-title">Smart Flashcards</h4>
+                        <p class="tool-description">Create and study with AI-powered spaced repetition</p>
+                        <a href="#" class="tool-button">Create Flashcards</a>
+                    </div>
+
+                    <!-- Study Group Finder -->
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h4 class="tool-title">Study Groups</h4>
+                        <p class="tool-description">Connect with peers for collaborative learning sessions</p>
+                        <a href="#" class="tool-button">Find Groups</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-img-top bg-light text-center py-5">
-                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
+    <!-- Progress Tracker Tab -->
+    <div id="progress" class="tab-content-advanced">
+        <div class="progress-section">
+            <div class="progress-header">
+                <h2>Your Academic Journey</h2>
+                <p class="lead">Track your progress and celebrate your achievements</p>
+            </div>
+
+            <div class="progress-grid">
+                <div class="progress-item" data-progress-type="sessions">
+                    <div class="progress-circle"></div>
+                    <div class="progress-label">Study Sessions This Week</div>
+                    <div class="progress-value">0</div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">How to Write an Outstanding Research Paper</h5>
-                    <p class="card-text">Step-by-step guidance on researching, organizing, and writing academic papers.</p>
-                    <small class="text-muted">Duration: 14:30</small>
+
+                <div class="progress-item" data-progress-type="hours">
+                    <div class="progress-circle"></div>
+                    <div class="progress-label">Hours Studied</div>
+                    <div class="progress-value">0</div>
+                </div>
+
+                <div class="progress-item" data-progress-type="resources">
+                    <div class="progress-circle"></div>
+                    <div class="progress-label">Resources Accessed</div>
+                    <div class="progress-value">0</div>
+                </div>
+
+                <div class="progress-item" data-progress-type="goals">
+                    <div class="progress-circle"></div>
+                    <div class="progress-label">Goals Completed</div>
+                    <div class="progress-value">0</div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-img-top bg-light text-center py-5">
-                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Memory Techniques for Exam Preparation</h5>
-                    <p class="card-text">Mnemonic devices and memory-enhancing strategies to help you remember important information.</p>
-                    <small class="text-muted">Duration: 11:45</small>
-                </div>
+
+            <div class="text-center mt-4">
+                <button class="btn-advanced">View Detailed Analytics</button>
+                <button class="btn-outline-advanced">Export Progress Report</button>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-img-top bg-light text-center py-5">
-                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
+    </div>
+
+    <!-- Study Planner Tab -->
+    <div id="calendar" class="tab-content-advanced">
+        <div class="study-calendar" id="studyCalendar">
+            <!-- Calendar will be dynamically generated -->
+        </div>
+
+        <div class="academic-card mt-4">
+            <div class="card-header-advanced">
+                <h3><i class="bi bi-calendar-check me-2"></i>Upcoming Study Sessions</h3>
+            </div>
+            <div class="card-body-advanced">
+                <div class="alert alert-info">
+                    <i class="bi bi-lightbulb me-2"></i>
+                    <strong>Pro Tip:</strong> Schedule regular study sessions to maintain consistency and improve
+                    retention.
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Digital Tools for Academic Success</h5>
-                    <p class="card-text">A tour of free and low-cost apps and websites that can help you study, organize, and collaborate more effectively.</p>
-                    <small class="text-muted">Duration: 16:20</small>
+                <button class="btn-advanced">Schedule New Session</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Services Tab -->
+    <div id="services" class="tab-content-advanced">
+        <div class="academic-grid">
+            <div class="services-card">
+                <div class="services-content">
+                    <h3 class="mb-4"><i class="bi bi-headset me-2"></i>Academic Support Services</h3>
+
+                    <div class="service-item">
+                        <div class="service-name">Campus Tutoring Center</div>
+                        <div class="service-hours">Monday - Friday: 9:00 AM - 7:00 PM</div>
+                        <div class="service-location">Library Building, Room 204</div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Writing Excellence Center</div>
+                        <div class="service-hours">Monday - Thursday: 10:00 AM - 8:00 PM</div>
+                        <div class="service-location">Academic Building, Room 156</div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Mathematics Learning Lab</div>
+                        <div class="service-hours">Monday - Friday: 11:00 AM - 5:00 PM</div>
+                        <div class="service-location">Science Hall, Room 302</div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Research Support Desk</div>
+                        <div class="service-hours">Monday - Friday: 8:00 AM - 6:00 PM</div>
+                        <div class="service-location">Library, Information Commons</div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Academic Success Coaching</div>
+                        <div class="service-hours">By Appointment</div>
+                        <div class="service-location">Student Success Center</div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <button class="btn-advanced">Schedule Appointment</button>
+                        <button class="btn-outline-advanced">Virtual Help Desk</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="academic-card">
+                <div class="card-header-advanced">
+                    <h3><i class="bi bi-question-circle me-2"></i>Quick Help</h3>
+                </div>
+                <div class="card-body-advanced">
+                    <div class="mb-3">
+                        <h5>Need immediate assistance?</h5>
+                        <p class="text-muted">Get instant help with common academic challenges</p>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button class="btn-outline-advanced">Study Strategy Consultation</button>
+                        <button class="btn-outline-advanced">Research Help</button>
+                        <button class="btn-outline-advanced">Citation & Bibliography</button>
+                        <button class="btn-outline-advanced">Time Management Coaching</button>
+                        <button class="btn-outline-advanced">Academic Planning</button>
+                    </div>
+
+                    <div class="mt-4 p-3 bg-light rounded">
+                        <h6><i class="bi bi-chat-dots me-2"></i>24/7 AI Study Assistant</h6>
+                        <p class="small mb-2">Get instant answers to your academic questions</p>
+                        <button class="btn-advanced btn-sm">Start Chat</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="text-center mb-5">
-        <a asp-action="Index" class="btn btn-outline-secondary">
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <a asp-action="Index" class="btn-outline-advanced">
             <i class="bi bi-arrow-left me-2"></i>Back to Resources
+        </a>
+        <a href="#" class="btn-advanced">
+            <i class="bi bi-bookmark me-2"></i>Bookmark This Page
         </a>
     </div>
 </div>
+
+@section Scripts {
+    <script src="~/js/academic-support-advanced.js"></script>
+    <script>
+        // Additional inline scripts for enhanced functionality
+        $(document).ready(function () {
+            // Smooth scrolling for anchor links
+            $('a[href^="#"]').on('click', function (event) {
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 100
+                    }, 800);
+                }
+            });
+
+            // Enhanced hover effects
+            $('.academic-card, .tool-card').hover(
+                function () {
+                    $(this).addClass('hover-effect');
+                },
+                function () {
+                    $(this).removeClass('hover-effect');
+                }
+            );
+
+            // Auto-update progress every 30 seconds
+            setInterval(function () {
+                if (window.academicApp) {
+                    window.academicApp.updateProgress();
+                }
+            }, 30000);
+
+            // Add loading states to buttons
+            $('.btn-advanced, .tool-button').on('click', function (e) {
+                const $btn = $(this);
+                const originalText = $btn.text();
+
+                if (!$btn.hasClass('no-loading')) {
+                    $btn.addClass('loading');
+                    $btn.html('<i class="bi bi-hourglass-split me-2"></i>Loading...');
+
+                    setTimeout(() => {
+                        $btn.removeClass('loading');
+                        $btn.html(originalText);
+                    }, 1500);
+                }
+            });
+
+            // Initialize tooltips for enhanced UX
+            $('[title]').each(function () {
+                $(this).attr('data-bs-toggle', 'tooltip');
+            });
+
+            // Enhanced search with keyboard shortcuts
+            $(document).on('keydown', function (e) {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    $('#academicSearch').focus();
+                }
+            });
+
+            // Add keyboard shortcut hint
+            $('#academicSearch').attr('placeholder', 'Search resources... (Ctrl+K)');
+
+            // Enhanced tab switching with keyboard
+            $(document).on('keydown', function (e) {
+                if (e.altKey && e.key >= '1' && e.key <= '5') {
+                    e.preventDefault();
+                    const tabs = $('.nav-tab-advanced');
+                    const index = parseInt(e.key) - 1;
+                    if (tabs[index]) {
+                        $(tabs[index]).click();
+                    }
+                }
+            });
+
+            // Add ripple effect to buttons
+            $('.btn-advanced, .tool-button').on('click', function (e) {
+                const $btn = $(this);
+                const ripple = $('<span class="ripple"></span>');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.css({
+                    width: size,
+                    height: size,
+                    left: x,
+                    top: y
+                });
+
+                $btn.append(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });            // Ripple effect CSS is now in the external CSS file
+
+            // Initialize the advanced features
+            setTimeout(() => {
+                if (window.academicApp) {
+                    console.log('Academic Support App initialized successfully');
+                }
+            }, 1000);
+        });
+    </script>
+}

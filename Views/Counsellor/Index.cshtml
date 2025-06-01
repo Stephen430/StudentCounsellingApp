@@ -4,61 +4,469 @@
     ViewData["Title"] = "Our Counsellors";
 }
 
-<div class="container">
-    <h1 class="my-4">Our Counselling Team</h1>
-    <p class="lead mb-5">Meet our professional counsellors dedicated to supporting your mental health and academic well-being.</p>
+@section Styles {
+    <link rel="stylesheet" href="~/css/counsellor-advanced.css" />
+}
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        @foreach (var counsellor in Model)
-        {
-            <div class="col">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="text-center pt-4">
-                        @if (!string.IsNullOrEmpty(counsellor.ProfileImageUrl))
-                        {
-                            <img src="@counsellor.ProfileImageUrl" class="rounded-circle mb-3" width="140" height="140" alt="@counsellor.FirstName @counsellor.LastName">
-                        }
-                        else
-                        {
-                            <div class="counsellor-placeholder-img mb-3">
-                                <i class="bi bi-person-fill"></i>
-                            </div>
-                        }
-                        <h5 class="card-title">@counsellor.FirstName @counsellor.LastName</h5>
-                        <p class="card-text text-primary">@counsellor.Specialization</p>
+<!-- Hero Section -->
+<section class="counsellor-hero">
+    <div class="counsellor-hero-content">
+        <div class="container text-center">
+            <h1 class="fade-in">Meet Our Expert Counsellors</h1>
+            <p class="lead fade-in">Compassionate professionals dedicated to your mental health and well-being</p>
+            
+            <!-- Enhanced Stats Section -->
+            <div class="row mt-5">
+                <div class="col-md-3 col-6">
+                    <div class="hero-stat">
+                        <div class="stat-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <h3 class="mb-1 counter" data-target="50">0+</h3>
+                        <small>Expert Counsellors</small>
                     </div>
-                    <div class="card-body">
-                        <p class="card-text text-muted">
-                            <i class="bi bi-stars me-1"></i>
-                            <span>@counsellor.YearsOfExperience years of experience</span>
-                        </p>
-                        <p class="card-text">@(counsellor.Biography?.Length > 150 ? counsellor.Biography.Substring(0, 150) + "..." : counsellor.Biography)</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="hero-stat">
+                        <div class="stat-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </div>
+                        <h3 class="mb-1 counter" data-target="10000">0+</h3>
+                        <small>Successful Sessions</small>
                     </div>
-                    <div class="card-footer bg-transparent border-0 pb-4">
-                        <a asp-controller="Appointment" asp-action="Create" asp-route-counsellorId="@counsellor.Id" class="btn btn-primary w-100">
-                            <i class="bi bi-calendar-plus me-2"></i>Book Session
-                        </a>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="hero-stat">
+                        <div class="stat-icon">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+                        <h3 class="mb-1 counter" data-target="98">0%</h3>
+                        <small>Satisfaction Rate</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="hero-stat">
+                        <div class="stat-icon">
+                            <i class="bi bi-clock-fill"></i>
+                        </div>
+                        <h3 class="mb-1">24/7</h3>
+                        <small>Available Support</small>
                     </div>
                 </div>
             </div>
+            
+            <!-- Quick Actions -->
+            <div class="hero-actions mt-4">
+                <button class="btn btn-light btn-lg me-3" onclick="document.getElementById('counsellorSearch').focus()">
+                    <i class="bi bi-search"></i> Find Your Counsellor
+                </button>
+                <button class="btn btn-outline-light btn-lg" onclick="scrollToBooking()">
+                    <i class="bi bi-calendar-plus"></i> Book Now
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">    <!-- Advanced Search and Filter Controls -->
+    <div class="counsellor-filters slide-up">
+        <div class="row align-items-center mb-3">
+            <div class="col-lg-5 col-md-6">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="counsellorSearch" placeholder="Search by name, specialization, or expertise..." autocomplete="off" />
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <select class="sort-dropdown w-100" id="sortCounsellors">
+                    <option value="name">Sort by Name</option>
+                    <option value="experience">Sort by Experience</option>
+                    <option value="specialization">Sort by Specialization</option>
+                    <option value="rating">Sort by Rating</option>
+                </select>
+            </div>
+            <div class="col-lg-2 col-md-3">
+                <select class="sort-dropdown w-100" id="filterAvailability">
+                    <option value="all">All Counsellors</option>
+                    <option value="available">Available Now</option>
+                    <option value="soon">Available Soon</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <div class="d-flex justify-content-end align-items-center">
+                    <span class="badge bg-primary fs-6 me-2" id="counsellorCount">@Model.Count() Available</span>
+                    <button class="btn btn-outline-primary btn-sm" onclick="clearAllFilters()" title="Clear Filters">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Enhanced Specialization Filters -->
+        <div class="filter-section">
+            <div class="filter-header">
+                <span class="fw-bold me-3">
+                    <i class="bi bi-funnel"></i> Filter by Specialization:
+                </span>
+                <small class="text-muted">Click multiple tags to combine filters</small>
+            </div>
+            <div class="filter-group mt-2">
+                <div class="filter-chip active" data-filter="all">
+                    <i class="bi bi-people"></i> All Counsellors
+                </div>
+                <div class="filter-chip" data-filter="anxiety">
+                    <i class="bi bi-heart-pulse"></i> Anxiety & Stress
+                </div>
+                <div class="filter-chip" data-filter="depression">
+                    <i class="bi bi-cloud-rain"></i> Depression
+                </div>
+                <div class="filter-chip" data-filter="academic">
+                    <i class="bi bi-book"></i> Academic Support
+                </div>
+                <div class="filter-chip" data-filter="career">
+                    <i class="bi bi-briefcase"></i> Career Guidance
+                </div>
+                <div class="filter-chip" data-filter="relationships">
+                    <i class="bi bi-hearts"></i> Relationships
+                </div>
+                <div class="filter-chip" data-filter="trauma">
+                    <i class="bi bi-shield-check"></i> Trauma Support
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div class="counsellor-loading" id="loadingState">
+        <div class="loading-spinner"></div>
+        <p>Loading counsellors...</p>
+    </div>
+
+    <!-- Counsellors Grid -->
+    <div class="counsellor-grid" id="counsellorsGrid">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var counsellor in Model)
+            {
+                <div class="counsellor-card fade-in" data-specialization="@counsellor.Specialization?.ToLower().Replace(" ", "")" data-name="@counsellor.FirstName @counsellor.LastName" data-experience="@counsellor.YearsOfExperience">
+                    <!-- Profile Section -->
+                    <div class="counsellor-profile">
+                        <div class="counsellor-avatar">
+                            @if (!string.IsNullOrEmpty(counsellor.ProfileImageUrl))
+                            {
+                                <img src="@counsellor.ProfileImageUrl" alt="@counsellor.FirstName @counsellor.LastName" />
+                            }
+                            else
+                            {
+                                <div class="counsellor-placeholder-img">
+                                    <i class="bi bi-person-fill"></i>
+                                </div>
+                            }
+                            <div class="online-indicator" title="Available for sessions"></div>
+                        </div>
+                        <h3 class="counsellor-name">@counsellor.FirstName @counsellor.LastName</h3>
+                        <p class="counsellor-title">@counsellor.Specialization</p>
+                    </div>
+
+                    <!-- Stats Section -->
+                    <div class="counsellor-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">@counsellor.YearsOfExperience</span>
+                            <span class="stat-label">Years Exp.</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.9</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Sessions</span>
+                        </div>
+                    </div>
+
+                    <!-- Bio Section -->
+                    <div class="counsellor-bio">
+                        <p>@(counsellor.Biography?.Length > 120 ? counsellor.Biography.Substring(0, 120) + "..." : counsellor.Biography ?? "Experienced counsellor dedicated to helping students achieve their personal and academic goals.")</p>
+                    </div>
+
+                    <!-- Specializations Tags -->
+                    <div class="specializations">
+                        @{
+                            var tags = new[] { counsellor.Specialization, "Individual Therapy", "Group Sessions" };
+                            foreach (var tag in tags.Where(t => !string.IsNullOrEmpty(t)).Take(3))
+                            {
+                                <span class="specialization-tag">@tag</span>
+                            }
+                        }
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="counsellor-actions">
+                        <a asp-controller="Appointment" asp-action="Create" asp-route-counsellorId="@counsellor.Id" class="btn-book">
+                            <i class="bi bi-calendar-plus"></i>
+                            Book Session
+                        </a>
+                        <a asp-controller="Counsellor" asp-action="Details" asp-route-id="@counsellor.Id" class="btn-profile">
+                            <i class="bi bi-person-lines-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            }
         }
+        else
+        {
+            <div class="empty-state">
+                <i class="bi bi-people"></i>
+                <h3>No Counsellors Available</h3>
+                <p>We're working to bring you the best counselling professionals. Please check back soon.</p>
+            </div>
+        }
+    </div>
+
+    <!-- No Results State -->
+    <div class="empty-state d-none" id="noResults">
+        <i class="bi bi-search"></i>
+        <h3>No Counsellors Found</h3>
+        <p>Try adjusting your search criteria or filters to find the right counsellor for you.</p>
+        <button class="btn btn-primary" onclick="clearFilters()">Clear All Filters</button>
     </div>
 </div>
 
-<style>
-    .counsellor-placeholder-img {
-        width: 140px;
-        height: 140px;
-        background-color: #f8f9fa;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-    }
-    
-    .counsellor-placeholder-img i {
-        font-size: 4rem;
-        color: #dee2e6;
-    }
-</style>
+@section Scripts {
+    <script src="~/js/counsellor-advanced.js"></script>
+    <script>
+        // Advanced filtering and search functionality
+        $(document).ready(function() {
+            const $grid = $('#counsellorsGrid');
+            const $cards = $('.counsellor-card');
+            const $searchInput = $('#counsellorSearch');
+            const $sortSelect = $('#sortCounsellors');
+            const $filterChips = $('.filter-chip');
+            const $counsellorCount = $('#counsellorCount');
+            const $noResults = $('#noResults');
+
+            let currentFilter = 'all';
+            let currentSort = 'name';
+
+            // Search functionality
+            $searchInput.on('input', function() {
+                applyFilters();
+            });
+
+            // Sort functionality
+            $sortSelect.on('change', function() {
+                currentSort = $(this).val();
+                applyFilters();
+            });
+
+            // Filter chips
+            $filterChips.on('click', function() {
+                $filterChips.removeClass('active');
+                $(this).addClass('active');
+                currentFilter = $(this).data('filter');
+                applyFilters();
+            });
+
+            function applyFilters() {
+                const searchTerm = $searchInput.val().toLowerCase();
+                let visibleCards = [];
+
+                $cards.each(function() {
+                    const $card = $(this);
+                    const name = $card.data('name').toLowerCase();
+                    const specialization = $card.data('specialization');
+                    
+                    // Apply search filter
+                    const matchesSearch = searchTerm === '' || 
+                        name.includes(searchTerm) || 
+                        specialization.includes(searchTerm.replace(/\s+/g, ''));
+
+                    // Apply specialization filter
+                    const matchesFilter = currentFilter === 'all' || 
+                        specialization.includes(currentFilter);
+
+                    if (matchesSearch && matchesFilter) {
+                        visibleCards.push($card);
+                        $card.show().addClass('fade-in');
+                    } else {
+                        $card.hide().removeClass('fade-in');
+                    }
+                });
+
+                // Sort visible cards
+                if (visibleCards.length > 0) {
+                    sortCards(visibleCards);
+                    $noResults.addClass('d-none');
+                    $grid.removeClass('d-none');
+                } else {
+                    $noResults.removeClass('d-none');
+                    $grid.addClass('d-none');
+                }
+
+                // Update count
+                $counsellorCount.text(visibleCards.length + ' Available');
+            }
+
+            function sortCards(cards) {
+                cards.sort(function(a, b) {
+                    const $a = $(a);
+                    const $b = $(b);
+
+                    switch(currentSort) {
+                        case 'experience':
+                            return $b.data('experience') - $a.data('experience');
+                        case 'specialization':
+                            return $a.data('specialization').localeCompare($b.data('specialization'));
+                        default: // name
+                            return $a.data('name').localeCompare($b.data('name'));
+                    }
+                });
+
+                // Reorder DOM elements
+                const $container = $grid;
+                $.each(cards, function(index, card) {
+                    $container.append(card);
+                });
+            }
+
+            // Animation on scroll
+            function animateOnScroll() {
+                $('.counsellor-card').each(function() {
+                    const $card = $(this);
+                    const cardTop = $card.offset().top;
+                    const cardBottom = cardTop + $card.outerHeight();
+                    const viewportTop = $(window).scrollTop();
+                    const viewportBottom = viewportTop + $(window).height();
+
+                    if (cardBottom > viewportTop && cardTop < viewportBottom) {
+                        $card.addClass('slide-up');
+                    }
+                });
+            }
+
+            $(window).on('scroll', animateOnScroll);
+            animateOnScroll(); // Initial call
+
+            // Clear filters function
+            window.clearFilters = function() {
+                $searchInput.val('');
+                $filterChips.removeClass('active');
+                $filterChips.first().addClass('active');
+                $sortSelect.val('name');
+                currentFilter = 'all';
+                currentSort = 'name';
+                applyFilters();
+            };
+
+            // Smooth scroll to top when filtering
+            $filterChips.on('click', function() {
+                setTimeout(function() {
+                    $('html, body').animate({
+                        scrollTop: $('.counsellor-filters').offset().top - 100
+                    }, 500);
+                }, 300);
+            });            // Initialize advanced interactions
+            initAdvancedFeatures();
+            
+            // Initialize counter animations
+            animateHeroCounters();
+        });
+
+        function animateHeroCounters() {
+            $('.counter').each(function() {
+                const $this = $(this);
+                const target = parseInt($this.data('target'));
+                const suffix = $this.text().replace(/\d+/, '');
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        $this.text(target + suffix);
+                        clearInterval(timer);
+                    } else {
+                        $this.text(Math.floor(current) + suffix);
+                    }
+                }, 50);
+            });
+        }
+
+        function scrollToBooking() {
+            $('html, body').animate({
+                scrollTop: $('.counsellor-grid').offset().top - 100
+            }, 800);
+        }
+
+        function clearAllFilters() {
+            $searchInput.val('');
+            $filterChips.removeClass('active');
+            $filterChips.first().addClass('active');
+            $sortSelect.val('name');
+            $('#filterAvailability').val('all');
+            currentFilter = 'all';
+            currentSort = 'name';
+            applyFilters();
+            
+            // Show success feedback
+            const $btn = $('[onclick="clearAllFilters()"]');
+            const originalHtml = $btn.html();
+            $btn.html('<i class="bi bi-check"></i>');
+            setTimeout(() => $btn.html(originalHtml), 1000);
+        }
+
+        function initAdvancedFeatures() {
+            // Add ripple effect to buttons
+            $('.btn-book, .btn-profile').on('click', function(e) {
+                const $btn = $(this);
+                const ripple = $('<span class="ripple-effect"></span>');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.css({
+                    width: size,
+                    height: size,
+                    left: x,
+                    top: y
+                });
+                
+                $btn.append(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+
+            // Add loading states
+            $('.btn-book').on('click', function(e) {
+                const $btn = $(this);
+                const originalText = $btn.html();
+                
+                $btn.html('<i class="bi bi-clock"></i> Booking...');
+                $btn.prop('disabled', true);
+                
+                setTimeout(() => {
+                    $btn.html(originalText);
+                    $btn.prop('disabled', false);
+                }, 2000);
+            });            // Add CSS for ripple effect
+            $('<style>').text(`
+                .ripple-effect {
+                    position: absolute;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.6);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                }
+                
+                @@keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `).appendTo('head');
+        }
+    </script>
+}

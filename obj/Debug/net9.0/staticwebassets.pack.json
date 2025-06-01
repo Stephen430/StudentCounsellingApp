@@ -1,51 +1,91 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\css\\dashboard-enhancements.css",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\academic-support-advanced.css",
+      "PackagePath": "staticwebassets\\css\\academic-support-advanced.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\career-guidance-advanced.css",
+      "PackagePath": "staticwebassets\\css\\career-guidance-advanced.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\counsellor-advanced.css",
+      "PackagePath": "staticwebassets\\css\\counsellor-advanced.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\dashboard-critical.css",
+      "PackagePath": "staticwebassets\\css\\dashboard-critical.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\dashboard-enhancements.css",
       "PackagePath": "staticwebassets\\css\\dashboard-enhancements.css"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\css\\landing-page.css",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\landing-page.css",
       "PackagePath": "staticwebassets\\css\\landing-page.css"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\mental-health-advanced.css",
+      "PackagePath": "staticwebassets\\css\\mental-health-advanced.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\modern-layout.css",
+      "PackagePath": "staticwebassets\\css\\modern-layout.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\css\\testimonials.css",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\testimonials.css",
       "PackagePath": "staticwebassets\\css\\testimonials.css"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\css\\timeline.css",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\timeline.css",
       "PackagePath": "staticwebassets\\css\\timeline.css"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\js\\dashboard-diagnostics.js",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\academic-support-advanced.js",
+      "PackagePath": "staticwebassets\\js\\academic-support-advanced.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\career-guidance-advanced.js",
+      "PackagePath": "staticwebassets\\js\\career-guidance-advanced.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\counsellor-advanced.js",
+      "PackagePath": "staticwebassets\\js\\counsellor-advanced.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\dashboard-diagnostics.js",
       "PackagePath": "staticwebassets\\js\\dashboard-diagnostics.js"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\js\\dashboard-enhancements.js",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\dashboard-enhancements.js",
       "PackagePath": "staticwebassets\\js\\dashboard-enhancements.js"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\js\\dashboard-fix.js",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\dashboard-fix.js",
       "PackagePath": "staticwebassets\\js\\dashboard-fix.js"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\js\\landing-page.js",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\landing-page.js",
       "PackagePath": "staticwebassets\\js\\landing-page.js"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\mental-health-advanced.js",
+      "PackagePath": "staticwebassets\\js\\mental-health-advanced.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\js\\testimonials.js",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\js\\testimonials.js",
       "PackagePath": "staticwebassets\\js\\testimonials.js"
     },
     {
-      "Id": "C:\\Users\\USER\\Downloads\\StudentCounsellingApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {

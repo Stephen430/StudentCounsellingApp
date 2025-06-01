@@ -34,10 +34,9 @@
                         </thead>
                         <tbody>
                             @foreach (var appointment in Model)
-                            {
-                                <tr class="@(appointment.Status == "Cancelled" ? "table-danger" : appointment.Status == "Completed" ? "table-secondary" : "")">
+                            {                                <tr class="@(appointment.Status == "Cancelled" ? "table-danger" : appointment.Status == "Completed" ? "table-secondary" : "")">
                                     <td>@appointment.AppointmentDate.ToShortDateString()</td>
-                                    <td>@appointment.StartTime.ToString(@"hh\:mm tt") - @appointment.EndTime.ToString(@"hh\:mm tt")</td>
+                                    <td>@appointment.StartTime.ToString(@"hh\:mm") - @appointment.EndTime.ToString(@"hh\:mm")</td>
                                     <td>@appointment.Subject</td>
                                     <td>@(appointment.Counsellor != null ? $"{appointment.Counsellor.FirstName} {appointment.Counsellor.LastName}" : "Not assigned")</td>
                                     <td>
@@ -57,12 +56,9 @@
                                             {
                                                 <a asp-action="Edit" asp-route-id="@appointment.Id" class="btn btn-outline-secondary">
                                                     <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <a asp-action="Cancel" asp-route-id="@appointment.Id" 
-                                                   class="btn btn-outline-danger" 
-                                                   onclick="return confirm('Are you sure you want to cancel this appointment?');">
-                                                    <i class="bi bi-x-circle"></i>
-                                                </a>
+                                                </a>                                <a asp-action="Cancel" asp-route-id="@appointment.Id" class="btn btn-outline-danger">
+                                    <i class="bi bi-x-circle"></i>
+                                </a>
                                             }
                                         </div>
                                     </td>

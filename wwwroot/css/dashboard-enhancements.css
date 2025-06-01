@@ -1,16 +1,24 @@
 /**
  * Custom CSS for the Student Counselling App Dashboard
  * Enhanced visual styles for the modern dashboard UI
+ * Updated: May 27, 2025
  */
 
 /* Additional hover effects for stat cards */
 .stat-card {
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, filter 0.3s ease;
+    opacity: 1; /* Changed from 0 to 1 to ensure cards are visible by default */
+    transform: translateY(0); /* Changed from 20px to 0 to avoid needing animation to display properly */
+}
+
+.stat-card.animated {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .stat-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-8px) !important;
+    box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15);
     filter: brightness(1.05);
 }
 
@@ -37,7 +45,7 @@
 }
 
 .appointment-item-hover {
-    background-color: #f8f9fa !important;
+    background-color: rgba(67, 97, 238, 0.03) !important;
     transform: translateX(5px);
 }
 
@@ -48,7 +56,7 @@
     bottom: 0;
     height: 3px;
     width: 0;
-    background: linear-gradient(to right, #4158d0, #c850c0);
+    background: linear-gradient(to right, var(--primary-color), var(--info-color));
     transition: width 0.3s ease;
 }
 
@@ -61,6 +69,7 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
+    transition: all 0.3s ease;
 }
 
 .quick-link-item::before {
@@ -70,7 +79,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, rgba(65, 88, 208, 0.15) 0%, rgba(200, 80, 192, 0.15) 100%);
+    background: linear-gradient(45deg, rgba(67, 97, 238, 0.15) 0%, rgba(58, 190, 255, 0.15) 100%);
     z-index: -1;
     transform: scaleX(0);
     transform-origin: 0 50%;
@@ -89,6 +98,8 @@
 /* Dashboard hero section enhancements */
 .dashboard-hero {
     position: relative;
+    background-size: 200% 100% !important;
+    animation: gradientShift 15s infinite alternate ease-in-out;
 }
 
 .dashboard-hero::after {
@@ -100,6 +111,15 @@
     height: 30%;
     background: linear-gradient(to top, rgba(0,0,0,0.1), transparent);
     pointer-events: none;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 /* Animation for welcome message */
@@ -121,14 +141,53 @@
 /* Empty state enhancements */
 .empty-state {
     position: relative;
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
 .empty-state i {
     transition: transform 0.3s ease;
+    animation: floatAnimation 3s ease-in-out infinite;
 }
 
 .empty-state:hover i {
     transform: scale(1.2) rotate(10deg);
+}
+
+.empty-state .btn {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.15);
+}
+
+.empty-state .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(67, 97, 238, 0.25);
+}
+
+/* Button enhancements */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn.rounded-pill {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.btn-primary {
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.15);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 15px rgba(67, 97, 238, 0.25);
+}
+
+/* Badge enhancements */
+.badge {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile optimizations */
@@ -146,6 +205,48 @@
     }
 }
 
+/* Card header styles */
+.appointment-header h5 {
+    position: relative;
+    display: inline-block;
+}
+
+.appointment-header h5::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary-color), transparent);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease;
+}
+
+.appointment-container:hover .appointment-header h5::after {
+    transform: scaleX(1);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-400);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
     .quick-link-item {
@@ -158,5 +259,17 @@
     
     .appointment-item-hover {
         background-color: rgba(255,255,255,0.05) !important;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.1);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.2);
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255,255,255,0.3);
     }
 }

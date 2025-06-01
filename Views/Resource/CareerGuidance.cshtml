@@ -1,102 +1,599 @@
 @{
-    ViewData["Title"] = "Career Guidance Resources";
+    ViewData["Title"] = "Career Excellence Hub";
 }
 
+@section Styles {
+    <link rel="stylesheet" href="~/css/career-guidance-advanced.css" />
+}
+
+<!-- Hero Section -->
+<section class="career-hero">
+    <div class="career-hero-content">
+        <div class="container text-center">
+            <h1 class="fade-in">Career Excellence Hub</h1>
+            <p class="lead fade-in">Transform your career aspirations into reality with comprehensive tools, expert guidance, and personalized strategies for professional success</p>
+            
+            <div class="career-stats">
+                <div class="stat-card fade-in">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Career Resources</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Job Placement Rate</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Industry Partners</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Career Support</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="container">
-    <h1 class="my-4">Career Guidance Resources</h1>
-    <p class="lead mb-5">Tools and information to help you plan your career path, prepare for job applications, and develop professional skills.</p>
+    <!-- Navigation Tabs -->
+    <nav class="career-nav">
+        <div class="nav-tabs-advanced">
+            <a href="#resources" class="nav-tab-advanced active" data-tab="resources">
+                <i class="bi bi-journal-text me-2"></i>Resources & Guides
+            </a>
+            <a href="#pathfinder" class="nav-tab-advanced" data-tab="pathfinder">
+                <i class="bi bi-compass me-2"></i>Career Path Finder
+            </a>
+            <a href="#resume" class="nav-tab-advanced" data-tab="resume">
+                <i class="bi bi-file-earmark-person me-2"></i>Resume Builder
+            </a>
+            <a href="#interview" class="nav-tab-advanced" data-tab="interview">
+                <i class="bi bi-chat-dots me-2"></i>Interview Prep
+            </a>
+            <a href="#networking" class="nav-tab-advanced" data-tab="networking">
+                <i class="bi bi-people me-2"></i>Networking Tools
+            </a>
+            <a href="#tracker" class="nav-tab-advanced" data-tab="tracker">
+                <i class="bi bi-graph-up me-2"></i>Progress Tracker
+            </a>
+        </div>
+    </nav>
 
-    <div class="row mb-5">
-        <div class="col-md-8">
-            <h3>Articles & Reading Materials</h3>
-            <div class="list-group shadow-sm">
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Creating a Stand-Out Resume and Cover Letter</h5>
-                        <small>15 min read</small>
-                    </div>
-                    <p class="mb-1">Tips and templates for crafting professional application documents that highlight your strengths and experiences.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Mastering the Job Interview Process</h5>
-                        <small>20 min read</small>
-                    </div>
-                    <p class="mb-1">Comprehensive guide to preparing for interviews, including common questions, body language, and follow-up strategies.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Networking for Career Success</h5>
-                        <small>12 min read</small>
-                    </div>
-                    <p class="mb-1">How to build and maintain professional relationships that can help advance your career goals.</p>
-                </a>
+    <!-- Search Section -->
+    <div class="career-search">
+        <div class="search-container">
+            <div class="search-box-advanced">
+                <i class="bi bi-search"></i>
+                <input type="text" id="careerSearch" placeholder="Search career resources, tools, and guidance..." />
+            </div>
+            <div class="search-filters">
+                <div class="filter-tag" data-filter="resume">Resume</div>
+                <div class="filter-tag" data-filter="interview">Interview</div>
+                <div class="filter-tag" data-filter="networking">Networking</div>
+                <div class="filter-tag" data-filter="salary">Salary</div>
+                <div class="filter-tag" data-filter="skills">Skills</div>
+                <div class="filter-tag" data-filter="leadership">Leadership</div>
+                <div class="filter-tag" data-filter="tech">Technology</div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-info text-white">
-                    <h5 class="mb-0">Career Services</h5>
+    </div>
+
+    <!-- Resources Tab -->
+    <div id="resources" class="tab-content-advanced active">
+        <div class="career-grid">
+            <!-- Articles Section -->
+            <div class="career-card">
+                <div class="card-header-advanced">
+                    <h3><i class="bi bi-journal-text me-2"></i>Career Development Articles</h3>
+                    <p class="text-muted mb-0">Expert insights and proven strategies for career success</p>
                 </div>
-                <div class="card-body">
-                    <p><strong>Career Center Hours:</strong><br>Mon-Fri, 9am-5pm<br>Student Union, Room 305</p>
-                    <p><strong>Resume Review Drop-ins:</strong><br>Tuesdays & Thursdays, 1pm-3pm</p>
-                    <p><strong>Mock Interview Sessions:</strong><br>By appointment only<br>Schedule online through the portal</p>
-                    <hr>
-                    <p class="mb-0">Career advisors are available for one-on-one consultations to discuss your specific goals and challenges.</p>
+                <div class="card-body-advanced">
+                    <div class="article-item" data-tags="resume writing application">
+                        <h5 class="article-title">Creating a Stand-Out Resume and Cover Letter</h5>
+                        <p class="article-description">Master the art of crafting compelling application documents that showcase your unique value proposition and get you noticed by hiring managers and ATS systems.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Resume Writing</span>
+                                <span class="tag">Application</span>
+                                <span class="tag">ATS Optimization</span>
+                            </div>
+                            <span class="read-time">15 min read</span>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-tags="interview preparation communication">
+                        <h5 class="article-title">Mastering the Job Interview Process</h5>
+                        <p class="article-description">Comprehensive guide to interview success, from research and preparation to confident delivery and effective follow-up strategies that leave lasting impressions.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Interview Skills</span>
+                                <span class="tag">Communication</span>
+                                <span class="tag">Confidence</span>
+                            </div>
+                            <span class="read-time">20 min read</span>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-tags="networking professional relationships">
+                        <h5 class="article-title">Strategic Networking for Career Growth</h5>
+                        <p class="article-description">Build meaningful professional relationships that accelerate your career through authentic networking strategies, both online and offline.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Networking</span>
+                                <span class="tag">Relationship Building</span>
+                                <span class="tag">Professional Growth</span>
+                            </div>
+                            <span class="read-time">12 min read</span>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-tags="salary negotiation compensation">
+                        <h5 class="article-title">Salary Negotiation Mastery</h5>
+                        <p class="article-description">Learn to confidently negotiate your worth with research-backed strategies, timing techniques, and communication frameworks that maximize your earning potential.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Salary Negotiation</span>
+                                <span class="tag">Compensation</span>
+                                <span class="tag">Value Communication</span>
+                            </div>
+                            <span class="read-time">18 min read</span>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-tags="leadership skills management">
+                        <h5 class="article-title">Developing Leadership Skills Early in Your Career</h5>
+                        <p class="article-description">Essential leadership competencies and practical strategies to build influence, manage teams effectively, and position yourself for advancement opportunities.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Leadership</span>
+                                <span class="tag">Management</span>
+                                <span class="tag">Career Advancement</span>
+                            </div>
+                            <span class="read-time">22 min read</span>
+                        </div>
+                    </div>
+
+                    <div class="article-item" data-tags="remote work digital skills">
+                        <h5 class="article-title">Thriving in the Remote Work Revolution</h5>
+                        <p class="article-description">Master remote work skills, digital communication, and virtual collaboration tools to excel in the modern workplace and expand your career opportunities globally.</p>
+                        <div class="article-meta">
+                            <div class="article-tags">
+                                <span class="tag">Remote Work</span>
+                                <span class="tag">Digital Skills</span>
+                                <span class="tag">Virtual Collaboration</span>
+                            </div>
+                            <span class="read-time">16 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Resources Section -->
+            <div class="career-card">
+                <div class="card-header-advanced">
+                    <h3><i class="bi bi-play-circle me-2"></i>Video Learning Library</h3>
+                    <p class="text-muted mb-0">Visual guides and expert interviews for career development</p>
+                </div>
+                <div class="card-body-advanced">
+                    <div class="video-grid">
+                        <div class="video-card-advanced">
+                            <div class="video-thumbnail" data-video="linkedin-optimization">
+                                <div class="play-button-advanced">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                            <div class="video-content">
+                                <h5 class="video-title">LinkedIn Profile Optimization</h5>
+                                <p class="video-description">Transform your LinkedIn profile into a powerful personal brand that attracts recruiters and opportunities.</p>
+                                <div class="video-meta">
+                                    <span>Duration: 18:45</span>
+                                    <span>Expert: Sarah Chen</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-card-advanced">
+                            <div class="video-thumbnail" data-video="salary-negotiation">
+                                <div class="play-button-advanced">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                            <div class="video-content">
+                                <h5 class="video-title">Salary Negotiation Techniques</h5>
+                                <p class="video-description">Real-world strategies and scripts for successful salary negotiations and benefit discussions.</p>
+                                <div class="video-meta">
+                                    <span>Duration: 14:30</span>
+                                    <span>Expert: Michael Rodriguez</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-card-advanced">
+                            <div class="video-thumbnail" data-video="finding-internships">
+                                <div class="play-button-advanced">
+                                    <i class="bi bi-play-fill"></i>
+                                </div>
+                            </div>
+                            <div class="video-content">
+                                <h5 class="video-title">Finding Internships & Entry-Level Opportunities</h5>
+                                <p class="video-description">Proven methods for discovering and securing valuable internships and first career positions.</p>
+                                <div class="video-meta">
+                                    <span>Duration: 16:20</span>
+                                    <span>Expert: Dr. Amanda Johnson</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Career Services Card -->
+            <div class="career-card">
+                <div class="card-header-advanced">
+                    <h3><i class="bi bi-headset me-2"></i>Career Services & Support</h3>
+                    <p class="text-muted mb-0">Professional guidance and personalized career counseling</p>
+                </div>
+                <div class="card-body-advanced">
+                    <div class="services-card">
+                        <div class="services-content">
+                            <div class="service-item">
+                                <div class="service-name">Career Center</div>
+                                <div class="service-hours">Monday-Friday, 9:00 AM - 5:00 PM</div>
+                                <div class="service-location">Student Union, Room 305</div>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-name">Resume Review Sessions</div>
+                                <div class="service-hours">Tuesdays & Thursdays, 1:00 PM - 3:00 PM</div>
+                                <div class="service-location">Walk-in appointments available</div>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-name">Mock Interview Practice</div>
+                                <div class="service-hours">By appointment only</div>
+                                <div class="service-location">Schedule through student portal</div>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-name">Career Coaching</div>
+                                <div class="service-hours">One-on-one consultations</div>
+                                <div class="service-location">Virtual and in-person options</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mb-4">
-        <div class="col-12">
-            <h3>Video Resources</h3>
+    <!-- Career Path Finder Tab -->
+    <div id="pathfinder" class="tab-content-advanced">
+        <div class="career-path-finder">
+            <div class="text-center">
+                <h2>Discover Your Ideal Career Path</h2>
+                <p class="lead">Take our comprehensive career assessment and explore personalized career trajectories based on your interests, skills, and goals.</p>
+            </div>
+            
+            <div class="path-steps">
+                <div class="path-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Self Assessment</div>
+                    <div class="step-description">Evaluate your interests, values, skills, and personality to understand your career preferences and strengths.</div>
+                </div>
+                <div class="path-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Explore Careers</div>
+                    <div class="step-description">Research potential career paths, industry trends, growth prospects, and required qualifications.</div>
+                </div>
+                <div class="path-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Plan Your Journey</div>
+                    <div class="step-description">Create a detailed roadmap with education requirements, skill development, and experience milestones.</div>
+                </div>
+                <div class="path-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Take Action</div>
+                    <div class="step-description">Execute your plan with guided steps, track progress, and adapt as you grow and learn.</div>
+                </div>
+            </div>
+
+            <div id="careerPathsContainer" class="mt-5">
+                <!-- Career paths will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Salary Calculator -->
+            <div class="salary-calculator mt-5" id="salaryCalculator">
+                <h3 class="text-center mb-4">Career Salary Calculator</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <select id="position">
+                            <option value="">Select a position</option>
+                            <option value="software-engineer">Software Engineer</option>
+                            <option value="data-scientist">Data Scientist</option>
+                            <option value="product-manager">Product Manager</option>
+                            <option value="designer">UX/UI Designer</option>
+                            <option value="marketing">Marketing Specialist</option>
+                            <option value="sales">Sales Representative</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience</label>
+                        <input type="number" id="experience" min="0" max="30" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <select id="location">
+                            <option value="other">Other</option>
+                            <option value="san-francisco">San Francisco, CA</option>
+                            <option value="new-york">New York, NY</option>
+                            <option value="seattle">Seattle, WA</option>
+                            <option value="austin">Austin, TX</option>
+                            <option value="denver">Denver, CO</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="education">Education</label>
+                        <select id="education">
+                            <option value="bachelors">Bachelor's Degree</option>
+                            <option value="masters">Master's Degree</option>
+                            <option value="phd">PhD</option>
+                            <option value="bootcamp">Bootcamp/Certificate</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <button id="calculateSalary" class="btn-career">Calculate Salary</button>
+                </div>
+                <div id="salaryResult" style="display: none;"></div>
+            </div>
         </div>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-img-top bg-light text-center py-5">
-                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">LinkedIn Profile Optimization</h5>
-                    <p class="card-text">How to create an effective LinkedIn profile that attracts recruiters and showcases your professional brand.</p>
-                    <small class="text-muted">Duration: 18:45</small>
-                </div>
+    <!-- Resume Builder Tab -->
+    <div id="resume" class="tab-content-advanced">
+        <div class="resume-builder">
+            <div class="text-center mb-4">
+                <h2>Professional Resume Builder</h2>
+                <p class="lead">Create ATS-optimized resumes with our professional templates and expert guidance.</p>
             </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-img-top bg-light text-center py-5">
-                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Salary Negotiation Techniques</h5>
-                    <p class="card-text">Strategies for navigating compensation discussions and advocating for your value in the workplace.</p>
-                    <small class="text-muted">Duration: 14:30</small>
-                </div>
+
+            <div id="resumeTemplates" class="resume-sections">
+                <!-- Templates will be loaded here by JavaScript -->
             </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-img-top bg-light text-center py-5">
-                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
+
+            <div class="resume-sections mt-5">
+                <div class="resume-section" data-section="personal">
+                    <h4><i class="bi bi-person me-2"></i>Personal Information</h4>
+                    <p>Add your contact details, professional summary, and career objectives.</p>
+                    <div class="resume-tip">
+                        <strong>Pro Tip:</strong> Use a professional email address and include links to your LinkedIn and portfolio.
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Finding Internships in Your Field</h5>
-                    <p class="card-text">Resources and approaches for identifying and securing valuable internship opportunities relevant to your career goals.</p>
-                    <small class="text-muted">Duration: 16:20</small>
+
+                <div class="resume-section" data-section="experience">
+                    <h4><i class="bi bi-briefcase me-2"></i>Work Experience</h4>
+                    <p>Highlight your professional achievements using action verbs and quantifiable results.</p>
+                    <div class="resume-tip">
+                        <strong>Pro Tip:</strong> Use the STAR method (Situation, Task, Action, Result) to describe your accomplishments.
+                    </div>
+                </div>
+
+                <div class="resume-section" data-section="education">
+                    <h4><i class="bi bi-mortarboard me-2"></i>Education & Certifications</h4>
+                    <p>List your academic background, relevant coursework, and professional certifications.</p>
+                    <div class="resume-tip">
+                        <strong>Pro Tip:</strong> Include GPA if it's 3.5 or higher, and highlight relevant projects or honors.
+                    </div>
+                </div>
+
+                <div class="resume-section" data-section="skills">
+                    <h4><i class="bi bi-gear me-2"></i>Skills & Competencies</h4>
+                    <p>Showcase both technical and soft skills that are relevant to your target role.</p>
+                    <div class="resume-tip">
+                        <strong>Pro Tip:</strong> Match your skills to the job description keywords for better ATS compatibility.
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="text-center mb-5">
-        <a asp-action="Index" class="btn btn-outline-secondary">
+    <!-- Interview Preparation Tab -->
+    <div id="interview" class="tab-content-advanced">
+        <div class="interview-prep">
+            <div class="interview-content text-center">
+                <h2>Interview Preparation Toolkit</h2>
+                <p class="lead">Master the interview process with practice questions, expert tips, and confidence-building strategies.</p>
+            </div>
+        </div>
+
+        <div id="interviewQuestionsContainer" class="mt-4">
+            <!-- Interview questions will be loaded here by JavaScript -->
+        </div>
+
+        <div class="interview-tips mt-5">
+            <div class="career-grid">
+                <div class="career-card">
+                    <div class="card-header-advanced">
+                        <h3><i class="bi bi-lightbulb me-2"></i>Interview Success Tips</h3>
+                    </div>
+                    <div class="card-body-advanced">
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><strong>Research the Company:</strong> Study their mission, values, recent news, and culture</li>
+                            <li class="mb-3"><strong>Practice Your Stories:</strong> Prepare 3-5 specific examples using the STAR method</li>
+                            <li class="mb-3"><strong>Prepare Questions:</strong> Show engagement by asking thoughtful questions about the role</li>
+                            <li class="mb-3"><strong>Body Language:</strong> Maintain eye contact, firm handshake, and confident posture</li>
+                            <li class="mb-3"><strong>Follow Up:</strong> Send a thank-you email within 24 hours</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="career-card">
+                    <div class="card-header-advanced">
+                        <h3><i class="bi bi-clock me-2"></i>Interview Timeline</h3>
+                    </div>
+                    <div class="card-body-advanced">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <strong>1 Week Before:</strong> Research company and role thoroughly
+                            </div>
+                            <div class="timeline-item">
+                                <strong>3 Days Before:</strong> Practice common questions and prepare stories
+                            </div>
+                            <div class="timeline-item">
+                                <strong>1 Day Before:</strong> Prepare outfit, route, and materials
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Day Of:</strong> Arrive 10-15 minutes early
+                            </div>
+                            <div class="timeline-item">
+                                <strong>After:</strong> Send thank-you note within 24 hours
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Networking Tools Tab -->
+    <div id="networking" class="tab-content-advanced">
+        <div class="text-center mb-5">
+            <h2>Professional Networking Mastery</h2>
+            <p class="lead">Build meaningful professional relationships that accelerate your career growth and open new opportunities.</p>
+        </div>
+
+        <div id="networkingStrategies" class="networking-tools">
+            <!-- Networking strategies will be loaded here by JavaScript -->
+        </div>
+
+        <div class="career-grid mt-5">
+            <div class="career-card">
+                <div class="card-header-advanced">
+                    <h3><i class="bi bi-chat-square-text me-2"></i>Networking Scripts & Templates</h3>
+                </div>
+                <div class="card-body-advanced">
+                    <div class="networking-template">
+                        <h5>LinkedIn Connection Request</h5>
+                        <div class="template-text">
+                            "Hi [Name], I came across your profile and was impressed by your work at [Company]. I'm currently [your situation] and would love to connect and learn from your experience in [industry/field]. Thank you!"
+                        </div>
+                    </div>
+                    <div class="networking-template mt-3">
+                        <h5>Follow-up After Meeting</h5>
+                        <div class="template-text">
+                            "Hi [Name], It was great meeting you at [event]. I enjoyed our conversation about [topic]. I'd love to continue our discussion over coffee. Are you available for a brief chat next week?"
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="career-card">
+                <div class="card-header-advanced">
+                    <h3><i class="bi bi-calendar-check me-2"></i>Networking Action Plan</h3>
+                </div>
+                <div class="card-body-advanced">
+                    <div class="action-plan">
+                        <div class="plan-item">
+                            <strong>Week 1-2:</strong> Optimize your LinkedIn profile and identify target connections
+                        </div>
+                        <div class="plan-item">
+                            <strong>Week 3-4:</strong> Attend 2-3 networking events or join professional groups
+                        </div>
+                        <div class="plan-item">
+                            <strong>Week 5-6:</strong> Conduct informational interviews with industry professionals
+                        </div>
+                        <div class="plan-item">
+                            <strong>Week 7-8:</strong> Follow up with new connections and nurture relationships
+                        </div>
+                        <div class="plan-item">
+                            <strong>Ongoing:</strong> Regularly engage with your network and provide value
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Tracker Tab -->
+    <div id="tracker" class="tab-content-advanced">
+        <div class="career-progress">
+            <div class="text-center mb-4">
+                <h2>Career Development Progress</h2>
+                <p class="lead">Track your career advancement and skill development with visual progress indicators.</p>
+            </div>
+
+            <div class="progress-grid">
+                <div class="progress-item" data-skill="resume">
+                    <div class="progress-circle"></div>
+                    <div class="progress-label">Resume Building</div>
+                    <div class="progress-value">0%</div>
+                </div>
+                <div class="progress-item" data-skill="interview">
+                    <div class="progress-circle"></div>
+                    <div class="progress-label">Interview Skills</div>
+                    <div class="progress-value">0%</div>
+                </div>
+                <div class="progress-item" data-skill="networking">
+                    <div class="progress-circle"></div>
+                    <div class="progress-label">Professional Network</div>
+                    <div class="progress-value">0%</div>
+                </div>
+                <div class="progress-item" data-skill="linkedin">
+                    <div class="progress-circle"></div>
+                    <div class="progress-label">LinkedIn Optimization</div>
+                    <div class="progress-value">0%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goal Tracker -->
+        <div class="career-card mt-5">
+            <div class="card-header-advanced">
+                <h3><i class="bi bi-target me-2"></i>Career Goals Tracker</h3>
+                <p class="text-muted mb-0">Set and track your career milestones</p>
+            </div>
+            <div class="card-body-advanced">
+                <form id="careerGoalForm" class="mb-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="goalTitle" class="form-control mb-3" placeholder="Goal Title" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="date" name="goalDeadline" class="form-control mb-3" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <textarea name="goalDescription" class="form-control mb-3" placeholder="Goal Description" rows="2" required></textarea>
+                        </div>
+                        <div class="col-md-4">
+                            <select name="goalPriority" class="form-control mb-3" required>
+                                <option value="">Priority</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-career">Add Goal</button>
+                </form>
+                <div id="careerGoalsList">
+                    <!-- Goals will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="text-center my-5">
+        <a asp-action="Index" class="btn-outline-career me-3">
             <i class="bi bi-arrow-left me-2"></i>Back to Resources
+        </a>
+        <a href="#" class="btn-career" onclick="careerApp.showNotification('Scheduling career consultation...', 'info')">
+            <i class="bi bi-calendar-plus me-2"></i>Schedule Career Consultation
         </a>
     </div>
 </div>
+
+@section Scripts {
+    <script src="~/js/career-guidance-advanced.js"></script>
+}

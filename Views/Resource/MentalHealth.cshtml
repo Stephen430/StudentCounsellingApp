@@ -2,101 +2,451 @@
     ViewData["Title"] = "Mental Health Resources";
 }
 
+@section Styles {
+    <link rel="stylesheet" href="~/css/mental-health-advanced.css" />
+}
+
+<!-- Hero Section -->
+<section class="mh-hero">
+    <div class="mh-hero-content">
+        <div class="container">
+            <h1 class="fade-in">Mental Wellness Center</h1>
+            <p class="lead fade-in">Your comprehensive resource for mental health support, interactive tools, and
+                personalized wellness tracking</p>
+            <div class="row mt-4">
+                <div class="col-6 col-md-3">
+                    <div class="text-center">
+                        <h3 class="mb-1">24/7</h3>
+                        <small>Support Available</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="text-center">
+                        <h3 class="mb-1">100+</h3>
+                        <small>Resources</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="text-center">
+                        <h3 class="mb-1">95%</h3>
+                        <small>Success Rate</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="text-center">
+                        <h3 class="mb-1">Safe</h3>
+                        <small>& Confidential</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <div class="container">
-    <h1 class="my-4">Mental Health Resources</h1>
-    <p class="lead mb-5">Supporting your emotional well-being through information and strategies for managing stress, anxiety, and depression.</p>
+    <!-- Daily Mood Tracker -->
+    <section class="mh-meter-section">
+        <div class="mh-meter-card">
+            <h2 class="text-center mb-4">How are you feeling today?</h2>
+            <p class="text-center text-muted">Your daily mood tracking helps us provide better resources</p>
 
-    <div class="row mb-5">
-        <div class="col-md-8">
-            <h3>Articles & Reading Materials</h3>
-            <div class="list-group shadow-sm">
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Understanding Stress and Anxiety in College</h5>
-                        <small>15 min read</small>
+            <div class="mood-tracker">
+                <div class="mood-option mood-very-sad" data-mood="very-sad" title="Very Sad">😢</div>
+                <div class="mood-option mood-sad" data-mood="sad" title="Sad">😔</div>
+                <div class="mood-option mood-neutral" data-mood="neutral" title="Neutral">😐</div>
+                <div class="mood-option mood-happy" data-mood="happy" title="Happy">😊</div>
+                <div class="mood-option mood-very-happy" data-mood="very-happy" title="Very Happy">😄</div>
+            </div>
+
+            <div id="moodFeedback" style="display: none;"></div>
+
+            <div class="text-center mt-3">
+                <small class="text-muted">Select your mood to get personalized recommendations</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Features Tabs -->
+    <section class="mh-interactive-section">
+        <div class="feature-tabs">
+            <button class="tab-button active" data-tab="resources">📚 Resources</button>
+            <button class="tab-button" data-tab="tools">🛠️ Wellness Tools</button>
+            <button class="tab-button" data-tab="progress">📊 Progress Tracker</button>
+            <button class="tab-button" data-tab="emergency">🚨 Emergency Help</button>
+        </div>
+
+        <!-- Resources Tab -->
+        <div id="resources" class="tab-content active">
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="resourceSearch" placeholder="Search articles, videos, and resources..." />
+                </div>
+            </div>
+
+            <div class="resource-grid">
+                <!-- Articles Section -->
+                <div class="mh-card">
+                    <div class="card-header-custom">
+                        <h3 class="mb-0"><i class="bi bi-book me-2"></i>Featured Articles</h3>
                     </div>
-                    <p class="mb-1">Learn about the common causes of stress and anxiety in academic settings and effective coping mechanisms.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Building Resilience: A Guide for Students</h5>
-                        <small>10 min read</small>
+                    <div class="card-body-custom">
+                        <div class="article-item mb-3">
+                            <a href="#" class="article-link text-decoration-none">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-2 text-primary">Understanding Stress and Anxiety in College</h5>
+                                        <p class="mb-1 text-muted">Learn about the common causes of stress and anxiety
+                                            in academic settings and discover evidence-based coping strategies that can
+                                            help you manage overwhelming feelings.</p>
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-light text-dark me-2">Anxiety</span>
+                                            <span class="badge bg-light text-dark me-2">Stress Management</span>
+                                        </div>
+                                    </div>
+                                    <small class="text-muted ms-3">15 min read</small>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="article-item mb-3">
+                            <a href="#" class="article-link text-decoration-none">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-2 text-primary">Building Emotional Resilience</h5>
+                                        <p class="mb-1 text-muted">Practical strategies to develop emotional resilience
+                                            and bounce back from challenges. Learn how to build mental strength and
+                                            adapt to life's ups and downs.</p>
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-light text-dark me-2">Resilience</span>
+                                            <span class="badge bg-light text-dark me-2">Personal Growth</span>
+                                        </div>
+                                    </div>
+                                    <small class="text-muted ms-3">12 min read</small>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="article-item mb-3">
+                            <a href="#" class="article-link text-decoration-none">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-2 text-primary">Mindfulness Techniques for Daily Life</h5>
+                                        <p class="mb-1 text-muted">Simple mindfulness practices that can be integrated
+                                            into your daily routine to reduce stress, improve focus, and enhance overall
+                                            well-being.</p>
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-light text-dark me-2">Mindfulness</span>
+                                            <span class="badge bg-light text-dark me-2">Meditation</span>
+                                        </div>
+                                    </div>
+                                    <small class="text-muted ms-3">10 min read</small>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="article-item mb-3">
+                            <a href="#" class="article-link text-decoration-none">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h5 class="mb-2 text-primary">Sleep Hygiene for Better Mental Health</h5>
+                                        <p class="mb-1 text-muted">Discover how quality sleep affects your mental health
+                                            and learn practical tips for improving your sleep hygiene and establishing
+                                            healthy sleep patterns.</p>
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-light text-dark me-2">Sleep</span>
+                                            <span class="badge bg-light text-dark me-2">Wellness</span>
+                                        </div>
+                                    </div>
+                                    <small class="text-muted ms-3">8 min read</small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <p class="mb-1">Practical strategies to develop emotional resilience and bounce back from challenges and setbacks.</p>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">Mindfulness Techniques for Daily Life</h5>
-                        <small>12 min read</small>
+                </div>
+
+                <!-- Video Resources -->
+                <div class="mh-card">
+                    <div class="card-header-custom">
+                        <h3 class="mb-0"><i class="bi bi-play-circle me-2"></i>Video Library</h3>
                     </div>
-                    <p class="mb-1">Simple mindfulness practices that can be integrated into your daily routine to reduce stress and improve focus.</p>
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Emergency Resources</h5>
-                </div>
-                <div class="card-body">
-                    <p><strong>National Suicide Prevention Lifeline:</strong><br>1-800-273-8255</p>
-                    <p><strong>Crisis Text Line:</strong><br>Text HOME to 741741</p>
-                    <p><strong>Campus Counseling Center:</strong><br>555-123-4567</p>
-                    <hr>
-                    <p class="mb-0">If you're experiencing an emergency, please call 911 or visit your nearest emergency room.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <div class="card-body-custom">
+                        <div class="video-card mb-3">
+                            <div class="video-player" data-video-id="anxiety-management"
+                                data-title="Managing Test Anxiety">
+                                <div class="video-overlay">
+                                    <div class="play-button">
+                                        <i class="bi bi-play-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <h5>Managing Test Anxiety</h5>
+                                <p class="text-muted mb-1">Proven techniques for handling anxiety before and during
+                                    exams to improve performance and reduce stress.</p>
+                                <small class="text-muted">Duration: 8:45 | Views: 1.2K</small>
+                            </div>
+                        </div>
 
-    <div class="row mb-4">
-        <div class="col-12">
-            <h3>Video Resources</h3>
-        </div>
-    </div>
+                        <div class="video-card mb-3">
+                            <div class="video-player" data-video-id="guided-meditation"
+                                data-title="Guided Meditation for Students">
+                                <div class="video-overlay">
+                                    <div class="play-button">
+                                        <i class="bi bi-play-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <h5>Guided Meditation for Students</h5>
+                                <p class="text-muted mb-1">A relaxing guided meditation specifically designed to help
+                                    students clear their minds and reduce stress.</p>
+                                <small class="text-muted">Duration: 15:20 | Views: 2.1K</small>
+                            </div>
+                        </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-img-top bg-light text-center py-5">
-                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Managing Test Anxiety</h5>
-                    <p class="card-text">Techniques for handling anxiety before and during exams to improve performance.</p>
-                    <small class="text-muted">Duration: 8:45</small>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-img-top bg-light text-center py-5">
-                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Guided Meditation for Students</h5>
-                    <p class="card-text">A relaxing guided meditation specifically designed to help students clear their minds.</p>
-                    <small class="text-muted">Duration: 15:20</small>
+                        <div class="video-card mb-3">
+                            <div class="video-player" data-video-id="burnout-prevention"
+                                data-title="Preventing Academic Burnout">
+                                <div class="video-overlay">
+                                    <div class="play-button">
+                                        <i class="bi bi-play-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <h5>Preventing Academic Burnout</h5>
+                                <p class="text-muted mb-1">Identifying early signs of burnout and implementing
+                                    strategies to maintain balance and motivation.</p>
+                                <small class="text-muted">Duration: 12:15 | Views: 890</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <div class="card-img-top bg-light text-center py-5">
-                    <i class="bi bi-play-circle" style="font-size: 3rem;"></i>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Dealing with Burnout</h5>
-                    <p class="card-text">Identifying signs of burnout and strategies to recover and prevent future occurrences.</p>
-                    <small class="text-muted">Duration: 12:15</small>
-                </div>
-            </div>
-        </div>
-    </div>
 
+        <!-- Wellness Tools Tab -->
+        <div id="tools" class="tab-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Breathing Exercise -->
+                    <div class="breathing-exercise">
+                        <h3 class="mb-3">Guided Breathing Exercise</h3>
+                        <p class="text-muted">Take a moment to center yourself with this simple breathing exercise</p>
+
+                        <div id="breathingCircle" class="breathing-circle">
+                            Click to Start
+                        </div>
+
+                        <button id="startBreathing" class="btn btn-primary btn-lg mt-3">
+                            Start Breathing Exercise
+                        </button>
+
+                        <div class="mt-3">
+                            <small class="text-muted">4 seconds in, 4 seconds out. Follow the circle's rhythm.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <!-- Daily Tip -->
+                    <div class="mh-card">
+                        <div class="card-header-custom">
+                            <h4 class="mb-0"><i class="bi bi-lightbulb me-2"></i>Daily Wellness Tip</h4>
+                        </div>
+                        <div class="card-body-custom text-center">
+                            <div class="mb-3">
+                                <i class="bi bi-heart" style="font-size: 3rem; color: var(--mh-peaceful-green);"></i>
+                            </div>
+                            <p id="dailyTip" class="lead mb-3"></p>
+                            <small class="text-muted">Check back tomorrow for a new tip!</small>
+                        </div>
+                    </div>
+
+                    <!-- Quick Assessment -->
+                    <div class="mh-card mt-4">
+                        <div class="card-header-custom">
+                            <h4 class="mb-0"><i class="bi bi-clipboard-check me-2"></i>Quick Self-Assessment</h4>
+                        </div>
+                        <div class="card-body-custom">
+                            <p class="mb-3">Rate how you're feeling today (1-10):</p>
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <label class="form-label">Stress Level</label>
+                                    <input type="range" class="form-range" min="1" max="10" value="5" id="stressLevel">
+                                    <span id="stressValue">5</span>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label">Energy Level</label>
+                                    <input type="range" class="form-range" min="1" max="10" value="5" id="energyLevel">
+                                    <span id="energyValue">5</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary mt-3 w-100">Save Assessment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Tracker Tab -->
+        <div id="progress" class="tab-content">
+            <div class="progress-tracker">
+                <h3 class="mb-4 text-center">Your Wellness Journey</h3>
+                <div id="progressTracker">
+                    <!-- Progress items will be dynamically generated -->
+                </div>
+
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary me-2">View Detailed Report</button>
+                    <button class="btn btn-outline-secondary">Reset Progress</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Resources Tab -->
+        <div id="emergency" class="tab-content">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="emergency-card">
+                        <div class="emergency-content">
+                            <h2 class="mb-4"><i class="bi bi-exclamation-triangle me-2"></i>Emergency Resources</h2>
+                            <p class="lead mb-4">If you're experiencing a mental health emergency, please reach out
+                                immediately. You're not alone, and help is available 24/7.</p>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="emergency-contact" data-type="National Suicide Prevention Lifeline"
+                                        data-contact="988">
+                                        <h5><i class="bi bi-telephone me-2"></i>Crisis Lifeline</h5>
+                                        <p class="mb-1"><strong>Call or Text: 988</strong></p>
+                                        <small>Available 24/7 for anyone in crisis</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="emergency-contact" data-type="Crisis Text Line" data-contact="741741">
+                                        <h5><i class="bi bi-chat-dots me-2"></i>Crisis Text Line</h5>
+                                        <p class="mb-1"><strong>Text HOME to 741741</strong></p>
+                                        <small>Free, confidential support via text</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="emergency-contact" data-type="Campus Counseling"
+                                        data-contact="555-123-4567">
+                                        <h5><i class="bi bi-building me-2"></i>Campus Counseling</h5>
+                                        <p class="mb-1"><strong>Call: 555-123-4567</strong></p>
+                                        <small>On-campus mental health services</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="emergency-contact" data-type="Emergency Services" data-contact="911">
+                                        <h5><i class="bi bi-shield-check me-2"></i>Emergency Services</h5>
+                                        <p class="mb-1"><strong>Call: 911</strong></p>
+                                        <small>For immediate medical emergencies</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="mh-card">
+                        <div class="card-header-custom">
+                            <h4 class="mb-0"><i class="bi bi-heart-pulse me-2"></i>Immediate Help</h4>
+                        </div>
+                        <div class="card-body-custom">
+                            <h6>If you're in immediate danger:</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Call 911</li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Go to nearest ER
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Call crisis hotline
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-circle text-success me-2"></i>Reach out to
+                                    trusted friend</li>
+                            </ul>
+
+                            <hr>
+
+                            <h6>Warning Signs:</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><small>• Thoughts of self-harm</small></li>
+                                <li class="mb-1"><small>• Feeling hopeless</small></li>
+                                <li class="mb-1"><small>• Severe depression</small></li>
+                                <li class="mb-1"><small>• Substance abuse</small></li>
+                                <li class="mb-1"><small>• Social isolation</small></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Buttons -->
     <div class="text-center mb-5">
-        <a asp-action="Index" class="btn btn-outline-secondary">
+        <a asp-controller="Appointment" asp-action="Create" class="btn btn-primary btn-lg me-3">
+            <i class="bi bi-calendar-plus me-2"></i>Book Counseling Session
+        </a>
+        <a asp-action="Index" class="btn btn-outline-secondary btn-lg">
             <i class="bi bi-arrow-left me-2"></i>Back to Resources
         </a>
     </div>
 </div>
+
+@section Scripts {
+    <script src="~/js/mental-health-advanced.js"></script>
+    <script>
+        // Initialize additional features
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize daily tip
+            window.mentalHealthApp.initializeDailyTip();
+
+            // Setup range sliders
+            const stressLevel = document.getElementById('stressLevel');
+            const energyLevel = document.getElementById('energyLevel');
+            const stressValue = document.getElementById('stressValue');
+            const energyValue = document.getElementById('energyValue');
+
+            if (stressLevel && stressValue) {
+                stressLevel.addEventListener('input', function () {
+                    stressValue.textContent = this.value;
+                });
+            }
+
+            if (energyLevel && energyValue) {
+                energyLevel.addEventListener('input', function () {
+                    energyValue.textContent = this.value;
+                });
+            }
+
+            // Add smooth scroll to sections
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+}
+</div>
+
+                   
+                   
+                   
+                   
+                   
+                   
+                       
+                               i</ul>
+   

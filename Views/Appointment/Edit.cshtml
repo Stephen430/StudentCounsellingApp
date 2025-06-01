@@ -1,0 +1,68 @@
+@model StudentCounsellingApp.ViewModels.AppointmentViewModel
+
+@{
+    ViewData["Title"] = "Edit Appointment";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card dashboard-card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="bi bi-pencil-square me-2"></i>Edit Appointment</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit" asp-route-id="@ViewBag.AppointmentId" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="CounsellorId" class="form-label"></label>
+                            <select asp-for="CounsellorId" asp-items="ViewBag.Counsellors" class="form-select">
+                                <option value="">-- Select a Counsellor --</option>
+                            </select>
+                            <span asp-validation-for="CounsellorId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="AppointmentDate" class="form-label"></label>
+                            <input asp-for="AppointmentDate" class="form-control" type="date" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                            <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="StartTime" class="form-label"></label>
+                            <input asp-for="StartTime" class="form-control" type="time" />
+                            <span asp-validation-for="StartTime" class="text-danger"></span>
+                            <small class="text-muted">Appointments are one hour long by default</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Subject" class="form-label"></label>
+                            <input asp-for="Subject" class="form-control" />
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Details" asp-route-id="@ViewBag.AppointmentId" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left me-2"></i>Back to Details
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save me-2"></i>Save Changes
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

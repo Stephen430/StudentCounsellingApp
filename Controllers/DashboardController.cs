@@ -25,6 +25,35 @@ namespace StudentCounsellingApp.Controllers
             _logger = logger;
         }
 
+        // Simple dashboard for emergency fallback
+        [HttpGet]
+        [Route("dashboard/simple")]
+        [AllowAnonymous]
+        public IActionResult Simple()
+        {
+            try
+            {
+                _logger.LogInformation("Simple dashboard requested");
+
+                var viewModel = new DashboardViewModel
+                {
+                    StudentName = User.Identity?.IsAuthenticated == true ? User.Identity?.Name : "Guest",
+                    UpcomingAppointments = new List<Appointment>(),
+                    PastAppointments = new List<Appointment>(),
+                    IsLoaded = true,
+                    LastUpdated = DateTime.Now
+                };
+
+                // The SimpleIndex view will use minimal styling for reliability
+                return View("SimpleIndex", viewModel);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in Simple dashboard view");
+                return Content("Dashboard Error: " + ex.Message);
+            }
+        }
+
         private async Task EnsureDatabaseInitializedAsync()
         {
             try
@@ -121,11 +150,17 @@ namespace StudentCounsellingApp.Controllers
                 return Content("Error: " + ex.Message);
             }
         }
-
         public async Task<IActionResult> Index()
         {
             try
             {
+                // Check for dashboard_fix flag to trigger fallback view
+                if (Request.Query.ContainsKey("fix"))
+                {
+                    _logger.LogInformation("Dashboard fix mode requested");
+                    return RedirectToAction("Simple");
+                }
+
                 // Enhanced logging and database initialization
                 _logger.LogInformation("Dashboard Index action started");
                 _logger.LogInformation($"Session ID: {HttpContext.TraceIdentifier}");
@@ -180,11 +215,9 @@ namespace StudentCounsellingApp.Controllers
                 }
 
                 List<Appointment> upcomingAppointments = new();
-                List<Appointment> pastAppointments = new();
-
-                try
+                List<Appointment> pastAppointments = new(); try
                 {
-                    // Test TimeSpan formatting with error checking
+                    // Test TimeSpan formatting with proper format
                     var testAppointment = await _context.Appointments.FirstOrDefaultAsync();
                     if (testAppointment != null)
                     {
@@ -192,9 +225,10 @@ namespace StudentCounsellingApp.Controllers
                         {
                             _logger.LogInformation("Sample appointment time format check:");
                             _logger.LogInformation($"StartTime (raw): {testAppointment.StartTime}");
-                            _logger.LogInformation($"StartTime (formatted): {testAppointment.StartTime.ToString(@"hh\:mm tt")}");
+                            // Fixed TimeSpan formatting - TimeSpan doesn't support "tt" format
+                            _logger.LogInformation($"StartTime (formatted): {testAppointment.StartTime.ToString(@"hh\:mm")}");
                             _logger.LogInformation($"EndTime (raw): {testAppointment.EndTime}");
-                            _logger.LogInformation($"EndTime (formatted): {testAppointment.EndTime.ToString(@"hh\:mm tt")}");
+                            _logger.LogInformation($"EndTime (formatted): {testAppointment.EndTime.ToString(@"hh\:mm")}");
                         }
                         catch (Exception timeEx)
                         {
@@ -213,7 +247,8 @@ namespace StudentCounsellingApp.Controllers
 
                     foreach (var appointment in upcomingAppointments)
                     {
-                        _logger.LogInformation($"Upcoming appointment: {appointment.Subject} at {appointment.StartTime.ToString(@"hh\:mm tt")} - {appointment.EndTime.ToString(@"hh\:mm tt")}");
+                        // Fixed TimeSpan formatting - removed "tt" which is not supported
+                        _logger.LogInformation($"Upcoming appointment: {appointment.Subject} at {appointment.StartTime.ToString(@"hh\:mm")} - {appointment.EndTime.ToString(@"hh\:mm")}");
                     }
 
                     _logger.LogInformation($"Loaded {upcomingAppointments.Count} upcoming appointments");
@@ -228,7 +263,8 @@ namespace StudentCounsellingApp.Controllers
 
                     foreach (var appointment in pastAppointments)
                     {
-                        _logger.LogInformation($"Past appointment: {appointment.Subject} at {appointment.StartTime.ToString(@"hh\:mm tt")} - {appointment.EndTime.ToString(@"hh\:mm tt")}");
+                        // Fixed TimeSpan formatting - removed "tt" which is not supported
+                        _logger.LogInformation($"Past appointment: {appointment.Subject} at {appointment.StartTime.ToString(@"hh\:mm")} - {appointment.EndTime.ToString(@"hh\:mm")}");
                     }
 
                     _logger.LogInformation($"Loaded {pastAppointments.Count} past appointments");
@@ -349,13 +385,11 @@ namespace StudentCounsellingApp.Controllers
 
                 return Content(htmlContent, "text/html");
             }
-        }
-
-        /// <summary>
-        /// Simple dashboard view for troubleshooting rendering issues
-        /// </summary>
+        }        /// <summary>
+                 /// Simple dashboard view for troubleshooting rendering issues
+                 /// </summary>
         [HttpGet]
-        [Route("dashboard/simple")]
+        [Route("dashboard/minimal")]
         public async Task<IActionResult> SimpleIndex()
         {
             try
@@ -394,10 +428,9 @@ namespace StudentCounsellingApp.Controllers
                             if (testAppointment != null)
                             {
                                 _logger.LogInformation("Simple view - Sample appointment time format check:");
-                                _logger.LogInformation($"StartTime (raw): {testAppointment.StartTime}");
-                                _logger.LogInformation($"StartTime (formatted): {testAppointment.StartTime.ToString(@"hh\:mm tt")}");
+                                _logger.LogInformation($"StartTime (raw): {testAppointment.StartTime}"); _logger.LogInformation($"StartTime (formatted): {testAppointment.StartTime.ToString(@"hh\:mm")}");
                                 _logger.LogInformation($"EndTime (raw): {testAppointment.EndTime}");
-                                _logger.LogInformation($"EndTime (formatted): {testAppointment.EndTime.ToString(@"hh\:mm tt")}");
+                                _logger.LogInformation($"EndTime (formatted): {testAppointment.EndTime.ToString(@"hh\:mm")}");
                             }
 
                             viewModel.UpcomingAppointments = await _context.Appointments
@@ -411,7 +444,7 @@ namespace StudentCounsellingApp.Controllers
 
                             foreach (var appointment in viewModel.UpcomingAppointments)
                             {
-                                _logger.LogInformation($"Simple view - Upcoming appointment: {appointment.Subject} at {appointment.StartTime.ToString(@"hh\:mm tt")} - {appointment.EndTime.ToString(@"hh\:mm tt")}");
+                                _logger.LogInformation($"Simple view - Upcoming appointment: {appointment.Subject} at {appointment.StartTime.ToString(@"hh\:mm")} - {appointment.EndTime.ToString(@"hh\:mm")}");
                             }
                         }
                     }

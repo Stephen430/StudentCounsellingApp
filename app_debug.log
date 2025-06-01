@@ -1,16 +1,32 @@
-c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.
-c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj : warning NU1900: Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 1 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 2 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 3 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 4 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 5 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 6 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 7 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 8 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 9 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): warning MSB3026: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Beginning retry 10 in 1000ms. The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): error MSB3027: Could not copy "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". Exceeded retry count of 10. Failed. The file is locked by: "StudentCounsellingApp (22944)" [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-C:\Program Files\dotnet\sdk\9.0.201\Microsoft.Common.CurrentVersion.targets(5364,5): error MSB3021: Unable to copy file "c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\StudentCounsellingApp.exe". The process cannot access the file 'c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\bin\Debug\net9.0\StudentCounsellingApp.exe' because it is being used by another process. [c:\Users\USER\Downloads\student-counselling-app\StudentCounsellingApp\StudentCounsellingApp.csproj]
-
-The build failed. Fix the build errors and run again.
+The specified launch profile 'c:\Users\USER\Desktop\StudentCounsellingApp\Properties\launchSettings.json' could not be located.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Users" AS "u")
+info: Program[0]
+      Database initialized successfully.
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: c:\Users\USER\Desktop\StudentCounsellingApp
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+warn: Program[0]
+      Authentication redirect to login from: /Account/Logout
+warn: Program[0]
+      Authentication redirect to login from: /Account/Logout
+warn: Program[0]
+      Authentication redirect to login from: /Account/Logout
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

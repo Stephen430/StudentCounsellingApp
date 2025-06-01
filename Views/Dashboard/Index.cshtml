@@ -2,23 +2,43 @@
 
 @{
     ViewData["Title"] = "Dashboard";
+    
+    // Add fallback detection
+    var hasLoadingIssue = false;
+    
+    // Check if model is null or missing essential properties
+    if (Model == null || !Model.IsLoaded) {
+        hasLoadingIssue = true;
+    }
 }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/dashboard-enhancements.css" />
+    <link rel="stylesheet" href="~/css/dashboard-critical.css" />
+    <!-- Temporarily disabled due to loading issues -->
+    <!-- <link rel="stylesheet" href="~/css/dashboard-enhancements.css" /> -->
+}
+
+@if (hasLoadingIssue) {
+    <div class="alert alert-warning">
+        <p><strong>Dashboard loading issue detected.</strong> We're showing a simplified version.</p>
+        <p>Please try one of these options:</p>
+        <a href="/Dashboard/Index" class="btn btn-primary me-2">Reload Dashboard</a>
+        <a href="/Dashboard/simple" class="btn btn-secondary">Simple Dashboard</a>
+    </div>
 }
 
 <!-- CSS for the advanced dashboard -->
 <style>
     /* Hero Section Styles */
     .dashboard-hero {
-        background: linear-gradient(135deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
-        border-radius: 0.75rem;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+        border-radius: 1rem;
         padding: 3rem 0;
         margin-bottom: 2rem;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        box-shadow: 0 10px 25px rgba(67, 97, 238, 0.15);
         position: relative;
         overflow: hidden;
+        transition: all 0.3s ease;
     }
 
     .dashboard-hero::before {
@@ -29,7 +49,7 @@
         bottom: 0;
         left: 0;
         background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMCkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-        opacity: 0.3;
+        opacity: 0.2;
     }
 
     .welcome-title {
@@ -37,6 +57,8 @@
         font-weight: 700;
         margin-bottom: 0.5rem;
         animation: fadeIn 0.8s ease-out;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .welcome-subtitle {
@@ -47,38 +69,73 @@
     /* Stat Card Styles */
     .stat-card {
         border-radius: 1rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
         overflow: hidden;
         height: 100%;
+        border: none;
+        position: relative;
+    }
+
+    .stat-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform 0.5s ease;
+    }
+
+    .stat-card:hover::after {
+        transform: scaleX(1);
     }
 
     .stat-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }    .stat-card.upcoming {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
     }
 
-    .stat-card.upcoming {
-        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+    .stat-card.upcoming::after {
+        background-color: var(--info-color);
     }
 
     .stat-card.past {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        background: linear-gradient(135deg, var(--info-color) 0%, var(--primary-hover) 100%);
+    }
+
+    .stat-card.past::after {
+        background-color: var(--primary-hover);
     }
 
     .stat-card.resources {
-        background: linear-gradient(135deg, #fad961 0%, #f76b1c 100%);
+        background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-color) 100%);
+    }
+    
+    .stat-card.resources::after {
+        background-color: var(--primary-color);
     }
 
     .stat-icon {
-        width: 60px;
-        height: 60px;
+        width: 64px;
+        height: 64px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: 50%;
-        background-color: rgba(255,255,255,0.2);
+        border-radius: 12px;
+        background-color: rgba(255,255,255,0.15);
         margin-bottom: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transform: rotate(0deg);
+        transition: transform 0.5s ease;
+    }
+
+    .stat-card:hover .stat-icon {
+        transform: rotate(10deg);
     }
 
     .stat-icon i {
@@ -90,39 +147,68 @@
         font-size: 2.5rem;
         font-weight: 700;
         margin-bottom: 0.25rem;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .stat-text {
         font-size: 1rem;
-        opacity: 0.85;
+        opacity: 0.9;
+        color: white;
     }
     
-    /* Appointment Card Styles */
-    .appointment-container {
+    /* Appointment Card Styles */    .appointment-container {
         background: white;
         border-radius: 1rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.05);
         overflow: hidden;
+        border: 1px solid var(--gray-200);
+        transition: all 0.3s ease;
+    }
+
+    .appointment-container:hover {
+        box-shadow: 0 8px 24px rgba(67, 97, 238, 0.08);
+        transform: translateY(-2px);
     }
 
     .appointment-header {
         padding: 1.25rem;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        background: linear-gradient(to right, #f8f9fa, #f1f3f5);
+        border-bottom: 1px solid var(--gray-200);
+        background: linear-gradient(to right, var(--gray-100), white);
+    }
+    
+    .appointment-header h5 {
+        font-weight: 600;
+        color: var(--gray-800);
     }
 
     .appointment-list {
         padding: 0;
         margin: 0;
         list-style-type: none;
-    }
-
-    .appointment-item {
+    }    .appointment-item {
         display: flex;
         align-items: center;
         padding: 1.25rem;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        transition: background-color 0.2s;
+        border-bottom: 1px solid var(--gray-200);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .appointment-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+    }
+
+    .appointment-item:hover::before {
+        background-color: var(--primary-color);
     }
 
     .appointment-item:last-child {
@@ -130,54 +216,71 @@
     }
 
     .appointment-item:hover {
-        background-color: rgba(0,0,0,0.01);
-    }
-
-    .appointment-date {
+        background-color: rgba(67, 97, 238, 0.02);
+    }    .appointment-date {
         min-width: 70px;
         height: 70px;
-        border-radius: 10px;
-        background: #f5f5f5;
+        border-radius: 12px;
+        background: var(--gray-100);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-right: 1rem;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+        border: 1px solid var(--gray-200);
+        transition: all 0.3s ease;
+    }
+    
+    .appointment-item:hover .appointment-date {
+        background: rgba(67, 97, 238, 0.05);
+        border-color: rgba(67, 97, 238, 0.2);
     }
 
     .date-day {
         font-size: 1.5rem;
         font-weight: 700;
         line-height: 1;
+        color: var(--gray-800);
     }
 
     .date-month {
         text-transform: uppercase;
         font-size: 0.8rem;
-        color: #777;
+        color: var(--gray-600);
+        font-weight: 500;
     }
 
     .appointment-details {
         flex: 1;
-    }
-
-    .appointment-details h6 {
+    }    .appointment-details h6 {
         margin-bottom: 0.25rem;
         font-weight: 600;
+        color: var(--gray-800);
+        transition: color 0.2s ease;
+    }
+    
+    .appointment-item:hover .appointment-details h6 {
+        color: var(--primary-color);
     }
 
     .appointment-status .badge {
         padding: 0.5rem 0.75rem;
         font-weight: 500;
+        border-radius: 30px;
     }
 
-    /* Quick Links Styles */
-    .quick-links-container {
+    /* Quick Links Styles */    .quick-links-container {
         background: white;
         border-radius: 1rem;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.05);
         overflow: hidden;
+        border: 1px solid var(--gray-200);
+        transition: all 0.3s ease;
+    }
+
+    .quick-links-container:hover {
+        box-shadow: 0 8px 24px rgba(67, 97, 238, 0.08);
     }
 
     .quick-links {
@@ -192,49 +295,109 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding: 1.25rem;
+        padding: 1.5rem 1.25rem;
         border-radius: 0.75rem;
-        background-color: #f8f9fa;
-        color: #495057;
+        background-color: var(--gray-100);
+        color: var(--gray-700);
         transition: all 0.3s;
         text-decoration: none;
         height: 100%;
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .quick-link-item::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     .quick-link-item:hover {
-        background-color: #e9ecef;
+        background-color: transparent;
         transform: translateY(-3px);
-        box-shadow: 0 5px 10px rgba(0,0,0,0.05);
-        color: #212529;
+        box-shadow: 0 5px 15px rgba(67, 97, 238, 0.15);
+        color: white;
+        border-color: rgba(67, 97, 238, 0.1);
+    }
+    
+    .quick-link-item:hover::after {
+        opacity: 1;
     }
 
     .quick-link-icon {
         font-size: 2rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
+        transition: transform 0.3s ease;
     }
 
     .quick-link-icon i {
-        color: #6c757d;
+        color: var(--primary-color);
+        transition: all 0.3s ease;
+    }
+
+    .quick-link-item:hover .quick-link-icon {
+        transform: scale(1.1);
     }
 
     .quick-link-item:hover .quick-link-icon i {
-        color: #495057;
-    }
-
-    /* Empty State Styles */
+        color: white;
+    }    /* Empty State Styles */
     .empty-state {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 3rem 1.5rem;
-        color: #6c757d;
+        color: var(--gray-600);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .empty-state::before {
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: var(--gray-100);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: 0.7;
     }
 
     .empty-state i {
         font-size: 3rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
         opacity: 0.7;
+        color: var(--gray-500);
+        animation: floatAnimation 3s ease-in-out infinite;
+    }
+
+    .empty-state p {
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    .empty-state .btn {
+        box-shadow: 0 4px 12px rgba(67, 97, 238, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    .empty-state .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(67, 97, 238, 0.25);
     }
 
     .empty-state.smaller {
@@ -242,16 +405,23 @@
     }
 
     .empty-state.smaller i {
-        font-size: 2rem;
+        font-size: 2.25rem;
+    }
+
+    .empty-state.smaller::before {
+        width: 80px;
+        height: 80px;
+    }    @@keyframes floatAnimation {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0); }
     }
 
     /* Animations */
     @@keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
-    }
-
-    @@keyframes slideUp {
+    }    @@keyframes slideUp {
         from { 
             opacity: 0; 
             transform: translateY(20px);
@@ -267,14 +437,80 @@
         50% { transform: scale(1.05); }
         100% { transform: scale(1); }
     }
-
-    /* Responsive adjustments */
-    @@media (max-width: 768px) {
+    
+    @@keyframes shimmer {
+        0% { background-position: -100% 0; }
+        100% { background-position: 100% 0; }
+    }
+    
+    @@keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }    /* Responsive adjustments */
+    @@media (max-width: 991.98px) {
+        .welcome-title {
+            font-size: 2.2rem;
+        }
+        .stat-card {
+            margin-bottom: 1.5rem;
+        }
+        .appointment-container {
+            margin-bottom: 1.5rem;
+        }
+        .quick-links {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @@media (max-width: 767.98px) {
         .welcome-title {
             font-size: 2rem;
         }
-        .stat-card {
-            margin-bottom: 1rem;
+        .dashboard-hero {
+            padding: 2rem 0;
+        }
+        .stat-number {
+            font-size: 2rem;
+        }
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+        }
+        .quick-links {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+    }
+    
+    @@media (max-width: 575.98px) {
+        .welcome-title {
+            font-size: 1.75rem;
+        }
+        .date-day {
+            font-size: 1.25rem;
+        }
+        .date-month {
+            font-size: 0.7rem;
+        }
+        .appointment-date {
+            min-width: 60px;
+            height: 60px;
+        }
+        .appointment-item {
+            padding: 1rem;
+        }
+        .stat-icon {
+            margin-bottom: 0.5rem;
+        }
+        .quick-link-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
     }
 </style>
@@ -303,12 +539,11 @@
                     <h1 class="welcome-title text-white">Welcome, @(string.IsNullOrEmpty(Model.StudentName) ? "Student" : Model.StudentName)!</h1>
                     <p class="welcome-subtitle text-white-50 mb-1">Your wellness journey at a glance</p>
                     <p class="text-white-50 small mb-4">Last updated: @(Model.LastUpdated.ToString("f"))</p>
-                    
-                    <div class="d-flex gap-2">
-                        <a asp-controller="Appointment" asp-action="Create" class="btn btn-light btn-lg">
+                      <div class="d-flex gap-2 flex-wrap">
+                        <a asp-controller="Appointment" asp-action="Create" class="btn btn-light btn-lg shadow-sm">
                             <i class="bi bi-calendar-plus me-2"></i>Schedule Session
                         </a>
-                        <a asp-controller="Resource" asp-action="Index" class="btn btn-outline-light">
+                        <a asp-controller="Resource" asp-action="Index" class="btn btn-outline-light shadow-sm">
                             <i class="bi bi-journal-bookmark me-2"></i>View Resources
                         </a>
                     </div>
@@ -323,29 +558,28 @@
     <!-- Dashboard Stats Section -->
     <div class="row g-4 mb-5">
         <div class="col-12 col-md-4">
-            <div class="stat-card upcoming text-white">
+            <div class="stat-card upcoming text-white" style="opacity: 1; transform: translateY(0);">
                 <div class="card-body p-4">
                     <div class="stat-icon">
                         <i class="bi bi-calendar-check"></i>
                     </div>
-                    <h3 class="stat-number">@(Model.UpcomingAppointments?.Count() ?? 0)</h3>
+                    <h3 class="stat-number">@(Model?.UpcomingAppointments?.Count() ?? 0)</h3>
                     <p class="stat-text">Upcoming Sessions</p>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-4">
-            <div class="stat-card past text-white">
+            <div class="stat-card past text-white" style="opacity: 1; transform: translateY(0);">
                 <div class="card-body p-4">
                     <div class="stat-icon">
                         <i class="bi bi-clock-history"></i>
-                    </div>
-                    <h3 class="stat-number">@(Model.PastAppointments?.Count() ?? 0)</h3>
+                    </div>                    <h3 class="stat-number">@(Model?.PastAppointments?.Count() ?? 0)</h3>
                     <p class="stat-text">Past Sessions</p>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md-4">
-            <div class="stat-card resources text-white">
+            <div class="stat-card resources text-white" style="opacity: 1; transform: translateY(0);">
                 <div class="card-body p-4">
                     <div class="stat-icon">
                         <i class="bi bi-journal-richtext"></i>
@@ -364,9 +598,8 @@
             <div class="appointment-container mb-4">
                 <div class="appointment-header">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0"><i class="bi bi-calendar2-week me-2"></i>Upcoming Appointments</h5>
-                        <a asp-controller="Appointment" asp-action="Index" class="btn btn-sm btn-primary rounded-pill">
-                            View all
+                        <h5 class="mb-0"><i class="bi bi-calendar2-week me-2"></i>Upcoming Appointments</h5>                        <a asp-controller="Appointment" asp-action="Index" class="btn btn-sm btn-primary rounded-pill shadow-sm">
+                            <i class="bi bi-list me-1"></i> View all
                         </a>
                     </div>
                 </div>
@@ -392,9 +625,8 @@
                                         <i class="bi bi-person me-1"></i>
                                         @(appointment?.Counsellor != null ? $"{appointment.Counsellor.FirstName} {appointment.Counsellor.LastName}" : "Counsellor")
                                     </p>
-                                </div>
-                                <div class="appointment-status ms-auto">
-                                    <span class="badge bg-primary">@(appointment?.Status ?? "Unknown")</span>
+                                </div>                                <div class="appointment-status ms-auto">
+                                    <span class="badge bg-primary shadow-sm">@(appointment?.Status ?? "Unknown")</span>
                                 </div>
                             </li>
                         }
@@ -404,9 +636,8 @@
                 {
                     <div class="empty-state">
                         <i class="bi bi-calendar-x"></i>
-                        <p>No upcoming appointments.</p>
-                        <a asp-controller="Appointment" asp-action="Create" class="btn btn-primary">
-                            Schedule New Appointment
+                        <p>No upcoming appointments.</p>                        <a asp-controller="Appointment" asp-action="Create" class="btn btn-primary shadow-sm">
+                            <i class="bi bi-calendar-plus me-2"></i>Schedule New Appointment
                         </a>
                     </div>
                 }
@@ -415,9 +646,8 @@
         
         <div class="col-12 col-lg-5">
             <!-- Past Appointments -->
-            <div class="appointment-container mb-4">
-                <div class="appointment-header">
-                    <h5 class="mb-0"><i class="bi bi-clock-history me-2"></i>Past Appointments</h5>
+            <div class="appointment-container mb-4">                <div class="appointment-header">
+                    <h5 class="mb-0"><i class="bi bi-clock-history me-2"></i>Past Sessions</h5>
                 </div>
                 
                 @if (Model.PastAppointments != null && Model.PastAppointments.Any())
@@ -436,10 +666,9 @@
                                         <i class="bi bi-person me-1"></i>
                                         @(appointment?.Counsellor != null ? $"{appointment.Counsellor.FirstName} {appointment.Counsellor.LastName}" : "Counsellor")
                                     </p>
-                                </div>
-                                <div class="appointment-status">
-                                    <a href="@Url.Action("Details", "Appointment", new { id = appointment?.Id })" class="btn btn-sm btn-outline-secondary">
-                                        Details
+                                </div>                                <div class="appointment-status">
+                                    <a href="@Url.Action("Details", "Appointment", new { id = appointment?.Id })" class="btn btn-sm btn-outline-primary rounded-pill">
+                                        <i class="bi bi-eye-fill me-1"></i> Details
                                     </a>
                                 </div>
                             </li>
@@ -493,6 +722,48 @@
     </div>
 </div>
 
-@section Scripts {
-    <script src="~/js/dashboard-enhancements.js"></script>
+@section Scripts {    <script>
+        // Wait for the DOM content to load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Ensure all dashboard elements are visible immediately
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach((card) => {
+                // Make sure cards are visible by default
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+                card.classList.add('animated');
+                
+                // Ensure icons are visible
+                const icon = card.querySelector('.stat-icon');
+                if (icon) {
+                    icon.style.opacity = '1';
+                }
+            });
+            
+            // Fix any appointment items that might not be displaying correctly
+            const appointmentItems = document.querySelectorAll('.appointment-item');
+            appointmentItems.forEach(item => {
+                // Ensure appointment items are visible
+                item.style.opacity = '1';
+                
+                // Add hover effects but don't rely on them for visibility
+                item.addEventListener('mouseenter', function() {
+                    const heading = this.querySelector('.appointment-details h6');
+                    if (heading) {
+                        heading.style.color = 'var(--primary-color)';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    const heading = this.querySelector('.appointment-details h6');
+                    if (heading) {
+                        heading.style.color = '';
+                    }
+                });
+            });
+            
+            // Log success to console for debugging
+            console.log('Dashboard initialization complete');
+        });
+    </script>
 }

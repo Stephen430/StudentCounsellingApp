@@ -1,0 +1,72 @@
+/* 
+ * Critical Dashboard CSS - Simplified Version
+ * This is a minimal version to ensure dashboard loads correctly
+ */
+
+/* Reset problematic styles */
+.stat-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    background: linear-gradient(135deg, #4361ee 0%, #3a8eff 100%);
+    border-radius: 1rem;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+    border: none;
+}
+
+.stat-card.past {
+    background: linear-gradient(135deg, #3a8eff 0%, #0096c7 100%);
+}
+
+.stat-card.resources {
+    background: linear-gradient(135deg, #0096c7 0%, #4361ee 100%);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.stat-text {
+    font-size: 1rem;
+    color: white;
+}
+
+.stat-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: rgba(255,255,255,0.15);
+    margin-bottom: 1rem;
+}
+
+.stat-icon i {
+    font-size: 1.75rem;
+    color: #fff;
+}
+
+.dashboard-hero {
+    background: linear-gradient(135deg, #4361ee 0%, #3a8eff 100%);
+    border-radius: 1rem;
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px rgba(67, 97, 238, 0.15);
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.welcome-subtitle {
+    color: rgba(255,255,255,0.9);
+}
