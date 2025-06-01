@@ -1066,418 +1066,188 @@
     }
 }
 
-/* Container Fluid Padding Fix */
-.container-fluid.px-4 {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+/* Enhanced appointment containers with better layout */
+.appointment-container {
+    background: white !important;
+    border-radius: 1.5rem !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    overflow: hidden !important;
+    margin-bottom: 2rem !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
 }
 
-/* Row Spacing Fixes */
-.row.g-4 {
-    margin-left: -0.75rem !important;
-    margin-right: -0.75rem !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
+.appointment-container:hover {
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-2px) !important;
 }
 
-.row.g-4 > * {
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
-    margin-bottom: 1.5rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.5rem !important;
+.appointment-header {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+    padding: 1.5rem 2rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    position: relative !important;
 }
 
-/* Stats Row Specific Fixes */
-.row.g-3 {
-    margin-left: -0.5rem !important;
-    margin-right: -0.5rem !important;
-}
-
-.row.g-3 > * {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-    margin-bottom: 1rem !important;
-}
-
-/* Animation Delays - Ensure proper spacing */
-.animated {
-    margin-bottom: 0 !important;
-}
-
-.delay-1,
-.delay-2,
-.delay-3,
-.delay-4 {
-    margin-bottom: 0 !important;
-}
-
-/* Empty State Spacing */
-.text-center.py-4 {
-    padding: 2rem 1rem !important;
-}
-
-/* Profile Header Contact Info Spacing */
-.profile-header .mt-4 {
-    margin-top: 1.5rem !important;
-}
-
-.profile-header .text-white-50 {
-    margin-bottom: 0 !important;
-    padding: 0 1rem;
-}
-
-/* Additional Enhanced Profile Page Styles */
-.profile-card-header h5 {
-    margin-bottom: 0 !important;
+.appointment-header h5 {
+    margin: 0 !important;
     font-weight: 700 !important;
-    font-size: 1.25rem !important;
-    color: #2d3748 !important;
-    display: flex;
-    align-items: center;
+    color: #1e293b !important;
+    font-size: 1.1rem !important;
 }
 
-.profile-card-header i {
-    margin-right: 0.75rem !important;
-    font-size: 1.25rem !important;
+.appointment-header i {
     color: #667eea !important;
-    padding: 0.5rem;
-    background: rgba(102, 126, 234, 0.1);
-    border-radius: 8px;
+    margin-right: 0.5rem !important;
 }
 
-/* Enhanced Profile Avatar */
-.profile-avatar {
-    width: 120px !important;
-    height: 120px !important;
-    margin: 0 auto 1.5rem !important;
-    position: relative;
-    z-index: 2;
+/* Enhanced appointment list items */
+.appointment-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-.profile-avatar-inner {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 50% !important;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+.appointment-item {
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
-    border: 4px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 1.5rem 2rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
     transition: all 0.3s ease !important;
+    position: relative !important;
 }
 
-.profile-avatar-inner:hover {
-    transform: scale(1.05) !important;
-    box-shadow: 0 12px 48px rgba(102, 126, 234, 0.4) !important;
+.appointment-item:last-child {
+    border-bottom: none !important;
 }
 
-.profile-avatar i {
-    font-size: 3rem !important;
-    color: white !important;
+.appointment-item:hover {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
+    transform: translateX(5px) !important;
 }
 
-/* Beautiful Profile Name and Badge */
-.profile-name {
-    font-size: 2.5rem !important;
-    font-weight: 800 !important;
-    margin-bottom: 0.5rem !important;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-}
-
-.profile-badge {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 2px solid rgba(255, 255, 255, 0.3) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    backdrop-filter: blur(10px) !important;
-    padding: 0.75rem 1.5rem !important;
-    border-radius: 50px !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    margin-bottom: 1rem !important;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Enhanced Profile Stats */
-.profile-stat {
-    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
-    border-radius: 16px !important;
-    padding: 2rem 1.5rem !important;
-    text-align: center;
-    border: 1px solid rgba(102, 126, 234, 0.1) !important;
-    transition: all 0.3s ease !important;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.profile-stat::before {
+.appointment-item::before {
     content: '';
     position: absolute;
-    top: 0;
     left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 0 2px 2px 0;
+    transition: height 0.3s ease;
 }
 
-.profile-stat:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.15) !important;
+.appointment-item:hover::before {
+    height: 60%;
 }
 
-.profile-stat-icon {
-    margin-bottom: 1rem !important;
-}
-
-.profile-stat-icon i {
-    font-size: 2.5rem !important;
-    color: #667eea !important;
-    padding: 1rem;
-    background: rgba(102, 126, 234, 0.1);
-    border-radius: 16px;
-}
-
-.profile-stat-value {
-    font-size: 2.25rem !important;
-    font-weight: 800 !important;
-    color: #2d3748 !important;
-    margin-bottom: 0.5rem !important;
-    line-height: 1;
-}
-
-.profile-stat-label {
-    font-weight: 600 !important;
-    color: #718096 !important;
-    font-size: 0.9rem !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Enhanced Info Rows */
-.profile-info-row {
-    padding: 1.25rem 0 !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
-    transition: all 0.2s ease;
-}
-
-.profile-info-row:hover {
-    background: rgba(102, 126, 234, 0.02);
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    border-radius: 8px;
-    margin: 0 -1rem;
-}
-
-.profile-info-row:last-child {
-    border-bottom: none !important;
-}
-
-.profile-info-label {
-    font-weight: 700 !important;
-    color: #2d3748 !important;
-    font-size: 0.9rem !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 0.25rem !important;
-}
-
-.profile-info-value {
-    font-weight: 500 !important;
-    color: #4a5568 !important;
-    font-size: 1rem !important;
-}
-
-/* Enhanced Action Buttons */
-.profile-action-btn {
-    margin: 0.5rem !important;
-    padding: 1rem 2rem !important;
-    border-radius: 50px !important;
-    font-weight: 600 !important;
-    font-size: 0.95rem !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    border: none !important;
-    position: relative;
-    overflow: hidden;
-}
-
-.profile-action-btn.btn-primary {
+/* Enhanced appointment date styling */
+.appointment-date {
+    min-width: 70px !important;
+    height: 70px !important;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
+    border-radius: 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 1.5rem !important;
+    color: white !important;
+    text-align: center !important;
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.25) !important;
+    transition: all 0.3s ease !important;
 }
 
-.profile-action-btn.btn-primary:hover {
-    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 12px 48px rgba(102, 126, 234, 0.4) !important;
+.appointment-item:hover .appointment-date {
+    transform: scale(1.05) !important;
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.35) !important;
 }
 
-.profile-action-btn.btn-outline-secondary {
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: 2px solid rgba(102, 126, 234, 0.2) !important;
+.date-day {
+    font-size: 1.4rem !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    margin-bottom: 0.1rem !important;
+}
+
+.date-month {
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    opacity: 0.9 !important;
+}
+
+/* Enhanced appointment details */
+.appointment-details {
+    flex: 1 !important;
+    margin-right: 1rem !important;
+}
+
+.appointment-details h6 {
+    margin-bottom: 0.5rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    font-size: 1rem !important;
+    transition: color 0.3s ease !important;
+}
+
+.appointment-item:hover .appointment-details h6 {
     color: #667eea !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
 }
 
-.profile-action-btn.btn-outline-secondary:hover {
+.appointment-details p {
+    margin-bottom: 0.25rem !important;
+    font-size: 0.875rem !important;
+    color: #64748b !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.appointment-details i {
+    margin-right: 0.5rem !important;
+    color: #94a3b8 !important;
+    width: 14px !important;
+    font-size: 0.8rem !important;
+}
+
+/* Enhanced appointment status */
+.appointment-status {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.appointment-status .badge {
+    padding: 0.5rem 1rem !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.25) !important;
+}
+
+.appointment-status .btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+    border: 2px solid #667eea !important;
+    color: #667eea !important;
+    background: transparent !important;
+}
+
+.appointment-status .btn:hover {
     background: #667eea !important;
     color: white !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
-}
-
-/* Enhanced Edit Button */
-.profile-edit-btn {
-    position: absolute !important;
-    right: 2rem !important;
-    top: 2rem !important;
-    background: rgba(255, 255, 255, 0.2) !important;
-    border: 2px solid rgba(255, 255, 255, 0.3) !important;
-    color: white !important;
-    padding: 0.75rem 1.5rem !important;
-    border-radius: 50px !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    backdrop-filter: blur(10px) !important;
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease !important;
-    z-index: 3;
-}
-
-.profile-edit-btn:hover {
-    background: white !important;
-    color: #667eea !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3) !important;
-}
-
-/* Enhanced Progress Bars */
-.progress {
-    height: 8px !important;
-    border-radius: 50px !important;
-    background: rgba(102, 126, 234, 0.1) !important;
-    margin-bottom: 1rem !important;
-    overflow: hidden;
-}
-
-.progress-bar {
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
-    border-radius: 50px !important;
-    transition: width 0.6s ease !important;
-}
-
-.progress-title {
-    font-weight: 700 !important;
-    color: #2d3748 !important;
-    font-size: 0.9rem !important;
-    margin-bottom: 0.5rem !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-/* Enhanced Alert Boxes */
-.alert {
-    margin-bottom: 0 !important;
-    padding: 1rem 1.5rem !important;
-    border-radius: 12px !important;
-    border: none !important;
-    font-weight: 500 !important;
-}
-
-.alert-info {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
-    color: #667eea !important;
-    border-left: 4px solid #667eea !important;
-}
-
-.alert-success {
-    background: linear-gradient(135deg, rgba(72, 187, 120, 0.1) 0%, rgba(56, 178, 172, 0.1) 100%) !important;
-    color: #38a169 !important;
-    border-left: 4px solid #38a169 !important;
-}
-
-/* Enhanced List Items */
-.list-group-item {
-    padding: 1.5rem !important;
-    border: none !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
-    background: transparent !important;
-    transition: all 0.2s ease !important;
-}
-
-.list-group-item:hover {
-    background: rgba(102, 126, 234, 0.02) !important;
-    padding-left: 2rem !important;
-    border-radius: 8px !important;
-}
-
-.list-group-item:last-child {
-    border-bottom: none !important;
-}
-
-.list-group-item h6 {
-    font-weight: 700 !important;
-    color: #2d3748 !important;
-    margin-bottom: 0.5rem !important;
-}
-
-.list-group-item .text-muted {
-    color: #718096 !important;
-    font-weight: 500 !important;
-}
-
-/* Animation Classes */
-.animated {
-    animation-duration: 0.8s;
-    animation-fill-mode: both;
-}
-
-.fadeInUp {
-    animation-name: fadeInUp;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-
-/* Empty State Styling */
-.text-center.py-4 {
-    padding: 3rem 2rem !important;
-}
-
-.text-center.py-4 i {
-    font-size: 4rem !important;
-    color: rgba(102, 126, 234, 0.2) !important;
-    margin-bottom: 1rem !important;
-}
-
-.text-center.py-4 p {
-    font-weight: 500 !important;
-    color: #718096 !important;
-    font-size: 1.1rem !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.3) !important;
 }
 
 /**
@@ -1694,30 +1464,52 @@
 }
 
 /**
- * Dashboard Index Page Padding Fixes
- * Fixing container padding, responsive spacing, and visual layout
+ * Dashboard Index Page Visual Repositioning & Layout Improvements
+ * Complete redesign for better visual hierarchy and modern appearance
  */
 
-/* Dashboard page container fixes */
-.dashboard-container {
-    padding: 0 !important;
-    margin: 0 !important;
-    width: 100% !important;
-    min-height: 100vh !important;
+/* Main dashboard page wrapper */
+.dashboard-page-wrapper {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
-/* Hero section container improvements */
+/* Enhanced hero section with better positioning */
 .dashboard-hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    padding: 3rem 0 !important;
-    margin-bottom: 0 !important;
-    border-radius: 0 !important;
+    padding: 4rem 0 3rem 0 !important;
+    margin-bottom: 3rem !important;
+    border-radius: 0 0 2rem 2rem !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
 }
 
-/* Fix container-fluid padding issues */
+.dashboard-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgZmlsbC1ydWxlPSJub256ZXJvIj48Y2lyY2xlIGN4PSIzIiBjeT0iMyIgcj0iMyIvPjxjaXJjbGUgY3g9IjEzIiBjeT0iMTMiIHI9IjEiLz48Y2lyY2xlIGN4PSIzMyIgY3k9IjUiIHI9IjIiLz48Y2lyY2xlIGN4PSI1MyIgY3k9IjEzIiByPSIyIi8+PGNpcmNsZSBjeD0iNDMiIGN5PSIzMyIgcj0iMyIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iNDMiIHI9IjIiLz48L2c+PC9nPjwvc3ZnPg==') repeat;
+    opacity: 0.3;
+    animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Container improvements with better spacing */
 .container-fluid.px-4 {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -1727,20 +1519,101 @@
     }
     
     .dashboard-hero {
-        padding: 2rem 0 !important;
+        padding: 2.5rem 0 2rem 0 !important;
+        margin-bottom: 2rem !important;
+        border-radius: 0 0 1.5rem 1.5rem !important;
     }
 }
 
-/* Stats section responsive improvements */
-.row.g-4.mb-5 {
-    margin-bottom: 2rem !important;
+/* Enhanced welcome section with better typography */
+.welcome-title {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 1rem !important;
+    color: white !important;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+    letter-spacing: -0.02em !important;
+    line-height: 1.1 !important;
+}
+
+.welcome-subtitle {
+    font-size: 1.2rem !important;
+    opacity: 0.9 !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 400 !important;
+}
+
+/* Enhanced action buttons with better positioning */
+.dashboard-hero .d-flex.gap-2 {
     gap: 1rem !important;
+    margin-top: 2rem !important;
+}
+
+.dashboard-hero .btn {
+    padding: 0.875rem 2rem !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-transform: none !important;
+    letter-spacing: 0.025em !important;
+}
+
+.dashboard-hero .btn-light {
+    background: rgba(255,255,255,0.95) !important;
+    border: 2px solid rgba(255,255,255,0.3) !important;
+    color: #667eea !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.dashboard-hero .btn-light:hover {
+    background: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+    border-color: white !important;
+}
+
+.dashboard-hero .btn-outline-light {
+    background: rgba(255,255,255,0.1) !important;
+    border: 2px solid rgba(255,255,255,0.4) !important;
+    color: white !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.dashboard-hero .btn-outline-light:hover {
+    background: rgba(255,255,255,0.2) !important;
+    border-color: rgba(255,255,255,0.6) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important;
 }
 
 @media (max-width: 768px) {
-    .row.g-4.mb-5 {
-        margin-bottom: 1.5rem !important;
+    .welcome-title {
+        font-size: 2.2rem !important;
+    }
+    
+    .dashboard-hero .btn {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome-title {
+        font-size: 1.9rem !important;
+    }
+    
+    .dashboard-hero .d-flex.gap-2 {
+        flex-direction: column !important;
+        align-items: stretch !important;
         gap: 0.75rem !important;
+    }
+    
+    .dashboard-hero .btn {
+        width: 100% !important;
+        text-align: center !important;
     }
 }
 
@@ -1775,121 +1648,240 @@
     }
 }
 
-/* Appointment container improvements */
-.appointment-container {
+/* Enhanced stats section with better positioning */
+.row.g-4.mb-5 {
+    margin-bottom: 3rem !important;
+    gap: 1.5rem !important;
+    justify-content: center !important;
+}
+
+/* Redesigned stat cards with modern positioning */
+.stat-card {
+    border-radius: 1.5rem !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+    border: none !important;
+    overflow: hidden !important;
+    position: relative !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;    -webkit-backdrop-filter: blur(20px) !important;
+    backdrop-filter: blur(20px) !important;
+    height: 180px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    z-index: 1;
+}
+
+.stat-card .card-body {
+    position: relative !important;
+    z-index: 2 !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Enhanced stat icons with better positioning */
+.stat-icon {
+    width: 70px !important;
+    height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    background: rgba(255,255,255,0.2) !important;
+    margin: 0 auto 1.5rem auto !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+    transition: all 0.4s ease !important;
+}
+
+.stat-card:hover .stat-icon {
+    transform: rotate(10deg) scale(1.1) !important;
+    background: rgba(255,255,255,0.3) !important;
+}
+
+.stat-icon i {
+    font-size: 2rem !important;
+    color: white !important;
+}
+
+/* Enhanced stat numbers with better typography */
+.stat-number {
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 0.5rem !important;
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+    line-height: 1 !important;
+}
+
+.stat-text {
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    margin: 0 !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+/* Individual card color schemes with gradients */
+.stat-card.upcoming {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.stat-card.past {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%) !important;
+}
+
+.stat-card.resources {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%) !important;
+}
+
+@media (max-width: 768px) {
+    .row.g-4.mb-5 {
+        margin-bottom: 2rem !important;
+        gap: 1rem !important;
+    }
+    
+    .stat-card {
+        height: 160px !important;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem !important;
+    }
+    
+    .stat-icon {
+        width: 60px !important;
+        height: 60px !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .stat-icon i {
+        font-size: 1.6rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-card {
+        height: 140px !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .stat-card .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    .stat-number {
+        font-size: 2rem !important;
+    }
+    
+    .stat-text {
+        font-size: 0.9rem !important;
+    }
+}
+
+/**
+ * Enhanced empty state styling
+ */
+.empty-state {
+    text-align: center !important;
+    padding: 3rem 2rem !important;
+    color: #64748b !important;
+    position: relative !important;
+}
+
+.empty-state::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.empty-state i {
+    font-size: 3rem !important;
+    color: #cbd5e1 !important;
+    margin-bottom: 1rem !important;
+    display: block !important;
+}
+
+.empty-state p {
+    font-size: 1rem !important;
     margin-bottom: 1.5rem !important;
-    border-radius: 1rem !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06) !important;
+    font-weight: 500 !important;
+}
+
+.empty-state.smaller {
+    padding: 2rem 1.5rem !important;
+}
+
+.empty-state.smaller i {
+    font-size: 2.5rem !important;
+}
+
+.empty-state.smaller::before {
+    width: 100px;
+    height: 100px;
+}
+
+/**
+ * Enhanced quick links container
+ */
+.quick-links-container {
+    background: white !important;
+    border-radius: 1.5rem !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     overflow: hidden !important;
     transition: all 0.3s ease !important;
 }
 
-.appointment-container:hover {
+.quick-links-container:hover {
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1) !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Appointment header padding */
-.appointment-header {
-    padding: 1.5rem 2rem !important;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
-    border-bottom: 2px solid rgba(102, 126, 234, 0.1) !important;
-}
-
-@media (max-width: 768px) {
-    .appointment-header {
-        padding: 1.25rem 1.5rem !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .appointment-header {
-        padding: 1rem 1.25rem !important;
-    }
-}
-
-/* Appointment list item padding */
-.appointment-item {
-    padding: 1.5rem 2rem !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
-    transition: all 0.2s ease !important;
-}
-
-.appointment-item:last-child {
-    border-bottom: none !important;
-}
-
-.appointment-item:hover {
-    background-color: rgba(102, 126, 234, 0.02) !important;
-    transform: translateX(4px) !important;
-}
-
-@media (max-width: 768px) {
-    .appointment-item {
-        padding: 1.25rem 1.5rem !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .appointment-item {
-        padding: 1rem 1.25rem !important;
-    }
-}
-
-/* Quick links container improvements */
-.quick-links-container {
-    border-radius: 1rem !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06) !important;
-    border: 1px solid rgba(0, 0, 0, 0.05) !important;
-    overflow: hidden !important;
-    margin-bottom: 0 !important;
 }
 
 .quick-links-container .card-body {
     padding: 2rem !important;
 }
 
-@media (max-width: 768px) {
-    .quick-links-container .card-body {
-        padding: 1.5rem !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .quick-links-container .card-body {
-        padding: 1.25rem !important;
-    }
-}
-
-/* Quick links grid responsive improvements */
+/* Enhanced quick links grid */
 .quick-links {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
+    gap: 1.5rem !important;
 }
 
-@media (max-width: 768px) {
-    .quick-links {
-        gap: 0.75rem !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .quick-links {
-        grid-template-columns: 1fr !important;
-        gap: 0.5rem !important;
-    }
-}
-
-/* Quick link item improvements */
 .quick-link-item {
-    padding: 1.5rem 1.25rem !important;
-    border-radius: 0.75rem !important;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 2rem 1.5rem !important;
+    border-radius: 1rem !important;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%) !important;
     border: 2px solid transparent !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     text-decoration: none !important;
+    color: #475569 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
     position: relative !important;
     overflow: hidden !important;
 }
@@ -1901,226 +1893,267 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
-.quick-link-item:hover {
-    transform: translateY(-4px) !important;
-    border-color: rgba(102, 126, 234, 0.2) !important;
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15) !important;
-    color: white !important;
 }
 
 .quick-link-item:hover::before {
     opacity: 1;
 }
 
-.quick-link-item:hover .quick-link-icon i {
-    color: white !important;
+.quick-link-item:hover {
+    transform: translateY(-3px) !important;
+    border-color: rgba(102, 126, 234, 0.2) !important;
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.15) !important;
+    color: #667eea !important;
+    text-decoration: none !important;
 }
 
-@media (max-width: 768px) {
-    .quick-link-item {
-        padding: 1.25rem 1rem !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .quick-link-item {
-        padding: 1rem 0.75rem !important;
-    }
-}
-
-/* Quick link icon improvements */
 .quick-link-icon {
-    font-size: 2rem !important;
-    margin-bottom: 0.75rem !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 1rem !important;
     transition: all 0.3s ease !important;
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.25) !important;
+}
+
+.quick-link-item:hover .quick-link-icon {
+    transform: scale(1.1) rotate(5deg) !important;
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.35) !important;
 }
 
 .quick-link-icon i {
-    color: #667eea !important;
-    transition: all 0.3s ease !important;
+    font-size: 1.5rem !important;
+    color: white !important;
 }
 
-@media (max-width: 768px) {
-    .quick-link-icon {
-        font-size: 1.75rem !important;
-        margin-bottom: 0.5rem !important;
-    }
+.quick-link-item span {
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
-@media (max-width: 576px) {
-    .quick-link-icon {
-        font-size: 1.5rem !important;
-        margin-bottom: 0.25rem !important;
-    }
-}
-
-/* Empty state improvements */
-.empty-state {
-    padding: 3rem 1.5rem !important;
-    text-align: center !important;
-}
-
-.empty-state.smaller {
-    padding: 2rem 1.5rem !important;
-}
-
-@media (max-width: 768px) {
-    .empty-state {
-        padding: 2rem 1rem !important;
+/* Responsive adjustments for quick links */
+@media (max-width: 991.98px) {
+    .quick-links {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
     }
     
-    .empty-state.smaller {
+    .quick-link-item {
         padding: 1.5rem 1rem !important;
     }
 }
 
-/* Welcome title responsive improvements */
-.welcome-title {
-    font-size: 2.5rem !important;
-    font-weight: 800 !important;
-    margin-bottom: 0.5rem !important;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-}
-
-@media (max-width: 992px) {
-    .welcome-title {
-        font-size: 2.25rem !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .welcome-title {
-        font-size: 2rem !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .welcome-title {
-        font-size: 1.75rem !important;
-        margin-bottom: 0.25rem !important;
-    }
-}
-
-/* Hero action buttons improvements */
-.dashboard-hero .d-flex.gap-2 {
-    gap: 0.75rem !important;
-}
-
-.dashboard-hero .btn {
-    padding: 0.875rem 2rem !important;
-    border-radius: 10px !important;
-    font-weight: 600 !important;
-    transition: all 0.3s ease !important;
-}
-
-@media (max-width: 768px) {
-    .dashboard-hero .btn {
-        padding: 0.75rem 1.5rem !important;
-        font-size: 0.9rem !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .dashboard-hero .d-flex.gap-2 {
-        flex-direction: column !important;
-        gap: 0.5rem !important;
+@media (max-width: 767.98px) {
+    .appointment-container {
+        margin-bottom: 1.5rem !important;
     }
     
-    .dashboard-hero .btn {
-        padding: 0.75rem 1.25rem !important;
-        font-size: 0.85rem !important;
-        width: 100% !important;
+    .appointment-header {
+        padding: 1.25rem 1.5rem !important;
     }
-}
-
-/* Main content area spacing */
-.row.g-4 {
-    gap: 1.5rem !important;
-}
-
-@media (max-width: 768px) {
-    .row.g-4 {
-        gap: 1rem !important;
+    
+    .appointment-item {
+        padding: 1.25rem 1.5rem !important;
     }
-}
-
-@media (max-width: 576px) {
-    .row.g-4 {
-        gap: 0.75rem !important;
-    }
-}
-
-/* Appointment date styling improvements */
-.appointment-date {
-    min-width: 70px !important;
-    height: 70px !important;
-    margin-right: 1rem !important;
-    border-radius: 12px !important;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
-    border: 2px solid rgba(102, 126, 234, 0.1) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
-    transition: all 0.3s ease !important;
-}
-
-.appointment-item:hover .appointment-date {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(102, 126, 234, 0.05) 100%) !important;
-    border-color: rgba(102, 126, 234, 0.3) !important;
-    transform: scale(1.05) !important;
-}
-
-@media (max-width: 768px) {
+    
     .appointment-date {
         min-width: 60px !important;
         height: 60px !important;
-        margin-right: 0.75rem !important;
+        margin-right: 1rem !important;
     }
-}
-
-@media (max-width: 576px) {
-    .appointment-date {
-        min-width: 50px !important;
-        height: 50px !important;
-        margin-right: 0.5rem !important;
-    }
-}
-
-/* Date text improvements */
-.date-day {
-    font-size: 1.5rem !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    color: #374151 !important;
-}
-
-.date-month {
-    font-size: 0.8rem !important;
-    text-transform: uppercase !important;
-    color: #6b7280 !important;
-    font-weight: 500 !important;
-}
-
-@media (max-width: 768px) {
+    
     .date-day {
-        font-size: 1.25rem !important;
+        font-size: 1.2rem !important;
     }
     
     .date-month {
         font-size: 0.7rem !important;
     }
-}
-
-@media (max-width: 576px) {
-    .date-day {
-        font-size: 1.1rem !important;
+    
+    .quick-links {
+        gap: 0.75rem !important;
     }
     
-    .date-month {
-        font-size: 0.65rem !important;
+    .quick-link-item {
+        padding: 1.25rem 0.75rem !important;
+    }
+    
+    .quick-link-icon {
+        width: 50px !important;
+        height: 50px !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .quick-link-icon i {
+        font-size: 1.25rem !important;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .appointment-item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+    }
+    
+    .appointment-date {
+        align-self: center !important;
+        margin-right: 0 !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .appointment-details {
+        margin-right: 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .appointment-status {
+        align-self: center !important;
+    }
+}
+
+/* Final layout improvements and positioning fixes */
+/* Better main content grid positioning */
+.row.g-4:not(.mb-5) {
+    gap: 2rem !important;
+    margin-bottom: 3rem !important;
+}
+
+/* Enhanced section spacing */
+.col-12.col-lg-7 {
+    padding-right: 1rem !important;
+}
+
+.col-12.col-lg-5 {
+    padding-left: 1rem !important;
+}
+
+/* Improved button styling throughout */
+.btn-primary.shadow-sm {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.25) !important;
+    border-radius: 50px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary.shadow-sm:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.35) !important;
+}
+
+.btn-sm.btn-primary.rounded-pill {
+    padding: 0.5rem 1.25rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.25) !important;
+}
+
+.btn-sm.btn-primary.rounded-pill:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.35) !important;
+}
+
+/* Enhanced scrollbar styling */
+.appointment-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.appointment-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.appointment-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.appointment-list::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: 3px;
+}
+
+.appointment-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.5);
+}
+
+/* Enhanced accessibility and focus states */
+.quick-link-item:focus,
+.appointment-status .btn:focus,
+.btn:focus {
+    outline: 2px solid #667eea !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+}
+
+/* Dark mode considerations */
+@media (prefers-color-scheme: dark) {
+    .dashboard-page-wrapper {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    }
+    
+    .appointment-container,
+    .quick-links-container {
+        background: #334155 !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    .appointment-header {
+        background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%) !important;
+    }
+    
+    .appointment-header h5 {
+        color: #f7fafc !important;
+    }
+    
+    .appointment-details h6 {
+        color: #f7fafc !important;
+    }
+    
+    .appointment-details p {
+        color: #a0aec0 !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .dashboard-page-wrapper {
+        background: white !important;
+    }
+      .dashboard-hero {
+        background: #667eea !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .stat-card {
+        page-break-inside: avoid !important;
+    }
+    
+    .appointment-container {
+        page-break-inside: avoid !important;
+    }
+}
+
+/* Animation performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
