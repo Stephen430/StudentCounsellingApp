@@ -4,7 +4,13 @@
     ViewData["Title"] = "Login";
 }
 
-<div class="row justify-content-center">
+@section Styles {
+    <link rel="stylesheet" href="~/css/appointment-fix.css" />
+}
+
+<div class="account-form-container">
+    <div class="container">
+        <div class="row justify-content-center">
     <div class="col-md-5">
         <div class="card shadow-sm">
             <div class="card-header bg-primary text-white">
@@ -35,12 +41,11 @@
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>
-                </form>
-
-                <div class="mt-3 text-center">
+                </form>                <div class="mt-3 text-center">
                     <p>Don't have an account? <a asp-action="Register">Register</a></p>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>

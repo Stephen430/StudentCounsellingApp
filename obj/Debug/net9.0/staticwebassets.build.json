@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "f4QTLbTZpg5zNlbZIjJBLF4kokOf5zu6U5EpInsJy+A=",
+  "Hash": "q7G/W/8HDfU6XdO5boXPW4r2qmX1U6FYIuYmMaK+OGs=",
   "Source": "StudentCounsellingApp",
   "BasePath": "_content/StudentCounsellingApp",
   "Mode": "Default",
@@ -120,6 +120,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\academic-support-advanced.css"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\obj\\Debug\\net9.0\\compressed\\9hxwfqugai-y5tejh6hdl.gz",
+      "SourceId": "StudentCounsellingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/StudentCounsellingApp",
+      "RelativePath": "css/appointment-fix#[.{fingerprint=y5tejh6hdl}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\appointment-fix.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "ic72d7vk41",
+      "Integrity": "TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\appointment-fix.css"
     },
     {
       "Identity": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\obj\\Debug\\net9.0\\compressed\\az6xwzr50d-uj4gcw6106.gz",
@@ -498,6 +519,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\academic-support-advanced.css"
+    },
+    {
+      "Identity": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\appointment-fix.css",
+      "SourceId": "StudentCounsellingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\",
+      "BasePath": "_content/StudentCounsellingApp",
+      "RelativePath": "css/appointment-fix#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "y5tejh6hdl",
+      "Integrity": "2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\appointment-fix.css"
     },
     {
       "Identity": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\career-guidance-advanced.css",
@@ -1237,6 +1279,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-qSQ+9nFVX6cZ8zT0WlLToTt4/ZsgDrmR1TXm0xGnwCE="
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.css",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\obj\\Debug\\net9.0\\compressed\\9hxwfqugai-y5tejh6hdl.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000137174211"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7289"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY="
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.css",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\appointment-fix.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51658"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY="
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.css.gz",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\obj\\Debug\\net9.0\\compressed\\9hxwfqugai-y5tejh6hdl.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7289"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU="
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.y5tejh6hdl.css",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\obj\\Debug\\net9.0\\compressed\\9hxwfqugai-y5tejh6hdl.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000137174211"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7289"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y5tejh6hdl"
+        },
+        {
+          "Name": "label",
+          "Value": "css/appointment-fix.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY="
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.y5tejh6hdl.css",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\appointment-fix.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51658"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y5tejh6hdl"
+        },
+        {
+          "Name": "label",
+          "Value": "css/appointment-fix.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY="
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.y5tejh6hdl.css.gz",
+      "AssetFile": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\obj\\Debug\\net9.0\\compressed\\9hxwfqugai-y5tejh6hdl.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7289"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y5tejh6hdl"
+        },
+        {
+          "Name": "label",
+          "Value": "css/appointment-fix.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU="
         }
       ]
     },

@@ -1,0 +1,2126 @@
+/**
+ * Appointment Create Page Padding Fixes
+ * Addressing spacing and padding issues for better visual layout
+ */
+
+/* Fix container padding on smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .col-md-8 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+}
+
+/* Improve card padding and spacing */
+.appointment-create .dashboard-card {
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.appointment-create .card-header {
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-bottom: 2px solid rgba(67, 97, 238, 0.1);
+}
+
+.appointment-create .card-body {
+    padding: 2rem;
+}
+
+/* Improve form field spacing */
+.appointment-create .mb-3 {
+    margin-bottom: 1.75rem !important;
+}
+
+.appointment-create .form-label {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.appointment-create .form-control,
+.appointment-create .form-select {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.appointment-create .form-control:focus,
+.appointment-create .form-select:focus {
+    border-color: #4361ee;
+    box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.15);
+    outline: none;
+}
+
+/* Textarea specific styling */
+.appointment-create textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+/* Button container spacing */
+.appointment-create .d-flex.justify-content-between {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.appointment-create .btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.appointment-create .btn-primary {
+    background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+    border: none;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+
+.appointment-create .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(67, 97, 238, 0.4);
+}
+
+.appointment-create .btn-secondary {
+    background: #6c757d;
+    border: none;
+    color: white;
+}
+
+.appointment-create .btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Small text and help text styling */
+.appointment-create .text-muted {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    color: #6b7280 !important;
+}
+
+/* Validation error styling */
+.appointment-create .text-danger {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* Select dropdown styling improvements */
+.appointment-create .form-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 16px 12px;
+}
+
+/* Icon spacing in header */
+.appointment-create .card-header i {
+    margin-right: 0.75rem;
+    color: #4361ee;
+}
+
+/* Responsive improvements */
+@media (max-width: 576px) {
+    .appointment-create .card-body {
+        padding: 1.5rem;
+    }
+    
+    .appointment-create .card-header {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .appointment-create .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .appointment-create .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Additional padding fixes for edge cases */
+.appointment-create .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.appointment-create .col-md-8 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Ensure proper spacing around validation summary */
+.appointment-create .text-danger:not(.field-validation-error) {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Fix icon alignment in buttons */
+.appointment-create .btn i {
+    vertical-align: baseline;
+    margin-right: 0.5rem;
+}
+
+/* Improve overall form container spacing */
+.appointment-create form {
+    position: relative;
+}
+
+/* Add subtle visual feedback for form interaction */
+.appointment-create .form-control:hover {
+    border-color: #d1d5db;
+}
+
+.appointment-create .form-select:hover {
+    border-color: #d1d5db;
+}
+
+/* Ensure consistent spacing in all form groups */
+.appointment-create .mb-3:last-of-type {
+    margin-bottom: 0 !important;
+}
+
+/**
+ * Student Edit Page Padding Fixes
+ * Extending the appointment fixes to include student profile editing
+ */
+
+/* Student Edit Page Styles */
+.student-edit-container {
+    padding: 2rem 0;
+}
+
+.student-edit-container .container {
+    max-width: 1200px;
+}
+
+/* Fix container padding on smaller screens for student edit */
+@media (max-width: 768px) {
+    .student-edit-container .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .student-edit-container .col-md-8,
+    .student-edit-container .col-md-4 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+}
+
+/* Page title styling */
+.student-edit-container .display-4 {
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Card improvements */
+.student-edit-container .card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.student-edit-container .card-body {
+    padding: 2rem;
+}
+
+.student-edit-container .card-header {
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-bottom: 2px solid rgba(67, 97, 238, 0.1);
+    font-weight: 600;
+}
+
+/* Form group improvements */
+.student-edit-container .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.student-edit-container .row.mb-3 {
+    margin-bottom: 2rem !important;
+}
+
+.student-edit-container .form-label {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+/* Form control styling */
+.student-edit-container .form-control,
+.student-edit-container .form-select {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.student-edit-container .form-control:focus,
+.student-edit-container .form-select:focus {
+    border-color: #4361ee;
+    box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.15);
+    outline: none;
+}
+
+.student-edit-container .form-control:hover,
+.student-edit-container .form-select:hover {
+    border-color: #d1d5db;
+}
+
+/* Button styling */
+.student-edit-container .btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.student-edit-container .btn-primary {
+    background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+    border: none;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+
+.student-edit-container .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(67, 97, 238, 0.4);
+}
+
+.student-edit-container .btn-outline-secondary {
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    background: transparent;
+}
+
+.student-edit-container .btn-outline-secondary:hover {
+    background: #6c757d;
+    border-color: #6c757d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Button container spacing */
+.student-edit-container .form-group.d-flex {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Validation error styling */
+.student-edit-container .text-danger {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+/* Validation summary styling */
+.student-edit-container .text-danger:not(.field-validation-error) {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Icon alignment in buttons */
+.student-edit-container .btn i {
+    vertical-align: baseline;
+    margin-right: 0.5rem;
+}
+
+/* Side panel styling */
+.student-edit-container .col-md-4 .card-body {
+    padding: 1.5rem;
+}
+
+.student-edit-container .col-md-4 ul {
+    padding-left: 1.25rem;
+    margin-bottom: 0;
+}
+
+.student-edit-container .col-md-4 li {
+    margin-bottom: 0.5rem;
+    color: #64748b;
+}
+
+/* Responsive improvements for student edit */
+@media (max-width: 576px) {
+    .student-edit-container .display-4 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .student-edit-container .card-body {
+        padding: 1.5rem;
+    }
+    
+    .student-edit-container .card-header {
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .student-edit-container .form-group.d-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .student-edit-container .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .student-edit-container .row.mb-3 {
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+/* Additional responsive fixes for very small screens */
+@media (max-width: 480px) {
+    .student-edit-container .container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    .student-edit-container .col-md-8,
+    .student-edit-container .col-md-4 {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+    }
+    
+    .student-edit-container .form-group {
+        margin-bottom: 1.25rem;
+    }
+}
+
+/* Improve spacing between nested form rows */
+.student-edit-container .row .col-md-6 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+@media (max-width: 767px) {
+    .student-edit-container .row .col-md-6 {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Enhanced focus states for accessibility */
+.student-edit-container .form-control:focus-visible,
+.student-edit-container .form-select:focus-visible {
+    outline: 2px solid #4361ee;
+    outline-offset: 2px;
+}
+
+.student-edit-container .btn:focus-visible {
+    outline: 2px solid #4361ee;
+    outline-offset: 2px;
+}
+
+/**
+ * Account Forms (Login/Register) Padding Fixes
+ * Consistent styling for authentication forms
+ */
+
+/* Account forms container */
+.account-form-container {
+    padding: 3rem 0;
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+}
+
+/* Account form card improvements */
+.account-form-container .card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.account-form-container .card-header {
+    padding: 2rem;
+    background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+    border: none;
+}
+
+.account-form-container .card-header h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+.account-form-container .card-body {
+    padding: 2rem;
+}
+
+/* Form styling for account forms */
+.account-form-container .form-label {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.account-form-container .form-control {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.account-form-container .form-control:focus {
+    border-color: #4361ee;
+    box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.15);
+    outline: none;
+}
+
+.account-form-container .form-control:hover {
+    border-color: #d1d5db;
+}
+
+/* Form group spacing */
+.account-form-container .mb-3 {
+    margin-bottom: 1.75rem !important;
+}
+
+.account-form-container .row .col-md-6 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+/* Button styling */
+.account-form-container .btn-primary {
+    background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+    border: none;
+    padding: 0.875rem 1.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+
+.account-form-container .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(67, 97, 238, 0.4);
+}
+
+.account-form-container .d-grid {
+    margin-top: 2rem;
+}
+
+/* Link styling */
+.account-form-container .mt-3 {
+    margin-top: 2rem !important;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.account-form-container .mt-3 a {
+    color: #4361ee;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.account-form-container .mt-3 a:hover {
+    color: #3f37c9;
+    text-decoration: underline;
+}
+
+/* Validation error styling for account forms */
+.account-form-container .text-danger {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.account-form-container .text-danger:not(.field-validation-error) {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive improvements for account forms */
+@media (max-width: 768px) {
+    .account-form-container {
+        padding: 2rem 0;
+    }
+    
+    .account-form-container .card {
+        margin: 0 1rem;
+    }
+    
+    .account-form-container .card-header,
+    .account-form-container .card-body {
+        padding: 1.5rem;
+    }
+    
+    .account-form-container .row .col-md-6 {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .account-form-container .card-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .account-form-container .card-header,
+    .account-form-container .card-body {
+        padding: 1.25rem;
+    }
+}
+
+/* =============================================================================
+   STUDENT PROFILE PAGE FIXES
+   Comprehensive padding and spacing improvements for profile layout
+   ============================================================================= */
+
+/* ================================
+   ENHANCED PROFILE PAGE DESIGN
+   ================================ */
+
+/* Profile Page Container */
+.profile-page-container {
+    padding: 1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* Beautiful Profile Header */
+.profile-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 20px !important;
+    padding: 3rem 2rem !important;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    text-align: center;
+}
+
+.profile-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDYwIDAgTCAwIDAgMCA2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIgLz48L3N2Zz4=') repeat;
+    opacity: 0.1;
+}
+
+/* Modern Profile Cards */
+.profile-card {
+    margin-bottom: 2rem;
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.15) !important;
+}
+
+.profile-card .card-body {
+    padding: 2rem !important;
+    background: transparent;
+}
+
+.profile-card-header {
+    padding: 1.5rem 2rem !important;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.1) !important;
+    border-radius: 16px 16px 0 0 !important;
+}
+
+/* Profile Info Row Spacing */
+.profile-info-row {
+    padding: 1rem 0 !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.profile-info-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0 !important;
+}
+
+/* Profile Stats Spacing */
+.profile-stat {
+    padding: 1.25rem !important;
+    margin-bottom: 0;
+}
+
+/* Action Buttons Spacing */
+.profile-action-btn {
+    margin: 0.5rem !important;
+    padding: 0.75rem 1.5rem !important;
+}
+
+/* Avatar and Header Content */
+.profile-avatar {
+    margin-bottom: 1.5rem !important;
+}
+
+.profile-name {
+    margin-bottom: 0.5rem !important;
+}
+
+.profile-badge {
+    margin-bottom: 1rem !important;
+}
+
+/* Recent Activity List Spacing */
+.list-group-item {
+    padding: 1rem !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.list-group-item:last-child {
+    border-bottom: none !important;
+}
+
+/* Progress Section Spacing */
+.progress-title {
+    margin-bottom: 0.5rem !important;
+}
+
+.progress {
+    margin-bottom: 1rem !important;
+}
+
+/* Alert Box Spacing */
+.alert {
+    margin-bottom: 0 !important;
+    padding: 0.75rem 1rem !important;
+}
+
+/* Edit Button Positioning */
+.profile-edit-btn {
+    right: 2rem !important;
+    top: 2rem !important;
+    padding: 0.5rem 1rem !important;
+}
+
+/* Responsive Profile Fixes */
+@media (max-width: 768px) {
+    .profile-header {
+        padding: 2rem 1.5rem !important;
+        margin-bottom: 1.5rem;
+    }
+    
+    .profile-card .card-body {
+        padding: 1.25rem !important;
+    }
+    
+    .profile-card-header {
+        padding: 1rem !important;
+    }
+    
+    .profile-info-row {
+        padding: 0.75rem 0 !important;
+    }
+    
+    .profile-stat {
+        padding: 1rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    .profile-action-btn {
+        margin: 0.25rem !important;
+        padding: 0.625rem 1.25rem !important;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .profile-edit-btn {
+        right: 1.5rem !important;
+        top: 1.5rem !important;
+        padding: 0.375rem 0.75rem !important;
+        font-size: 0.875rem;
+    }
+    
+    .profile-avatar {
+        width: 120px !important;
+        height: 120px !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .profile-name {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-header {
+        padding: 1.5rem 1rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    .profile-card .card-body {
+        padding: 1rem !important;
+    }
+    
+    .profile-card-header {
+        padding: 0.875rem !important;
+    }
+    
+    .profile-info-row {
+        padding: 0.625rem 0 !important;
+    }
+    
+    .profile-stat {
+        padding: 0.875rem !important;
+        margin-bottom: 0.75rem;
+    }
+    
+    .profile-action-btn {
+        margin: 0.25rem 0 !important;
+        padding: 0.5rem 1rem !important;
+    }
+    
+    .profile-edit-btn {
+        right: 1rem !important;
+        top: 1rem !important;
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.75rem;
+    }
+    
+    .profile-avatar {
+        width: 100px !important;
+        height: 100px !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .profile-name {
+        font-size: 1.75rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .list-group-item {
+        padding: 0.75rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-header {
+        padding: 1rem 0.75rem !important;
+    }
+    
+    .profile-card .card-body {
+        padding: 0.875rem !important;
+    }
+    
+    .profile-card-header {
+        padding: 0.75rem !important;
+    }
+    
+    .profile-stat {
+        padding: 0.75rem !important;
+    }
+    
+    .profile-stat-value {
+        font-size: 2rem !important;
+    }
+    
+    .profile-action-btn {
+        padding: 0.5rem 0.875rem !important;
+        font-size: 0.875rem;
+    }
+}
+
+/* ================================
+   RESPONSIVE DESIGN FOR PROFILE PAGE
+   ================================ */
+
+/* Tablet Responsive (768px and below) */
+@media (max-width: 768px) {
+    .profile-page-container {
+        padding: 0.5rem !important;
+    }
+    
+    .profile-header {
+        padding: 2rem 1.5rem !important;
+        border-radius: 16px !important;
+        margin-bottom: 1.5rem;
+    }
+    
+    .profile-name {
+        font-size: 2rem !important;
+    }
+    
+    .profile-avatar {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .profile-avatar i {
+        font-size: 2.5rem !important;
+    }
+    
+    .profile-card .card-body {
+        padding: 1.5rem !important;
+    }
+    
+    .profile-card-header {
+        padding: 1.25rem 1.5rem !important;
+    }
+    
+    .profile-stat {
+        padding: 1.5rem 1rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    .profile-stat-value {
+        font-size: 2rem !important;
+    }
+    
+    .profile-stat-icon i {
+        font-size: 2rem !important;
+        padding: 0.75rem;
+    }
+    
+    .profile-action-btn {
+        padding: 0.875rem 1.5rem !important;
+        margin: 0.25rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .profile-edit-btn {
+        right: 1.5rem !important;
+        top: 1.5rem !important;
+        padding: 0.625rem 1.25rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .profile-info-row:hover {
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+/* Mobile Responsive (576px and below) */
+@media (max-width: 576px) {
+    .profile-page-container {
+        padding: 0.25rem !important;
+    }
+    
+    .profile-header {
+        padding: 1.5rem 1rem !important;
+        border-radius: 12px !important;
+    }
+    
+    .profile-name {
+        font-size: 1.75rem !important;
+    }
+    
+    .profile-badge {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .profile-avatar {
+        width: 80px !important;
+        height: 80px !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .profile-avatar i {
+        font-size: 2rem !important;
+    }
+    
+    .profile-card {
+        border-radius: 12px !important;
+        margin-bottom: 1rem;
+    }
+    
+    .profile-card .card-body {
+        padding: 1.25rem !important;
+    }
+    
+    .profile-card-header {
+        padding: 1rem 1.25rem !important;
+    }
+    
+    .profile-card-header h5 {
+        font-size: 1.1rem !important;
+    }
+    
+    .profile-stat {
+        padding: 1.25rem 0.75rem !important;
+    }
+    
+    .profile-stat-value {
+        font-size: 1.75rem !important;
+    }
+    
+    .profile-stat-label {
+        font-size: 0.8rem !important;
+    }
+    
+    .profile-action-btn {
+        width: 100% !important;
+        margin: 0.25rem 0 !important;
+        padding: 1rem !important;
+    }
+    
+    .profile-edit-btn {
+        right: 1rem !important;
+        top: 1rem !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .profile-info-label {
+        font-size: 0.8rem !important;
+    }
+    
+    .profile-info-value {
+        font-size: 0.95rem !important;
+    }
+    
+    .list-group-item {
+        padding: 1.25rem !important;
+    }
+    
+    .list-group-item:hover {
+        padding-left: 1.25rem !important;
+    }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    .profile-header {
+        padding: 1.25rem 0.75rem !important;
+        text-align: center;
+    }
+    
+    .profile-name {
+        font-size: 1.5rem !important;
+        line-height: 1.2;
+    }
+    
+    .profile-card .card-body {
+        padding: 1rem !important;
+    }
+    
+    .profile-card-header {
+        padding: 0.875rem 1rem !important;
+    }
+    
+    .profile-edit-btn {
+        position: static !important;
+        width: 100% !important;
+        margin: 1rem 0 0 0 !important;
+        border-radius: 8px !important;
+    }
+    
+    .col-md-6 .profile-info-row {
+        margin-bottom: 0.5rem;
+    }
+    
+    .profile-stat-icon i {
+        font-size: 1.75rem !important;
+        padding: 0.5rem;
+    }
+}
+
+/* Container Fluid Padding Fix */
+.container-fluid.px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+/* Row Spacing Fixes */
+.row.g-4 {
+    margin-left: -0.75rem !important;
+    margin-right: -0.75rem !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+}
+
+.row.g-4 > * {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    margin-bottom: 1.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+}
+
+/* Stats Row Specific Fixes */
+.row.g-3 {
+    margin-left: -0.5rem !important;
+    margin-right: -0.5rem !important;
+}
+
+.row.g-3 > * {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Animation Delays - Ensure proper spacing */
+.animated {
+    margin-bottom: 0 !important;
+}
+
+.delay-1,
+.delay-2,
+.delay-3,
+.delay-4 {
+    margin-bottom: 0 !important;
+}
+
+/* Empty State Spacing */
+.text-center.py-4 {
+    padding: 2rem 1rem !important;
+}
+
+/* Profile Header Contact Info Spacing */
+.profile-header .mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.profile-header .text-white-50 {
+    margin-bottom: 0 !important;
+    padding: 0 1rem;
+}
+
+/* Additional Enhanced Profile Page Styles */
+.profile-card-header h5 {
+    margin-bottom: 0 !important;
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+    color: #2d3748 !important;
+    display: flex;
+    align-items: center;
+}
+
+.profile-card-header i {
+    margin-right: 0.75rem !important;
+    font-size: 1.25rem !important;
+    color: #667eea !important;
+    padding: 0.5rem;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 8px;
+}
+
+/* Enhanced Profile Avatar */
+.profile-avatar {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto 1.5rem !important;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-avatar-inner {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
+    border: 4px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.profile-avatar-inner:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 12px 48px rgba(102, 126, 234, 0.4) !important;
+}
+
+.profile-avatar i {
+    font-size: 3rem !important;
+    color: white !important;
+}
+
+/* Beautiful Profile Name and Badge */
+.profile-name {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 0.5rem !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.profile-badge {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Enhanced Profile Stats */
+.profile-stat {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    border-radius: 16px !important;
+    padding: 2rem 1.5rem !important;
+    text-align: center;
+    border: 1px solid rgba(102, 126, 234, 0.1) !important;
+    transition: all 0.3s ease !important;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.profile-stat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.15) !important;
+}
+
+.profile-stat-icon {
+    margin-bottom: 1rem !important;
+}
+
+.profile-stat-icon i {
+    font-size: 2.5rem !important;
+    color: #667eea !important;
+    padding: 1rem;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 16px;
+}
+
+.profile-stat-value {
+    font-size: 2.25rem !important;
+    font-weight: 800 !important;
+    color: #2d3748 !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1;
+}
+
+.profile-stat-label {
+    font-weight: 600 !important;
+    color: #718096 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Enhanced Info Rows */
+.profile-info-row {
+    padding: 1.25rem 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+    transition: all 0.2s ease;
+}
+
+.profile-info-row:hover {
+    background: rgba(102, 126, 234, 0.02);
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    border-radius: 8px;
+    margin: 0 -1rem;
+}
+
+.profile-info-row:last-child {
+    border-bottom: none !important;
+}
+
+.profile-info-label {
+    font-weight: 700 !important;
+    color: #2d3748 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem !important;
+}
+
+.profile-info-value {
+    font-weight: 500 !important;
+    color: #4a5568 !important;
+    font-size: 1rem !important;
+}
+
+/* Enhanced Action Buttons */
+.profile-action-btn {
+    margin: 0.5rem !important;
+    padding: 1rem 2rem !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-action-btn.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
+}
+
+.profile-action-btn.btn-primary:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 48px rgba(102, 126, 234, 0.4) !important;
+}
+
+.profile-action-btn.btn-outline-secondary {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 2px solid rgba(102, 126, 234, 0.2) !important;
+    color: #667eea !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+}
+
+.profile-action-btn.btn-outline-secondary:hover {
+    background: #667eea !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Enhanced Edit Button */
+.profile-edit-btn {
+    position: absolute !important;
+    right: 2rem !important;
+    top: 2rem !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    z-index: 3;
+}
+
+.profile-edit-btn:hover {
+    background: white !important;
+    color: #667eea !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Enhanced Progress Bars */
+.progress {
+    height: 8px !important;
+    border-radius: 50px !important;
+    background: rgba(102, 126, 234, 0.1) !important;
+    margin-bottom: 1rem !important;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+    border-radius: 50px !important;
+    transition: width 0.6s ease !important;
+}
+
+.progress-title {
+    font-weight: 700 !important;
+    color: #2d3748 !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Enhanced Alert Boxes */
+.alert {
+    margin-bottom: 0 !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 12px !important;
+    border: none !important;
+    font-weight: 500 !important;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%) !important;
+    color: #667eea !important;
+    border-left: 4px solid #667eea !important;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, rgba(72, 187, 120, 0.1) 0%, rgba(56, 178, 172, 0.1) 100%) !important;
+    color: #38a169 !important;
+    border-left: 4px solid #38a169 !important;
+}
+
+/* Enhanced List Items */
+.list-group-item {
+    padding: 1.5rem !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+    background: transparent !important;
+    transition: all 0.2s ease !important;
+}
+
+.list-group-item:hover {
+    background: rgba(102, 126, 234, 0.02) !important;
+    padding-left: 2rem !important;
+    border-radius: 8px !important;
+}
+
+.list-group-item:last-child {
+    border-bottom: none !important;
+}
+
+.list-group-item h6 {
+    font-weight: 700 !important;
+    color: #2d3748 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.list-group-item .text-muted {
+    color: #718096 !important;
+    font-weight: 500 !important;
+}
+
+/* Animation Classes */
+.animated {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+/* Empty State Styling */
+.text-center.py-4 {
+    padding: 3rem 2rem !important;
+}
+
+.text-center.py-4 i {
+    font-size: 4rem !important;
+    color: rgba(102, 126, 234, 0.2) !important;
+    margin-bottom: 1rem !important;
+}
+
+.text-center.py-4 p {
+    font-weight: 500 !important;
+    color: #718096 !important;
+    font-size: 1.1rem !important;
+}
+
+/**
+ * Resource Index Page Padding Fixes
+ * Fixing spacing and visual layout for service cards
+ */
+
+/* Resource page container */
+.resource-page-container {
+    padding: 2rem 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+/* Fix container padding on smaller screens for resource page */
+.resource-page-container .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .resource-page-container .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
+
+/* Service card styling */
+.service-card {
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+.service-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-card .card-body {
+    padding: 2.5rem 2rem !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Service icon styling */
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+}
+
+.service-icon i {
+    font-size: 2rem !important;
+    color: #ffffff !important;
+}
+
+/* Service card title */
+.service-card .card-title {
+    color: #2d3748 !important;
+    font-weight: 700 !important;
+    font-size: 1.375rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
+}
+
+/* Service card text */
+.service-card .card-text {
+    color: #718096 !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
+}
+
+/* Service card button */
+.service-card .btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.875rem 2rem !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    text-transform: none !important;
+    letter-spacing: 0.025em !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3) !important;
+}
+
+.service-card .btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4) !important;
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%) !important;
+}
+
+/* Resource page heading */
+.resource-page-container h1 {
+    color: #2d3748 !important;
+    font-weight: 800 !important;
+    font-size: 3rem !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.resource-page-container .lead {
+    color: #718096 !important;
+    font-size: 1.25rem !important;
+    text-align: center !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    max-width: 600px !important;
+    margin: 0 auto 3rem !important;
+}
+
+/* Responsive adjustments for resource cards */
+@media (max-width: 992px) {
+    .resource-page-container .row.g-4 {
+        gap: 1.5rem !important;
+    }
+    
+    .service-card .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .resource-page-container {
+        padding: 1rem 0;
+    }
+    
+    .resource-page-container h1 {
+        font-size: 2.25rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .resource-page-container .lead {
+        font-size: 1.125rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .service-card .card-body {
+        padding: 1.75rem 1.25rem !important;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1.25rem !important;
+    }
+    
+    .service-icon i {
+        font-size: 1.75rem !important;
+    }
+    
+    .service-card .card-title {
+        font-size: 1.25rem !important;
+    }
+    
+    .service-card .card-text {
+        font-size: 0.95rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+    
+    .service-card .btn {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .resource-page-container .row.g-4 {
+        gap: 1rem !important;
+    }
+    
+    .resource-page-container h1 {
+        font-size: 2rem !important;
+    }
+    
+    .service-card .card-body {
+        padding: 1.5rem 1rem !important;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-icon i {
+        font-size: 1.5rem !important;
+    }
+}
+
+/**
+ * Dashboard Index Page Padding Fixes
+ * Fixing container padding, responsive spacing, and visual layout
+ */
+
+/* Dashboard page container fixes */
+.dashboard-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+}
+
+/* Hero section container improvements */
+.dashboard-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    padding: 3rem 0 !important;
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Fix container-fluid padding issues */
+.container-fluid.px-4 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .container-fluid.px-4 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .dashboard-hero {
+        padding: 2rem 0 !important;
+    }
+}
+
+/* Stats section responsive improvements */
+.row.g-4.mb-5 {
+    margin-bottom: 2rem !important;
+    gap: 1rem !important;
+}
+
+@media (max-width: 768px) {
+    .row.g-4.mb-5 {
+        margin-bottom: 1.5rem !important;
+        gap: 0.75rem !important;
+    }
+}
+
+/* Stat cards responsive padding */
+.stat-card {
+    margin-bottom: 1rem !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+    border: none !important;
+    overflow: hidden !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12) !important;
+}
+
+.stat-card .card-body {
+    padding: 2rem 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .stat-card .card-body {
+        padding: 1.5rem 1.25rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-card .card-body {
+        padding: 1.25rem 1rem !important;
+    }
+}
+
+/* Appointment container improvements */
+.appointment-container {
+    margin-bottom: 1.5rem !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+}
+
+.appointment-container:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Appointment header padding */
+.appointment-header {
+    padding: 1.5rem 2rem !important;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+    border-bottom: 2px solid rgba(102, 126, 234, 0.1) !important;
+}
+
+@media (max-width: 768px) {
+    .appointment-header {
+        padding: 1.25rem 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .appointment-header {
+        padding: 1rem 1.25rem !important;
+    }
+}
+
+/* Appointment list item padding */
+.appointment-item {
+    padding: 1.5rem 2rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.2s ease !important;
+}
+
+.appointment-item:last-child {
+    border-bottom: none !important;
+}
+
+.appointment-item:hover {
+    background-color: rgba(102, 126, 234, 0.02) !important;
+    transform: translateX(4px) !important;
+}
+
+@media (max-width: 768px) {
+    .appointment-item {
+        padding: 1.25rem 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .appointment-item {
+        padding: 1rem 1.25rem !important;
+    }
+}
+
+/* Quick links container improvements */
+.quick-links-container {
+    border-radius: 1rem !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    overflow: hidden !important;
+    margin-bottom: 0 !important;
+}
+
+.quick-links-container .card-body {
+    padding: 2rem !important;
+}
+
+@media (max-width: 768px) {
+    .quick-links-container .card-body {
+        padding: 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .quick-links-container .card-body {
+        padding: 1.25rem !important;
+    }
+}
+
+/* Quick links grid responsive improvements */
+.quick-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+}
+
+@media (max-width: 768px) {
+    .quick-links {
+        gap: 0.75rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .quick-links {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+    }
+}
+
+/* Quick link item improvements */
+.quick-link-item {
+    padding: 1.5rem 1.25rem !important;
+    border-radius: 0.75rem !important;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
+    border: 2px solid transparent !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-decoration: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.quick-link-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.quick-link-item:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(102, 126, 234, 0.2) !important;
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15) !important;
+    color: white !important;
+}
+
+.quick-link-item:hover::before {
+    opacity: 1;
+}
+
+.quick-link-item:hover .quick-link-icon i {
+    color: white !important;
+}
+
+@media (max-width: 768px) {
+    .quick-link-item {
+        padding: 1.25rem 1rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .quick-link-item {
+        padding: 1rem 0.75rem !important;
+    }
+}
+
+/* Quick link icon improvements */
+.quick-link-icon {
+    font-size: 2rem !important;
+    margin-bottom: 0.75rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.quick-link-icon i {
+    color: #667eea !important;
+    transition: all 0.3s ease !important;
+}
+
+@media (max-width: 768px) {
+    .quick-link-icon {
+        font-size: 1.75rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .quick-link-icon {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+}
+
+/* Empty state improvements */
+.empty-state {
+    padding: 3rem 1.5rem !important;
+    text-align: center !important;
+}
+
+.empty-state.smaller {
+    padding: 2rem 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .empty-state {
+        padding: 2rem 1rem !important;
+    }
+    
+    .empty-state.smaller {
+        padding: 1.5rem 1rem !important;
+    }
+}
+
+/* Welcome title responsive improvements */
+.welcome-title {
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 0.5rem !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+@media (max-width: 992px) {
+    .welcome-title {
+        font-size: 2.25rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .welcome-title {
+        font-size: 1.75rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+}
+
+/* Hero action buttons improvements */
+.dashboard-hero .d-flex.gap-2 {
+    gap: 0.75rem !important;
+}
+
+.dashboard-hero .btn {
+    padding: 0.875rem 2rem !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+@media (max-width: 768px) {
+    .dashboard-hero .btn {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-hero .d-flex.gap-2 {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+    
+    .dashboard-hero .btn {
+        padding: 0.75rem 1.25rem !important;
+        font-size: 0.85rem !important;
+        width: 100% !important;
+    }
+}
+
+/* Main content area spacing */
+.row.g-4 {
+    gap: 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .row.g-4 {
+        gap: 1rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .row.g-4 {
+        gap: 0.75rem !important;
+    }
+}
+
+/* Appointment date styling improvements */
+.appointment-date {
+    min-width: 70px !important;
+    height: 70px !important;
+    margin-right: 1rem !important;
+    border-radius: 12px !important;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    border: 2px solid rgba(102, 126, 234, 0.1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s ease !important;
+}
+
+.appointment-item:hover .appointment-date {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(102, 126, 234, 0.05) 100%) !important;
+    border-color: rgba(102, 126, 234, 0.3) !important;
+    transform: scale(1.05) !important;
+}
+
+@media (max-width: 768px) {
+    .appointment-date {
+        min-width: 60px !important;
+        height: 60px !important;
+        margin-right: 0.75rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .appointment-date {
+        min-width: 50px !important;
+        height: 50px !important;
+        margin-right: 0.5rem !important;
+    }
+}
+
+/* Date text improvements */
+.date-day {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    color: #374151 !important;
+}
+
+.date-month {
+    font-size: 0.8rem !important;
+    text-transform: uppercase !important;
+    color: #6b7280 !important;
+    font-weight: 500 !important;
+}
+
+@media (max-width: 768px) {
+    .date-day {
+        font-size: 1.25rem !important;
+    }
+    
+    .date-month {
+        font-size: 0.7rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .date-day {
+        font-size: 1.1rem !important;
+    }
+    
+    .date-month {
+        font-size: 0.65rem !important;
+    }
+}

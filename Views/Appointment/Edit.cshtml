@@ -4,7 +4,11 @@
     ViewData["Title"] = "Edit Appointment";
 }
 
-<div class="container">
+@section Styles {
+    <link rel="stylesheet" href="~/css/appointment-fix.css" />
+}
+
+<div class="container appointment-create">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card dashboard-card mb-4">
@@ -25,7 +29,8 @@
 
                         <div class="mb-3">
                             <label asp-for="AppointmentDate" class="form-label"></label>
-                            <input asp-for="AppointmentDate" class="form-control" type="date" min="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                            <input asp-for="AppointmentDate" class="form-control" type="date"
+                                min="@DateTime.Today.ToString("yyyy-MM-dd")" />
                             <span asp-validation-for="AppointmentDate" class="text-danger"></span>
                         </div>
 
@@ -64,5 +69,10 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+        
+    

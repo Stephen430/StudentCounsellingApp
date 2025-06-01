@@ -12,6 +12,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ps0d7o6w89"},{"Name":"integrity","Value":"sha256-SWya3/6RvzN3X\u002BLDoyZyCYtQXJsliOl1aH3V/IWlWxI="},{"Name":"label","Value":"_content/StudentCounsellingApp/css/academic-support-advanced.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"24410"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022SWya3/6RvzN3X\u002BLDoyZyCYtQXJsliOl1aH3V/IWlWxI=\u0022"},{"Name":"Last-Modified","Value":"Sat, 31 May 2025 03:04:11 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentCounsellingApp/css/appointment-fix.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\appointment-fix.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2v2LnL8IGy/XTPYfXLBATz\u002BwkSSwxAr4JO9489j27fY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"51658"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00222v2LnL8IGy/XTPYfXLBATz\u002BwkSSwxAr4JO9489j27fY=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 18:25:26 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/StudentCounsellingApp/css/appointment-fix.y5tejh6hdl.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\appointment-fix.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"y5tejh6hdl"},{"Name":"integrity","Value":"sha256-2v2LnL8IGy/XTPYfXLBATz\u002BwkSSwxAr4JO9489j27fY="},{"Name":"label","Value":"_content/StudentCounsellingApp/css/appointment-fix.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"51658"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00222v2LnL8IGy/XTPYfXLBATz\u002BwkSSwxAr4JO9489j27fY=\u0022"},{"Name":"Last-Modified","Value":"Sun, 01 Jun 2025 18:25:26 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/StudentCounsellingApp/css/career-guidance-advanced.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\career-guidance-advanced.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

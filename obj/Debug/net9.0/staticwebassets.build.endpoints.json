@@ -301,6 +301,304 @@
       ]
     },
     {
+      "Route": "css/appointment-fix.css",
+      "AssetFile": "css/appointment-fix.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000137174211"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7289"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY="
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.css",
+      "AssetFile": "css/appointment-fix.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51658"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY="
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.css.gz",
+      "AssetFile": "css/appointment-fix.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7289"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU="
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.y5tejh6hdl.css",
+      "AssetFile": "css/appointment-fix.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000137174211"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7289"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y5tejh6hdl"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY="
+        },
+        {
+          "Name": "label",
+          "Value": "css/appointment-fix.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.y5tejh6hdl.css",
+      "AssetFile": "css/appointment-fix.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "51658"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y5tejh6hdl"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2v2LnL8IGy/XTPYfXLBATz+wkSSwxAr4JO9489j27fY="
+        },
+        {
+          "Name": "label",
+          "Value": "css/appointment-fix.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/appointment-fix.y5tejh6hdl.css.gz",
+      "AssetFile": "css/appointment-fix.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7289"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 01 Jun 2025 18:25:26 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "y5tejh6hdl"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-TtUOGrmihYDuzpVcehElypW7TX5o/htlusuxRunZ6LU="
+        },
+        {
+          "Name": "label",
+          "Value": "css/appointment-fix.css.gz"
+        }
+      ]
+    },
+    {
       "Route": "css/career-guidance-advanced.css",
       "AssetFile": "css/career-guidance-advanced.css.gz",
       "Selectors": [
