@@ -167,17 +167,6 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="d-flex justify-content-md-end align-items-center gap-3">
-                        <a asp-controller="Home" asp-action="Privacy" class="text-muted text-decoration-none small">
-                            Privacy Policy
-                        </a>
-                        <span class="text-muted">|</span>
-                        <span class="text-muted small">
-                            <i class="bi bi-telephone me-1"></i>Crisis: 988
-                        </span>
-                    </div>
-                </div>
             </div>
         </div>
     </footer>
@@ -186,7 +175,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
-   <script>
+    <script>
         // Monitor page load status
         document.addEventListener('DOMContentLoaded', function () {
             console.log('Page loaded at:', new Date().toISOString());
@@ -263,9 +252,77 @@
                 });
             };
 
-            window.addEventListener('scroll', animateOnScroll);
-            // Run once on page load
+            window.addEventListener('scroll', animateOnScroll);            // Run once on page load
             animateOnScroll();
+
+            // Newsletter subscription functionality
+            const subscribeBtn = document.getElementById('subscribeBtn');
+            const newsletterEmail = document.getElementById('newsletterEmail');
+            
+            if (subscribeBtn && newsletterEmail) {
+                subscribeBtn.addEventListener('click', function() {
+                    const email = newsletterEmail.value.trim();
+                    if (email && isValidEmail(email)) {
+                        // Simulate newsletter subscription
+                        subscribeBtn.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
+                        subscribeBtn.classList.remove('btn-primary');
+                        subscribeBtn.classList.add('btn-success');
+                        
+                        // Show success message
+                        const successMsg = document.createElement('small');
+                        successMsg.className = 'text-success mt-1 d-block';
+                        successMsg.textContent = 'Successfully subscribed!';
+                        newsletterEmail.parentNode.parentNode.appendChild(successMsg);
+                        
+                        // Reset after 3 seconds
+                        setTimeout(() => {
+                            subscribeBtn.innerHTML = '<i class="bi bi-envelope-plus"></i>';
+                            subscribeBtn.classList.remove('btn-success');
+                            subscribeBtn.classList.add('btn-primary');
+                            newsletterEmail.value = '';
+                            if (successMsg.parentNode) {
+                                successMsg.remove();
+                            }
+                        }, 3000);
+                    } else {
+                        // Show error for invalid email
+                        newsletterEmail.classList.add('is-invalid');
+                        setTimeout(() => {
+                            newsletterEmail.classList.remove('is-invalid');
+                        }, 2000);
+                    }
+                });
+                
+                // Clear validation on input
+                newsletterEmail.addEventListener('input', function() {
+                    this.classList.remove('is-invalid');
+                });
+                
+                // Enter key support
+                newsletterEmail.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        subscribeBtn.click();
+                    }
+                });
+            }
+              // Helper function for email validation
+            function isValidEmail(email) {
+                const emailRegex = new RegExp('^[^\\s@@]+@@[^\\s@@]+\\.[^\\s@@]+$');
+                return emailRegex.test(email);
+            }
+            
+            // Add hover effects to footer stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                stat.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.1)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                stat.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
         });
     </script>
 </body>

@@ -1463,100 +1463,10 @@
     }
 }
 
-/* Enhanced Resource Cards Alignment - Force same line layout */
-.resource-page-container .row.g-4 {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: stretch !important;
-    justify-content: center !important;
-    gap: 1.5rem !important;
-}
-
-.resource-page-container .row.g-4 > .col-xl-4,
-.resource-page-container .row.g-4 > .col-lg-4,
-.resource-page-container .row.g-4 > .col-md-4 {
-    flex: 1 1 0 !important;
-    max-width: 33.333333% !important;
-    min-width: 300px !important;
-    display: flex !important;
-}
-
-/* Ensure service cards have equal height and proper alignment */
-.resource-page-container .service-card {
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
-    min-height: 400px !important;
-}
-
-.resource-page-container .service-card .card-body {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    height: 100% !important;
-    padding: 2rem !important;
-}
-
-.resource-page-container .service-content {
-    flex-grow: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-}
-
-.resource-page-container .service-card .btn {
-    margin-top: auto !important;
-    align-self: center !important;
-    width: fit-content !important;
-}
-
-/* Mobile responsive - stack cards vertically on small screens */
-@media (max-width: 768px) {
-    .resource-page-container .row.g-4 {
-        flex-wrap: wrap !important;
-        flex-direction: column !important;
-    }
-    
-    .resource-page-container .row.g-4 > .col-xl-4,
-    .resource-page-container .row.g-4 > .col-lg-4,
-    .resource-page-container .row.g-4 > .col-md-4 {
-        max-width: 100% !important;
-        flex: none !important;
-        margin-bottom: 1rem !important;
-    }
-    
-    .resource-page-container .service-card {
-        min-height: 350px !important;
-    }
-}
-
-/* Tablet responsive - maintain 3 cards per row */
-@media (min-width: 769px) and (max-width: 1199px) {
-    .resource-page-container .row.g-4 > .col-xl-4,
-    .resource-page-container .row.g-4 > .col-lg-4,
-    .resource-page-container .row.g-4 > .col-md-4 {
-        min-width: 250px !important;
-    }
-}
-
-/* Large screens - optimal spacing */
-@media (min-width: 1200px) {
-    .resource-page-container .row.g-4 {
-        gap: 2rem !important;
-    }
-    
-    .resource-page-container .row.g-4 > .col-xl-4,
-    .resource-page-container .row.g-4 > .col-lg-4,
-    .resource-page-container .row.g-4 > .col-md-4 {
-        min-width: 320px !important;
-        max-width: 400px !important;
-    }
-}
-
-/* =============================================================================
-   DASHBOARD INDEX PAGE VISUAL REPOSITIONING & LAYOUT IMPROVEMENTS
-   COMPLETE REDESIGN FOR BETTER VISUAL HIERARCHY AND MODERN APPEARANCE
-   ============================================================================= */
+/**
+ * Dashboard Index Page Visual Repositioning & Layout Improvements
+ * Complete redesign for better visual hierarchy and modern appearance
+ */
 
 /* Main dashboard page wrapper */
 .dashboard-page-wrapper {

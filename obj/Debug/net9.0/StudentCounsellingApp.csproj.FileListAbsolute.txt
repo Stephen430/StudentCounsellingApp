@@ -670,6 +670,7 @@ C:\Users\USER\Desktop\StudentCounsellingApp\obj\Debug\net9.0\compressed\zmb5novg
 C:\Users\USER\Desktop\StudentCounsellingApp\obj\Debug\net9.0\compressed\4xilaeq97x-ps0d7o6w89.gz
 C:\Users\USER\Desktop\StudentCounsellingApp\obj\Debug\net9.0\compressed\j0mdgic2bi-rrsl4p0u9u.gz
 C:\Users\USER\Desktop\StudentCounsellingApp\obj\Debug\net9.0\compressed\hzfhjqbk3m-e5ylc4oye8.gz
-C:\Users\USER\Desktop\StudentCounsellingApp\obj\Debug\net9.0\compressed\9hxwfqugai-skleap6mfq.gz
 C:\Users\USER\Desktop\StudentCounsellingApp\obj\Debug\net9.0\compressed\os0zm4frm6-5ipweew5fc.gz
 C:\Users\USER\Desktop\StudentCounsellingApp\obj\Debug\net9.0\compressed\az6xwzr50d-5ipweew5fc.gz
+C:\Users\USER\Desktop\StudentCounsellingApp\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\USER\Desktop\StudentCounsellingApp\obj\Debug\net9.0\compressed\9hxwfqugai-skleap6mfq.gz
