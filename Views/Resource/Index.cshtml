@@ -4,55 +4,84 @@
 
 @section Styles {
     <link rel="stylesheet" href="~/css/appointment-fix.css" />
+    <style>
+        .resource-cards-container .service-card {
+            max-width: 390px;
+            margin: 4;
+        }
+
+        .resource-cards-container .service-card .card-body {
+            padding: 1.5rem 1rem !important;
+        }
+
+        .resource-cards-container .service-icon {
+            width: 60px !important;
+            height: 60px !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .resource-cards-container .service-icon i {
+            font-size: 1.5rem !important;
+        }
+
+        .resource-cards-container .card-title {
+            font-size: 1.1rem !important;
+            margin-bottom: 0.75rem !important;
+        }
+
+        .resource-cards-container .card-text {
+            font-size: 0.9rem !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .resource-cards-container .btn {
+            padding: 0.6rem 1.2rem !important;
+            font-size: 0.85rem !important;
+        }
+    </style>
 }
 
 <div class="resource-page-container">
-    <div class="container-fluid px-4">
+    <div class="container">
         <h1 class="my-4">Counselling Resources</h1>
-        <p class="lead mb-5">Access our collection of resources to support your mental health and academic success.</p>        <div class="row g-4 d-flex flex-row flex-nowrap justify-content-center align-items-stretch">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 d-flex">
-                <div class="card service-card h-100 w-100">
-                    <div class="card-body text-center d-flex flex-column justify-content-between">
-                        <div class="service-content">
-                            <div class="service-icon mb-3">
-                                <i class="bi bi-heart-pulse"></i>
-                            </div>
-                            <h4 class="card-title">Mental Health</h4>
-                            <p class="card-text">Resources focused on supporting your emotional well-being, stress
-                                management, and mental health.</p>
+        <p class="lead mb-5">Access our collection of resources to support your mental health and academic success.</p>
+        <div class="row g-3 resource-cards-container">
+            <div class="col-4">
+                <div class="card service-card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon mb-3">
+                            <i class="bi bi-heart-pulse"></i>
                         </div>
+                        <h4 class="card-title">Mental Health</h4>
+                        <p class="card-text">Resources focused on supporting your emotional well-being, stress
+                            management, and mental health.</p>
                         <a asp-action="MentalHealth" class="btn btn-primary mt-3">Explore Resources</a>
                     </div>
                 </div>
             </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 d-flex">
-                <div class="card service-card h-100 w-100">
-                    <div class="card-body text-center d-flex flex-column justify-content-between">
-                        <div class="service-content">
-                            <div class="service-icon mb-3">
-                                <i class="bi bi-book"></i>
-                            </div>
-                            <h4 class="card-title">Academic Support</h4>
-                            <p class="card-text">Materials to help you succeed academically, including study strategies,
-                                time management, and exam preparation.</p>
+            <div class="col-4">
+                <div class="card service-card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon mb-3">
+                            <i class="bi bi-book"></i>
                         </div>
+                        <h4 class="card-title">Academic Support</h4>
+                        <p class="card-text">Materials to help you succeed academically, including study strategies,
+                            time management, and exam preparation.</p>
                         <a asp-action="AcademicSupport" class="btn btn-primary mt-3">Explore Resources</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 d-flex">
-                <div class="card service-card h-100 w-100">
-                    <div class="card-body text-center d-flex flex-column justify-content-between">
-                        <div class="service-content">
-                            <div class="service-icon mb-3">
-                                <i class="bi bi-briefcase"></i>
-                            </div>
-                            <h4 class="card-title">Career Guidance</h4>
-                            <p class="card-text">Information about career planning, job searching, resume building, and
-                                interview preparation.</p>
+            <div class="col-4">
+                <div class="card service-card h-100">
+                    <div class="card-body text-center">
+                        <div class="service-icon mb-3">
+                            <i class="bi bi-briefcase"></i>
                         </div>
+                        <h4 class="card-title">Career Guidance</h4>
+                        <p class="card-text">Information about career planning, job searching, resume building, and
+                            interview preparation.</p>
                         <a asp-action="CareerGuidance" class="btn btn-primary mt-3">Explore Resources</a>
                     </div>
                 </div>

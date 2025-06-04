@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\dashboard-enhancements.css"
     },
     {
+      "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\footer-advanced.css",
+      "PackagePath": "staticwebassets\\css\\footer-advanced.css"
+    },
+    {
       "Id": "C:\\Users\\USER\\Desktop\\StudentCounsellingApp\\wwwroot\\css\\landing-page.css",
       "PackagePath": "staticwebassets\\css\\landing-page.css"
     },
